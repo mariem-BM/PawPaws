@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Animal</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+<body>
+<h1 id="title"><u>PawPaws Rescue - Adoption Application</u></h1>
+<p id="instructions">Please complete <strong>ALL</strong> questions.</p>
+<form id="application" method="GET" action="mailto:huw1963@hotmail.com">
+  <div class="rowTab">
+    <div class="label1">
+      <label id="name-label" for="name">Name: </label></div>
+    <div class="rightTab">
+      <input autofocus type="text" name="name" id="name" class="infield" placeholder="Please enter your name" required></div>
+  </div>
+  <div class="rowTab">
+    <div class="label1">
+      <label id="address-label" for="address">Address: </label></div>
+    <div class="rightTab">
+      <textarea autofocus name="address" id="address" class="infield2" placeholder="Please enter your address" rows="10" cols="5" required></textarea></div>
+    <div class="rowTab">
+      <div class="label1">
+        <label id="email-label" for="email">Email address: </label></div>
+      <div class="rightTab">
+        <input autofocus type="text" name="email" id="email" class="infield" placeholder="Please enter your email address" required></div>
+    </div>
+    <div class="rowTab">
+      <div class="label1">
+        <label id="phone-label" for="phone">Phone number: </label></div>
+      <div class="rightTab">
+        <input autofocus type="text" name="phone" id="phone" class="infield" placeholder="Please enter your telephone number" required></div>
+    </div>
+    <div class="rowTab">
+      <div class="label1">
+        <label for="hours">How many hours a day are you away from home? </label></div>
+      <div class="rightTab">
+        <select id="dropdown" name="hours" class="dropdown">
+          <option value="Select an option">Select an option</option>
+      <option value="nil">None</option>
+      <option value="four">0 to 4 hours</option>
+      <option value="eight">5 to 8 hours</option>
+      <option value="over">Over 8 hours</option></select></div>
+    </div>
+    <div class="rowTab">
+      <div class="label1">
+        <label for="animal">What animal(s) are you interested in? </label></div>
+      <div class="rightTab">
+        <ul style="list-style: none;">
+          <li class="radio"><label>Dogs<input name="radio-buttons" value="1" type="radio" class="animal"></label></li>
+          <li class="radio"><label>Cats<input name="radio-buttons" value="2" type="radio" class="animal"></label></li>
+          <li class="radio"><label>Dogs and cats<input name="radio-buttons" value="1" type="radio" class="animal"></label></li>
+      </div>
+    </div>
+    <div class="rowTab">
+      <div class="label1">
+        <label for="qty">How many pets do you currently have?</label></div>
+      <div class="rightTab">
+        <input type="number" name="qty" id="number" min="0" max="20" class="infield" placeholder="Quantity"></div>
+    </div>
+    <div class="rowTab">
+      <div class="label1">
+        <label for="additional">Is there any other information you need?<br>(select all that apply):</label></div>
+      <div class="rightTab">
+        <ul id="additional" style="list-style: none;">
+          <li class="radio"><label><input name="add" value="1" type="checkbox" class="animal">Living with a new puppy.</label></li>
+          <li class="radio"><label><input name="add" value="2" type="checkbox" class="animal">Living with a new kitten.</label></li>
+          <li class="radio"><label><input name="add" value="3" type="checkbox" class="animal">Training.</label></li>
+          <li class="radio"><label><input name="add" value="4" type="checkbox" class="animal">Neutering.</label></li>
+          <li class="radio"><label><input name="add" value="5" type="checkbox" class="animal">Microchipping your pet.</label></li>
+          <li class="radio"><label><input name="add" value="6" type="checkbox" class="animal">Vacinations and healthcare.</label></li>
+          <li class="radio"><label><input name="add" value="7" type="checkbox" class="animal">Dental care.</label></li>
+          <li class="radio"><label><input name="add" value="8" type="checkbox" class="animal">Insurance.</label></li>
+      </div>
+    </div>
+    <div class="rowTab">
+      <div class="label1">
+        <label for="other">Any other information you can offer or you need:</label></div>
+      <div class="rightTab">
+        <textarea autofocus name="other" id="other" class="infield2" placeholder="Enter your comments here....." rows="10" cols="5" required></textarea></div>
+    </div>
+    <button id="reset" type="reset">Reset</button>
+    <button id="submit" type="submit">Submit</button>
+</form>
+<footer class="footer">&copy2019 Dave The Dolphin.</footer>
+</body>
+</html>
