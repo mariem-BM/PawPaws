@@ -1,5 +1,4 @@
-
-   <?php
+ <?php
  include "config.php";
 
 class service
