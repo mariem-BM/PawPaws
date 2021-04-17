@@ -1,0 +1,152 @@
+<!--
+Author: Ognimo
+Author URL: http://ryuzak.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://ryuzak.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ryuzak Room Booking Form Template</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Room Booking Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<!-- js -->
+ <script src="Assets/reservation/js/jquery.min.js"></script>
+<!-- //js --> 
+<!-- font-awesome-icons -->
+<link href="Assets/reservation/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="Assets/reservation/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+</head>
+<body>
+	<div class="main">
+		<h1>Room Booking Form</h1>
+		<div class="w3_agile_main_grids">
+		
+			<div id='progress'><div id='progress-complete'></div></div>
+			
+			<form id="SignupForm" action="#" class="agile_form"method="post">
+				<fieldset>
+					<h3>Account information</h3>
+					<div class="form-group agileits_ryuzak_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input id="Name" type="text" name="Name" class="form-control" placeholder="Name" required="" />
+						</div>
+					</div>
+					<div class="form-group agileits_ryuzak_form">
+						<div class="wthree_input">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<input id="Email" type="email" name="Email" class="form-control" placeholder="Email" required="" />
+						</div>
+					</div>
+					<div class="form-group agileits_ryuzak_form w3_agileits_margin">
+						<div class="wthree_input">
+							<i class="fa fa-file-text" aria-hidden="true"></i>
+							<input id="Adress" type="text" name="Adress" class="form-control" placeholder="Adress" required="" />
+						</div>
+					</div>
+					<div class="form-group agileits_ryuzak_form">
+						<div class="wthree_input">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+							<!-- jareb -->
+						
+							<input id="Phone" type="text" name="Phone" class="form-control" placeholder="Phone" required="" />
+						</div>
+					</div> 
+					
+					
+					
+					<div class="clear"> </div>
+				</fieldset>
+				
+				<fieldset>
+					<h3>Room Type</h3>
+					<h4 class="ryuzak_type">What type of room would you want ?</h4>
+					<div class="form-group agileits_circles">
+						<div class="wthree_radio">
+							<span class="fa fa-user" aria-hidden="true"></span>
+							<label class="radio">
+								<input type="radio" name="radio" checked="">
+								<i></i>Luxuary boarding room
+							</label>
+						</div>
+					</div>
+					<div class="form-group agileits_circles">
+						<div class="wthree_radio">
+							<span class="fa fa-home" aria-hidden="true"></span>
+							<label class="radio">
+								<input type="radio" name="radio">
+								<i></i>Luxuary suite 
+							</label>
+						</div>
+					</div>
+					<div class="form-group agileits_circles">
+						<div class="wthree_radio">
+							<span class="fa fa-building-o" aria-hidden="true"></span>
+							<label class="radio">
+								<input type="radio" name="radio">
+								<i></i>Executive room 
+							</label>
+						</div>
+					</div>
+					<div class="clear"> </div>
+				</fieldset>
+				
+				<fieldset>
+					<h3 class="w3_room">Room Details</h3>
+					<div class="form-group ryuzak_description">
+						<i class="fa fa-align-right" aria-hidden="true"></i>
+						<textarea name="Message" placeholder="Your message here..." required=""></textarea>
+					</div>
+				</fieldset>
+	
+				<p>
+					<button id="SaveAccount" class="btn btn-primary agileinfo_primary submit">Submit form</button>
+				</p>
+			</form>
+			
+			<div class="agileits_copyright">
+				<p>© 2019 Room Booking Form. All rights reserved | Design by <a href="https://chat.whatsapp.com/KdVx8vOJzjmLdDOnfe7JBG">Ryuzak</a></p>
+			</div>
+		</div>
+	</div>
+	
+	<script src="Assets/reservation/js/jquery.validate.min.js"></script>
+    <script src="Assets/reservation/js/jquery.formtowizard.js"></script>
+
+    <script>
+        $( function() {
+            var $signupForm = $( '#SignupForm' );
+
+            $signupForm.validate({errorElement: 'em'});
+
+            $signupForm.formToWizard({
+                submitButton: 'SaveAccount',
+                nextBtnClass: 'btn btn-primary next',
+                prevBtnClass: 'btn btn-default prev',
+                buttonTag:    'button',
+                validateBeforeNext: function(form, step) {
+                    var stepIsValid = true;
+                    var validator = form.validate();
+                    $(':input', step).each( function(index) {
+                        var xy = validator.element(this);
+                        stepIsValid = stepIsValid && (typeof xy == 'undefined' || xy);
+                    });
+                    return stepIsValid;
+                },
+                progress: function (i, count) {
+                    $('#progress-complete').width(''+(i/count*100)+'%');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
