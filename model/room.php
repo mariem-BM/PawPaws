@@ -1,30 +1,30 @@
 <?php
 
 
-class chambres
+class Room
 {
 
 
-    private $idchambre=null;
-   private $typechambre=null;
+    private $idroom=null;
+   private $roomtype=null;
     private $price=null;
    private $photo;
-   private $qte=null;
+   private $qty=null;
 
     /**
      * room constructor.
-     * @param $idchambre
-     * @param $typechambre
+     * @param $idroom
+     * @param $roomtype
      * @param $price
      * @param $photo
      */
-    public function __construct( $typechambre, $price, $photo,$qte)
+    public function __construct( $roomtype, $price, $photo,$qty)
     {
 
-        $this->typechambre = $typechambre;
+        $this->roomtype = $roomtype;
         $this->price = $price;
         $this->photo = $photo;
-        $this->qte = $qte;
+        $this->qty = $qty;
     }/**
  * @return mixed
  */
@@ -33,33 +33,33 @@ class chambres
     /**
      * @return mixed
      */
-    public function getIdchambre()
+    public function getIdroom()
     {
-        return $this->idchambre;
+        return $this->idroom;
     }
 
     /**
      * @param mixed $idroom
      */
-    public function setIdchambre($idchambre)
+    public function setIdroom($idroom)
     {
-        $this->idchambre = $idchambre;
+        $this->idroom = $idroom;
     }
 
     /**
      * @return mixed
      */
-    public function getTypechambre()
+    public function getRoomtype()
     {
-        return $this->typechambre;
+        return $this->roomtype;
     }
 
     /**
      * @param mixed $roomtype
      */
-    public function setTypechambre($typechambre)
+    public function setRoomtype($roomtype)
     {
-        $this->typechambre = $typechambre;
+        $this->roomtype = $roomtype;
     }
 
     /**
@@ -97,20 +97,21 @@ class chambres
     /**
      * @return mixed
      */
-    public function getQte()
+    public function getQty()
     {
-        return $this->qte;
+        return $this->qty;
     }
 
     /**
      * @param mixed $qty
      */
-    public function setQty($qte): void
+    public function setQty($qty): void
     {
-        $this->qte = $qte;
+        $this->qty = $qty;
     }
 
 
 
 
 }
+?>
