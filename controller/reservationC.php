@@ -286,7 +286,7 @@ function afficherrooms($search)
 
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                Spend time in our 34 sqm Classic Rooms and you'll discover modern design and functionality combined to create the perfect environment in which to unwind. With an option of city and garden views the outside is just as rewarding as the inside. Sleep soundly on either a king sized or twin beds. Unwind after a long day with a relaxing bath in the luxurious bathrooms. The bathroom is also equipped with a hairdryer. There is plenty of amenities to entertain yourself including a flat screen LCD TV featuring a number of national and international TV channels, along with free Wi-Fi allowing for easy access to work, home and entertainment.
+                                                When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.
                                             </div>
 
                                             <!-- Modal footer -->
