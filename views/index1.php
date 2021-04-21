@@ -91,7 +91,7 @@ $_SESSION["e"]
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
-    <title>FormWizard_v2</title>
+    <title>Paw Paws</title>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,7 +116,7 @@ $_SESSION["e"]
 
 <body>
 
-<h1  <?php echo $_SESSION['Nom']; echo $_SESSION['e']?></h1>
+<h1  <?php echo $_SESSION['Nom']; echo $_SESSION['e']?> /h1>
 
 
 <form action="" method="POST">
@@ -129,7 +129,7 @@ $_SESSION["e"]
         {
             $search=$_GET["search"];
         }
-        afficherrooms1($search);
+        afficherservices1($search);
 
         ?>
         <div id="wizard">
@@ -146,24 +146,20 @@ $_SESSION["e"]
                     <div class="form-holder">
                         <input type="text" class="form-control datepicker-here pl-85" data-language='en' data-date-format="dd - m - yyyy" id="dp1" name="date" >
                         <span class="lnr lnr-chevron-down"></span>
-                        <span class="placeholder">Check in :</span>
+                        <span class="placeholder">Rendez-vous :  </span>
                     </div>
-                    <div class="form-holder">
-                        <input type="text" class="form-control datepicker-here pl-96" data-language='en'  data-date-format="dd - m - yyyy" id="dp2">
-                        <span class="lnr lnr-chevron-down"></span>
-                        <span class="placeholder">Check out :</span>
-                    </div>
+                    
                 </div>
                 <div class="form-row">
                     <div class="select">
 
-                        <select id =nbn" name="nbn" class="form-control">
-                            <option value="" style="color:white " value="" selected disabled hidden>Nights</option>
-                            <option style="color: midnightblue">1 Night</option>
-                            <option style="color: midnightblue" >2 Nights</option>
-                            <option style="color: midnightblue" >3 Nights</option>
-                            <option style="color: midnightblue" >4 Nights</option>
-                            <option style="color: midnightblue">5 Nights</option>
+                        <select id ="nbn" name="nbn" class="form-control">
+                            <option value="" style="color:white " value="" selected disabled hidden>Pets</option>
+                            <option style="color: midnightblue">1 Pet</option>
+                            <option style="color: midnightblue" >2 Pets</option>
+                            <option style="color: midnightblue" >3 Pets</option>
+                            <option style="color: midnightblue" >4 Pets</option>
+                            <option style="color: midnightblue">5 Pets</option>
                         </select>
                     </div>
                     <div class="select">
@@ -171,13 +167,13 @@ $_SESSION["e"]
 
 
                         </div>
-                        <select class="form-control" id =room" name="room">
-                            <option value="" style="color:white " value="" selected disabled hidden>Rooms</option>
-                            <option style="color: midnightblue">1 Room</option>
-                            <option style="color: midnightblue" >2 Rooms</option>
-                            <option style="color: midnightblue">3 Rooms</option>
-                            <option style="color: midnightblue">4 Rooms</option>
-                            <option style="color: midnightblue" >5 Rooms</option>
+                        <select class="form-control" id ="service" name="service">
+                            <option value="" style="color:white " value="" selected disabled hidden>Rooms Type</option>
+                            <option style="color: midnightblue">Luxary Room</option>
+                            <option style="color: midnightblue" >Executive Room</option>
+                            <option style="color: midnightblue">Traditional Room</option>
+                          <!-- <option style="color: midnightblue">Service</option>
+                            <option style="color: midnightblue" >Service</option>-->
                         </select>
                     </div>
                 </div>
@@ -189,7 +185,7 @@ $_SESSION["e"]
 
             <!-- SECTION 2 -->
 
-            <h4>Choose Room</h4>
+            <h4>Choose service</h4>
             <section>
 
                 <div class="form-row">
@@ -202,43 +198,17 @@ $_SESSION["e"]
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="select">
-
-                        <select id =firstname" name="firstname" class="form-control">
-                            <option value="" style="color:white " value="" selected disabled hidden>Adults</option>
-                            <option style="color: midnightblue">1 Adult</option>
-                            <option style="color: midnightblue" >2 Adults</option>
-                            <option style="color: midnightblue" >3 Adults</option>
-                            <option style="color: midnightblue" >4 Adults</option>
-                            <option style="color: midnightblue">5 Adults</option>
-                        </select>
-                    </div>
-                    <div class="select">
-                        <div class="form-holder">
-
-
-                        </div>
-
-                        <select class="form-control" id ="lastname" name="lastname">
-                            <option value="" style="color:white " value="" selected disabled hidden>Children</option>
-                            <option style="color: midnightblue">No child</option>
-                            <option style="color: midnightblue" >1 children</option>
-                            <option style="color: midnightblue">2 children</option>
-                            <option style="color: midnightblue">3 children</option>
-                            <option style="color: midnightblue" >4 children</option>
-                        </select>
-                    </div>
-                </div>
+                   
                 <div class="form-row mb-21">
                     <div class="form-holder w-100">
-                        <textarea name="rp" id="rp" class="form-control" style="height: 79px;" placeholder="Special Requirements :"></textarea>
-                        <input class="form-control" type="text" value=<?PHP echo $_GET['idroom'] ;?> name="idroom" hidden >
+                        <textarea name="rp" value="<?= $result['rp'] ?>" id="rp" class="form-control" style="height: 79px;" placeholder="Special Requirements and/or medical conditions : "></textarea>
+                        <input class="form-control" type="text"  name="idroom" id="idroom"  value="<?= $result['idroom'] ?> " hidden>
 
 
 
                     </div>
                 </div>
-                <button class="forward">NEXT
+                    <button class="forward">NEXT
                     <i class="zmdi zmdi-long-arrow-right"></i>
                 </button>
 
