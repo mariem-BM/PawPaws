@@ -1,8 +1,8 @@
 
 <?php
 
-include_once '../model/reservation.php';
-include_once '../controller/reservationC.php';
+include_once '../model/reservationS.php';
+include_once '../controller/reservationSC.php';
 include_once '../model/service.php';
 
 session_start();
@@ -16,41 +16,38 @@ $reservationC = null;
 // create an instance of the controller
 $reservationC = new reservationC();
 if (
-    isset($_POST["firstname"]) &&
-    isset($_POST["lastname"]) &&
+
     isset($_POST["adresse"])&&
     isset($_POST["tel"]) &&
     isset($_POST["date"])&&
     isset($_POST["email"]) &&
     isset($_POST["nbn"])&&
-    isset($_POST["service"])&&
+    
     isset($_POST["rp"])&&
     isset($_POST["idservice"])
 
 ) {
     if (
-        !empty($_POST["firstname"]) &&
-        !empty($_POST["lastname"]) &&
+
         !empty($_POST["adresse"])&&
         !empty($_POST["tel"])&&
         !empty($_POST["date"])&&
         !empty($_POST["email"])&&
         !empty($_POST["nbn"])&&
-        !empty($_POST["service"])&&
+        
         !empty($_POST["rp"])&&
         !empty($_POST["idservice"])
 
     ) {
         $Reservation = new reservation(
-            $_POST['firstname'],
-            $_POST['lastname'],
+ 
             $_POST['adresse'],
             $_POST['date'],
             $_POST['tel'],
 
             $_POST['email'],
             $_POST['nbn'],
-            $_POST['service'],
+            
             $_POST['rp'],
             $_POST['idservice'],
 $_SESSION["e"]
@@ -60,7 +57,7 @@ $_SESSION["e"]
         $reservationC-> ajouterReservation($Reservation,$qty,$idservice,$_SESSION['e']);
 
 
-        header('Location:showreservations.php');
+        header('Location:showreservationsS.php');
     }
     else
         $error = "Missing information";
@@ -68,14 +65,15 @@ $_SESSION["e"]
 
     $reservationC = new reservationC();
     $post=new reservationC();
-   $post->firstname= $_SESSION["Nom"];
-    $post->lastname= $_POST["lastname"];
+   //$post->firstname= $_SESSION["Nom"];
+   // $post->lastname= $_POST["lastname"];
+    $post->adresse= $_POST["adresse"];
     $post->date = $_POST["date"];
     $post->tel= $_POST["tel"];
-   $post->adresse= $_POST["adresse"];
+   $post->email= $_POST["email"];
     $post->nbn= $_POST["nbn"];
    $post->rp= $_POST["rp"];
-   $post->email= $_POST["email"];
+   
 
 
    $reservationC ->sendmail($post);
@@ -146,7 +144,7 @@ $_SESSION["e"]
                     <div class="form-holder">
                         <input type="text" class="form-control datepicker-here pl-85" data-language='en' data-date-format="dd - m - yyyy" id="dp1" name="date" >
                         <span class="lnr lnr-chevron-down"></span>
-                        <span class="placeholder">Rendez-vous :  </span>
+                        <span class="placeholder">Date :  </span>
                     </div>
                     
                 </div>
@@ -162,20 +160,7 @@ $_SESSION["e"]
                             <option style="color: midnightblue">5 Pets</option>
                         </select>
                     </div>
-                    <div class="select">
-                        <div class="form-holder">
-
-
-                        </div>
-                        <select class="form-control" id ="service" name="service">
-                            <option value="" style="color:white " value="" selected disabled hidden>Services</option>
-                            <option style="color: midnightblue">1 Servic</option>
-                            <option style="color: midnightblue" >2 Service</option>
-                            <option style="color: midnightblue">3 Service</option>
-                            <option style="color: midnightblue">4 Service</option>
-                            <option style="color: midnightblue" >5 Service</option>
-                        </select>
-                    </div>
+                    
                 </div>
                 <button class="forward">NEXT
                     <i class="zmdi zmdi-long-arrow-right"></i>
@@ -188,21 +173,15 @@ $_SESSION["e"]
             <h4>Choose service</h4>
             <section>
 
-                <div class="form-row">
-
-                    <div class="form-holder">
-
-                    </div>
-                    <div class="form-holder">
-
-                    </div>
+                
+                                <div class="form-row">
+                    
                 </div>
-                <div class="form-row">
                    
                 <div class="form-row mb-21">
                     <div class="form-holder w-100">
                         <textarea name="rp" value="<?= $result['rp'] ?>" id="rp" class="form-control" style="height: 79px;" placeholder="Special Requirements and/or medical conditions : "></textarea>
-                        <input class="form-control" type="text"  name="idroom" id="idroom"  value="<?= $result['idroom'] ?> " hidden>
+                        <input class="form-control" type="text"  name="idservice" id="idservice"  value="<?= $result['idservice'] ?> " hidden>
 
 
 

@@ -1,7 +1,7 @@
 
 <?php
-include_once '../model/reservation.php';
-include_once '../controller/reservationC.php';
+include_once '../model/reservationS.php';
+include_once '../controller/reservationSC.php';
 ?>
 <!DOCTYPE html>
 <html lang = "en">
@@ -26,7 +26,7 @@ include_once '../controller/reservationC.php';
 		<li><a href = "contactus.php">Contact us</a></li> |
 		<li><a href = "gallery.php">Gallery</a></li> |
 		<li><a href = "dineandlounge.php">Dine and Lounge</a></li> |
-		<li><a href = "reservation.php">Make a reservation</a></li> |
+		<li><a href = "reservationS.php">Make a reservation</a></li> |
 		<li><a href = "rulesandregulation.php">Rules and Regulation</a></li>
 	</ul>
 	<div style = "margin-left:0;" class = "container">

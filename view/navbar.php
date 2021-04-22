@@ -1,7 +1,7 @@
 <?php
-include_once '../model/reservation.php';
+include_once '../model/reservationS.php';
 include_once '../model/service.php';
-include_once '../controller/reservationC.php';
+include_once '../controller/reservationSC.php';
 ?>
 <html>
 <head>
@@ -16,7 +16,7 @@ include_once '../controller/reservationC.php';
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     </head>
     <div class="container">
-<a class="navbar-brand" href="index.html"><?php
+<a class="navbar-brand" href="index1.php"><?php
     session_start();
     if((isset($_SESSION['Nom']))&& (isset($_SESSION['Prenom']))){
     echo " Welcome , " ;

@@ -1,10 +1,8 @@
 <?php
-include "../model/reservation.php";
-include "../controller/reservationC.php";
+include "../model/reservationS.php";
+include "../controller/reservationSC.php";
 $reservationC = new reservationC();
 $post=new reservationC();
-$post->firstname= $_POST["firstname"];
-$post->lastname= $_POST["lastname"];
 $post->date = $_POST["date"];
 $post->tel= $_POST["tel"];
 $post->adresse= $_POST["adresse"];

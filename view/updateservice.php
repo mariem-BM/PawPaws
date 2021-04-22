@@ -63,7 +63,7 @@ if (  isset($_POST["idservice"]) &&
                     $result = $serviceC1->getservicesById($_GET['idservice']);
                     if ($result !== false) {
                     ?>
-                    <label for="fname">Room Type<span>*</span></label>
+                    <label for="fname">Service Type<span>*</span></label>
                     <input id="fname" type="text" name="servicetype" value="<?= $result['servicetype'] ?>"/>
                 </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-require "../controller/reservationC.php";
+require "../controller/reservationSC.php";
 require "../model/service.php";
 
 $serviceC = new serviceC(); //controller
