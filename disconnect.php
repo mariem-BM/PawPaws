@@ -9,6 +9,7 @@ unset($_SESSION['Date']);
 unset($_SESSION['Login']);
 unset($_SESSION['Password']);
 unset($_SESSION['Facture']);
-unset($_SESSION);
+unset($_SESSION['role']);
 session_destroy();
+header("Location: views/Acceuil.php");
 ?>
