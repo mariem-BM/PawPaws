@@ -35,7 +35,7 @@
     </div>
     </div>
    <div class = "head-bottom flex">
-   <h2>Welcome to PAWPAWS</h2>
+   <h2>Welcome</h2>
    <p>Paw Paws best website for all yours and your pets needs!</p>
 
     <button type = "button" class = "head-btn" onclick="bouton()">GET STARTED</button>
@@ -68,6 +68,14 @@
 
 }
 
+if (isset($_SESSION["role"]) && $_SESSION["role"]=="hotelmanager")
+    {
+
+  echo "<li><a href = 'DashboardHotelManager.php'>hotelmanager Space</a></li>";
+
+
+
+}
  if (!isset($_SESSION["e"]))
     {
 
@@ -95,15 +103,15 @@ include_once '../controller/reservationC.php';
 
 ?>
             <div class = "title">
-                <h3 style="color:#FF5733;">Rooms</h3>
+                <h3>Services</h3>
             </div> 
 <div class="service_area">
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                        <h3>BECAUSE YOUR PET DESERVES THE BEST</h3>
-                        <p>When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
+                        <h3>Services for every pet</h3>
+                        <p>Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
 
                     </div>
                     
@@ -137,94 +145,94 @@ include_once '../controller/reservationC.php';
 
         <section class = "rooms sec-width" id = "rooms">
             <div class = "title">
-                <h3 style="color:#FF5733;">Hotels</h3>
+                <h3>rooms</h3>
             </div>
             <div class = "rooms-container">
                 <!-- single room -->
                 <article class = "room">
                     <div class = "room-image">
-                        <img src = "../assets3/img/pet_hotels1.png" alt = "room image">
-                    </div>
-                    <div class = "room-text">
-                        <h3>LUXURY Hotels</h3>
-                        <ul>
-                            <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                                Private Suite.
-                            </li>
-                            <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                                Comforts.
-                            </li>
-                            <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                                Cleanliness.
-                            </li>
-                        </ul>
-                        <p>Our comfortable accommodations & safety-certified associates provide a welcoming place for dogs & cats to stay while you’re away! Guests will feel at home with the around-the-clock care of our pet-loving staff. We offer a safe, clean, temperature-controlled environment, playtime, exercise, healthy meals & more. Book the ultimate staycation destination for your pet now!.</p>
-                       <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>-->
-                        <p class = "rate">
-                            <span style="color:#FF5733;">TND200.4 /</span> Per Night
-                        </p>
-
-                    </div>
-                </article>
-                <!-- end of single room -->
-                <!-- single room -->
-                <article class = "room">
-                    <div class = "room-image">
-                        <img src = "../assets3/img/pet_hotel2.jpeg" alt = "room image">
-                    </div>
-                    <div class = "room-text">
-                        <h3>Luxury Hotels</h3>
-                        <ul>
-                            <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                                Private Suite.
-                            </li>
-                            <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                                Comforts.
-                            </li>
-                            <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                               Cleanliness.
-                            </li>
-                        </ul>
-                        <p>Our comfortable accommodations & safety-certified associates provide a welcoming place for dogs & cats to stay while you’re away! Guests will feel at home with the around-the-clock care of our pet-loving staff. We offer a safe, clean, temperature-controlled environment, playtime, exercise, healthy meals & more. Book the ultimate staycation destination for your pet now!</p>
-                       <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>-->
-                        <p class = "rate">
-                            <span style="color:#FF5733;">TND138.4 /</span> Per Night
-                        </p>
-
-                    </div>
-                </article>
-                <!-- end of single room -->
-                <!-- single room -->
-                <article class = "room">
-                    <div class = "room-image">
-                        <img src = "../assets3/img/pet_hotels3.jpg" alt = "room image">
+                        <img src = "../assets3/img/t0.jpg" alt = "room image">
                     </div>
                     <div class = "room-text">
                         <h3>Luxury Rooms</h3>
                         <ul>
                             <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                                Private Suite.
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
                             </li>
                             <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                                Comforts.
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
                             </li>
                             <li>
-                                <i class = "fas fa-arrow-alt-circle-right" style="color:#FF5733;"></i>
-                                Cleanliness.
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
                             </li>
                         </ul>
-                        <p>Our comfortable accommodations & safety-certified associates provide a welcoming place for dogs & cats to stay while you’re away! Guests will feel at home with the around-the-clock care of our pet-loving staff. We offer a safe, clean, temperature-controlled environment, playtime, exercise, healthy meals & more. Book the ultimate staycation destination for your pet now!</p>
-                      <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>-->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem repellendus maxime ullam tempore architecto provident unde expedita quam beatae, dolore eligendi molestias sint tenetur incidunt voluptas. Unde corporis qui iusto vitae. Aut nesciunt id iste, cum esse commodi nemo?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>
                         <p class = "rate">
-                            <span style="color:#FF5733;">TND150.00 /</span> Per Night
+                            <span>TND138.4 /</span> Per Night
+                        </p>
+
+                    </div>
+                </article>
+                <!-- end of single room -->
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src = "../assets3/img/t1.jpg" alt = "room image">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Luxury Rooms</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem repellendus maxime ullam tempore architecto provident unde expedita quam beatae, dolore eligendi molestias sint tenetur incidunt voluptas. Unde corporis qui iusto vitae. Aut nesciunt id iste, cum esse commodi nemo?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>
+                        <p class = "rate">
+                            <span>TND138.4 /</span> Per Night
+                        </p>
+
+                    </div>
+                </article>
+                <!-- end of single room -->
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src = "../assets3/img/t2.jpg" alt = "room image">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Luxury Rooms</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem repellendus maxime ullam tempore architecto provident unde expedita quam beatae, dolore eligendi molestias sint tenetur incidunt voluptas. Unde corporis qui iusto vitae. Aut nesciunt id iste, cum esse commodi nemo?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>
+                        <p class = "rate">
+                            <span>$99.00 /</span> Per Night
                         </p>
                     </div>
                 </article>
@@ -233,7 +241,7 @@ include_once '../controller/reservationC.php';
         </section>
         <section class = "rooms sec-width"  id = "rooms">
             <div class = "title">
-                <h3 style="color:#FF5733;">Activités</h3>
+                <h3>Activités</h3>
                
             </div> 
          </section>  
@@ -242,7 +250,7 @@ include_once '../controller/reservationC.php';
         <section class = "customers" id = "customers">
             <div class = "sec-width">
                 <div class = "title">
-                    <h2 style="color:#FF5733;">customers</h2>
+                    <h2>customers</h2>
                 </div>
                 <div class = "customers-container">
                     <!-- single customer -->

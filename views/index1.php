@@ -57,10 +57,15 @@ $_SESSION["e"]
         );
         $qty= $_GET["qty"];
         $idroom= $_GET["idroom"];
-        $reservationC-> ajouterReservation($Reservation,$qty,$idroom,$_SESSION['e']);
+        try
+        {$reservationC-> ajouterReservation($Reservation,$qty,$idroom,$_SESSION['e']);}
+        catch (Exception $e){
+            echo $e->getMessage();
+
+        }
 
 
-        header('Location:showreservations.php');
+        header('Location:Acceuil.php');
     }
     else
         $error = "Missing information";
@@ -88,35 +93,61 @@ $_SESSION["e"]
 ?>
 
 <!DOCTYPE html>
+<script>
+function test() {
+//1.saisie de control sur nom et prenom
+
+
+//3.sasie de control sur numero de telephone
+
+
+// 4.sasie de control sur profession
+
+
+
+//saise de control sur style de musique
+var x=document.getElementById('email').value;
+var atposition=x.indexOf("@");
+var dotposition=x.lastIndexOf(".");
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+alert("Please enter a valid e-mail address ");
+return false;}
+
+
+
+}
+
+</script>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
-    <title>Paw Paws</title>
+    <title>FormWizard_v2</title>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="colorlib.com">
     <!-- LINEARICONS -->
-    <link rel="stylesheet" href="fonts/linearicons/style.css">
+    <link rel="stylesheet" href="../assets3/Assets_Res/fonts/linearicons/style.css">
 
     <!-- MATERIAL DESIGN ICONIC FONT -->
-    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="../assets3/Assets_Res/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
 
     <!-- DATE-PICKER -->
-    <link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
+    <link rel="stylesheet" href="../assets3/Assets_Res/vendor/date-picker/css/datepicker.min.css">
 
     <!-- STYLE CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets3/Assets_Res/style.css">
 </head>
-<div id="error">
-    <?php echo $error; ?>
+<strong style="color: #AA0000">
+    <?php echo $error;
 
-</div>
+    ?>
 
+</strong>
 
 <body>
 
-<h1  <?php echo $_SESSION['Nom']; echo $_SESSION['e']?> /h1>
+
 
 
 <form action="" method="POST">
@@ -129,7 +160,7 @@ $_SESSION["e"]
         {
             $search=$_GET["search"];
         }
-        afficherservices1($search);
+        afficherrooms1($search);
 
         ?>
         <div id="wizard">
@@ -146,20 +177,24 @@ $_SESSION["e"]
                     <div class="form-holder">
                         <input type="text" class="form-control datepicker-here pl-85" data-language='en' data-date-format="dd - m - yyyy" id="dp1" name="date" >
                         <span class="lnr lnr-chevron-down"></span>
-                        <span class="placeholder">Rendez-vous :  </span>
+                        <span class="placeholder">Check in :</span>
                     </div>
-                    
+                    <div class="form-holder">
+                        <input type="text" class="form-control datepicker-here pl-96" data-language='en'  data-date-format="dd - m - yyyy" id="dp2">
+                        <span class="lnr lnr-chevron-down"></span>
+                        <span class="placeholder">Check out :</span>
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="select">
 
-                        <select id ="nbn" name="nbn" class="form-control">
-                            <option value="" style="color:white " value="" selected disabled hidden>Pets</option>
-                            <option style="color: midnightblue">1 Pet</option>
-                            <option style="color: midnightblue" >2 Pets</option>
-                            <option style="color: midnightblue" >3 Pets</option>
-                            <option style="color: midnightblue" >4 Pets</option>
-                            <option style="color: midnightblue">5 Pets</option>
+                        <select id =nbn" name="nbn" class="form-control">
+                            <option value="" style="color:white " value="" selected disabled hidden>Nights</option>
+                            <option style="color: midnightblue">1 Night</option>
+                            <option style="color: midnightblue" >2 Nights</option>
+                            <option style="color: midnightblue" >3 Nights</option>
+                            <option style="color: midnightblue" >4 Nights</option>
+                            <option style="color: midnightblue">5 Nights</option>
                         </select>
                     </div>
                     <div class="select">
@@ -167,13 +202,13 @@ $_SESSION["e"]
 
 
                         </div>
-                        <select class="form-control" id ="service" name="service">
-                            <option value="" style="color:white " value="" selected disabled hidden>Rooms Type</option>
-                            <option style="color: midnightblue">Luxary Room</option>
-                            <option style="color: midnightblue" >Executive Room</option>
-                            <option style="color: midnightblue">Traditional Room</option>
-                          <!-- <option style="color: midnightblue">Service</option>
-                            <option style="color: midnightblue" >Service</option>-->
+                        <select class="form-control" id =room" name="room">
+                            <option value="" style="color:white " value="" selected disabled hidden>Rooms</option>
+                            <option style="color: midnightblue">1 Room</option>
+                            <option style="color: midnightblue" >2 Rooms</option>
+                            <option style="color: midnightblue">3 Rooms</option>
+                            <option style="color: midnightblue">4 Rooms</option>
+                            <option style="color: midnightblue" >5 Rooms</option>
                         </select>
                     </div>
                 </div>
@@ -185,7 +220,7 @@ $_SESSION["e"]
 
             <!-- SECTION 2 -->
 
-            <h4>Choose service</h4>
+            <h4>Choose Room</h4>
             <section>
 
                 <div class="form-row">
@@ -198,17 +233,43 @@ $_SESSION["e"]
                     </div>
                 </div>
                 <div class="form-row">
-                   
+                    <div class="select">
+
+                        <select id ="firstname" name="firstname" class="form-control">
+                                                    <option value="" style="color:white " value="" selected disabled hidden>Pets</option>
+                                                    <option style="color: midnightblue">1 Pet</option>
+                                                    <option style="color: midnightblue" >2 Pets</option>
+                                                    <option style="color: midnightblue" >3 Pets</option>
+                                                    <option style="color: midnightblue" >4 Pets</option>
+                                                    <option style="color: midnightblue">5 Pets</option>
+                                                </select>
+                    </div>
+                    <div class="select">
+                        <div class="form-holder">
+
+
+                        </div>
+
+                        <select class="form-control" id ="lastname" name="lastname">
+                            <option value="" style="color:white " value="" selected disabled hidden>Room Type</option>
+                            <option style="color: midnightblue">Luxuary</option>
+                            <option style="color: midnightblue" >Exective</option>
+                            <option style="color: midnightblue">Tradtional</option>
+                            <!--<option style="color: midnightblue">3 children</option>
+                            <option style="color: midnightblue" >4 children</option>-->
+                        </select>
+                    </div>
+                </div>
                 <div class="form-row mb-21">
                     <div class="form-holder w-100">
-                        <textarea name="rp" value="<?= $result['rp'] ?>" id="rp" class="form-control" style="height: 79px;" placeholder="Special Requirements and/or medical conditions : "></textarea>
-                        <input class="form-control" type="text"  name="idroom" id="idroom"  value="<?= $result['idroom'] ?> " hidden>
+                        <textarea name="rp" id="rp" class="form-control" style="height: 79px;" placeholder="Special Requirements :"></textarea>
+                        <input class="form-control" type="text" value=<?PHP echo $_GET['idroom'] ;?> name="idroom" hidden >
 
 
 
                     </div>
                 </div>
-                    <button class="forward">NEXT
+                <button class="forward">NEXT
                     <i class="zmdi zmdi-long-arrow-right"></i>
                 </button>
 
@@ -226,7 +287,7 @@ $_SESSION["e"]
 
                     <div class="form-holder">
 
-                        <input type="text" class="form-control" placeholder="Phone :" name="tel" >
+                        <input type="text" class="form-control" placeholder="Phone :" name="tel" id="tel">
                     </div>
                     <div class="form-holder">
                         <input type="text" class="form-control" placeholder="Mail :"name="email" id="email" required >
@@ -244,7 +305,7 @@ $_SESSION["e"]
                         <span class="checkmark"></span>
                     </label>
                 </div>
-                <button type="submit" value="Submit">Submit</button>
+                <button type="submit" value="Submit"  onclick="test()">Submit</button>
             </section>
 
         </form>
@@ -254,19 +315,20 @@ $_SESSION["e"]
     </div>
 </div>
 
-<script src="js/jquery-3.3.1.min.js"></script>
+<script src="../assets3/Assets_Res/js/jquery-3.3.1.min.js"></script>
 
 <!-- JQUERY STEP -->
-<script src="js/jquery.steps.js"></script>
+<script src="../assets3/Assets_Res/js/jquery.steps.js"></script>
 
 <!-- DATE-PICKER -->
-<script src="vendor/date-picker/js/datepicker.js"></script>
-<script src="vendor/date-picker/js/datepicker.en.js"></script>
+<script src="../assets3/Assets_Res/vendor/date-picker/js/datepicker.js"></script>
+<script src="../assets3/Assets_Res/vendor/date-picker/js/datepicker.en.js"></script>
 
-<script src="js/main.js"></script>
+<script src="../assets3/Assets_Res/js/main.js"></script>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <!-- Template created and distributed by Colorlib -->
+<script src="../assets3/Assets_Res/js/script2.js"></script>
 </body>
 </html>
 
