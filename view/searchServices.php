@@ -48,7 +48,7 @@ include_once '../controller/reservationSC.php';
 	?>
 		<section class="container">
 			<h2>Nom services</h2>
-			<a href = "showServices.php" class="btn btn-primary shop-item-button">All services</a>
+			<a href = "showservices.php" class="btn btn-primary shop-item-button">All services</a>
 			<div class="shop-items">
 				
 				<div class="shop-item">

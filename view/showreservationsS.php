@@ -13,6 +13,10 @@ if (isset($_GET["tri"]))
 
 $listereservation=$reservationC->afficherActivites($tri);
 
+if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST["supprimer"])){
+    $reservationC->supprimerReservation($_POST["idreservation"],$_POST["idservice"]);
+    echo("<script>location.href = 'Reservation_Gestion.php';</script>");
+}
 
 
 

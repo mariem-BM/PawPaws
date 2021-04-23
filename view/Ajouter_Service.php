@@ -14,7 +14,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Gestion Blog</title>
+    <title>Service</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">

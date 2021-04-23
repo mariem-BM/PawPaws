@@ -105,21 +105,13 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <li class="sub-menu">
                       <a  href="javascript:;"  class="active">
                           <i class="fa fa-book"></i>
-                          <span>Reservations</span>
+                          <span>Reservations Service</span>
                       </a>
                       <ul class="sub">
                           <li class="active"><a  href="Gestion_Res_Conn.php">Afficher Vos Reservations</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a  href="javascript:;"  >
-                          <i class="fa fa-book"></i>
-                          <span>Complaints</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="Complaints_Conn.php">Afficher Vos Complaintes</a></li>
-                      </ul>
-                  </li>
+                  
               </ul>
               <!-- sidebar menu end-->
           </div>

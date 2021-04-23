@@ -43,7 +43,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="Acceuil.php" class="logo"><b>Radisson Blu</b></a>
+            <a href="Acceuil.php" class="logo"><b>Paw Paws</b></a>
             <!--logo end-->
                   <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -105,7 +105,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <li class="sub-menu">
                       <a  href="javascript:;"  class="active">
                           <i class="fa fa-book"></i>
-                          <span>Reservations</span>
+                          <span>Reservations Service</span>
                       </a>
                       <ul class="sub">
                           <li class="active"><a  href="Gestion_Res_Conn.php">Afficher Vos Reservations</a></li>

@@ -10,7 +10,7 @@ class reservationC{
     {
         echo('hhh');
         $db = config::getConnexion();
-        $sql = "INSERT INTO reservation (idreservation, adresse,tel,email,nbn,date,rp,idservice,iduser)
+        $sql = "INSERT INTO reservation (idreservation,adresse,tel,email,nbn,date,rp,idservice,iduser)
 			VALUES (:idreservation,:adresse,:tel,:email,:nbn,:date,:rp,:idservice,:iduser)";
 
 
@@ -94,7 +94,6 @@ class reservationC{
                 . $Reservation->getEmail() . " "
                 . $Reservation->getNbn() . " "
                 . $Reservation->getDate() . " "
-                
                 . $Reservation->getRp() . " "
                 . $Reservation->getIdservice() . " "
                 . $idreservation,
@@ -106,7 +105,6 @@ class reservationC{
                 'email' => $Reservation->getEmail(),
                 'nbn' => $Reservation->getNbn(),
                 'date' => $Reservation->getDate(),
-                
                 'rp' => $Reservation->getRp(),
                 'idservice' => $Reservation->getIdservice(),
                 'iduser' => $Reservation->getIduser(),
