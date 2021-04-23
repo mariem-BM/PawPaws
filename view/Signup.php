@@ -82,7 +82,7 @@
 					<a href="signin.php">Login</a>
 				</div>
 				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Register">
+					<input type="submit" name="register" class="register" value="Register" href="Acceuil.php">
 				</div>
 			</form>
 		</div>

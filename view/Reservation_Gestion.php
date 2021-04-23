@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
 {
-  if ($_SESSION["role"]=="admin")
+  if ($_SESSION["role"]=="admin" || $_SESSION["role"]=="ServiceProvider")
   {
 ?>
 <!DOCTYPE html>

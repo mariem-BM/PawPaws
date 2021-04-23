@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
 {
-  if ($_SESSION["role"]=="admin" || $_SESSION["role"]=="ServiceProvider" )
+  if ($_SESSION["role"]=="ServiceProvider")
   {
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Service</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="../disconnect.php">Logout</a></li>
               </ul>
             </div>
                                 
@@ -64,11 +64,11 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
+                  <p class="centered"><a href="profile.html"><img src="../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
                   <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
                   <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
-              	  	
-                  <li class="mt">
+                    
+                  <li class="mt" class="active">
                       <a href="DashboardAdmin.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
@@ -84,7 +84,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a  href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Blog</span>
                       </a>
@@ -104,24 +104,24 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;">
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Services</span>
+                          <span>Rooms</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Services_Gestion.php">Gérer Rooms</a></li>
-                          <li ><a  href="Res_Serv_Gestion.php">Gérer Les Réservations</a></li>
+                          <li ><a  href="Rooms_Gestion.php">Gérer Room</a></li>
+                          <li ><a  href="Res_room_Gestion.php">Gérer Les Réservations</a></li>
                       </ul>
                   </li>
-                                    <li class="sub-menu">
-                      <a href="javascript:;"  class="active">
+            <li class="sub-menu">
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Services</span>
+                          <span>Sevices</span>
                       </a>
                       <ul class="sub">
                           <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li class="active"><a  href="Ajouter_Service.php">Ajouter Un Service</a></li>
-                          <li><a  href="Services_Gestion.php">Gérer Les Services</a></li>
+                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
+                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
                       </ul>
                   </li>
                    
@@ -138,11 +138,11 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<?php include_once 'addservice.php'; ?>
-          		</div>
-          	</div>
-			
-		</section><! --/wrapper -->
+            <?php include_once 'Info User.php'; ?>
+              </div>
+            </div>
+      
+    </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->

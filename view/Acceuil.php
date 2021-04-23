@@ -52,7 +52,7 @@
     <li><a href = "#header">home</a></li>
    <li><a href = "servicespage.php">services</a></li>
    <li><a href = "WatchBlogPost.php">Blog</a></li>
-   <li><a href = "form.php">activités</a></li>
+   <li><a href = "form.php">shop</a></li>
    <li><a href = "FormComplaint.php">Reclamation</a></li>
     <li><a href = "roomspage.php">rooms</a></li>
     <?php if (isset($_SESSION["e"]))
@@ -60,7 +60,16 @@
 
     echo "<li><a href = 'DashboardUser.php'>Account</a></li>";
        
-    } if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
+    } 
+
+  if (isset($_SESSION["role"]) && $_SESSION["role"]=="ServiceProvider")
+    {
+
+  echo "<li><a href = 'DashboardServiceProvider.php'>ServiceProvider Space</a></li>";
+
+
+}
+ if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
     {
 
   echo "<li><a href = 'DashboardAdmin.php'>Admin Space</a></li>";
@@ -68,7 +77,8 @@
 
 }
 
- if (!isset($_SESSION["e"]))
+
+if (!isset($_SESSION["e"]))
     {
 
 

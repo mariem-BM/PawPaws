@@ -44,11 +44,11 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>Paw Paws</b></a>
+            <a href="Acceuil.php" class="logo"><b>Paw Paws</b></a>
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="../disconnect.php">Logout</a></li>
               </ul>
             </div>
                                 
