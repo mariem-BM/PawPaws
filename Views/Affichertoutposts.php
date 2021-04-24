@@ -127,10 +127,10 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                    <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Complaints</span>
+                          <span>Thémes</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Complaints_Gestion.php">Gérer Les Requetes</a></li>
+                          <li ><a  href="Complaints_Gestion.php">Gérer Les Thémes</a></li>
                       </ul>
                   </li>
               </ul>
