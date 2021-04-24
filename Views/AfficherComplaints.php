@@ -28,12 +28,9 @@ $tri=$_GET["tri"];
   <thead> 
       <tr style="text-align: center;"  >
 
-        <th  style="text-align: center; padding: 10px ;width: 250px ; font-size: 20px  "> Titre </th>
+        <th  style="text-align: center; padding: 10px ;width: 250px ; font-size: 20px  "> Id </th>
         
-        <th   style="text-align: center; width: 250px; font-size: 20px ">Description</th>
-        <th   style="text-align: center; width: 250px; font-size: 20px ">User</th>
-        <th   style="text-align: center; width: 250px; font-size: 20px ">Type</th>
-        <th style="text-align: center; width: 250px; font-size: 20px ">Checked ?</th>
+        <th   style="text-align: center; width: 250px; font-size: 20px ">Titre</th>
         <th style="text-align: center; width: 250px; font-size: 20px ">Date</th>
                  <th style="text-align: center; width: 250px; font-size: 20px ">Modifier</th>
         <th style="text-align: center; width: 250px; font-size: 20px ">Supprimer</th>
@@ -50,9 +47,6 @@ $tri=$_GET["tri"];
 <form method="POST" action="AfficherComplaints.php">
           <td align="center" ><input name="titre" value="<?PHP echo $Complaints['Titre']; ?>"></td>
           <td align="center"><input name="Message" value="<?PHP echo $Complaints['Message']; ?>"></td>
-          <td align="center"><?PHP echo $Complaints['nom_user']; ?></td>>
-          <td align="center"><input name="Type" value="<?PHP echo $Complaints['Type']; ?>"></td>>
-          <td align="center"><input name="Checked" value="<?PHP echo $Complaints['Checked']; ?>"></td>>
           <td align="center"><?PHP echo $Complaints['Date']; ?></td>>
           
 

@@ -41,7 +41,7 @@ if (isset($_GET["idresponse"]))
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Reclamtion</title>
+  <title>Thémes</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../Assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +56,7 @@ if (isset($_GET["idresponse"]))
     <br>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Radisson Blu</a>
+      <a class="navbar-brand" href="#">PawPaws</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -83,7 +83,7 @@ if (isset($_GET["idresponse"]))
       <div class="col-lg-8">
 
         <!-- Title -->
-        <h1 class="mt-4"><?php echo "Complaint From ". $post->user ." in Section ".$post->type; ?></h1>
+        <h1 class="mt-4"><?php echo "FeedBack " ." in Théme ".$post->type; ?></h1>
 
         <hr>
 

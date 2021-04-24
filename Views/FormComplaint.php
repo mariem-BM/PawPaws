@@ -24,17 +24,17 @@ session_start();
   <div class="wrapper">
     <form class="form" method ="POST" action="FormComplaint.php">
       <div class="pageTitle title">FEEDBACK </div>
-      <div class="secondaryTitle title">Please fill this form to reclam.</div>
+    
 
-      <input type="text" class="name formEntry" name="nom"  placeholder="name" value="<?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"];?>" disabled>
+      
       <input name="id" value="<?php echo $_SESSION["e"];?>" hidden>
       <input name="titre" type="text" class="name formEntry">
       <select type="select" name="type" class="select formEntry" >     
 
-    <option  value="Rooms">Rooms</option>
+    <option  value="Rooms">Animals</option>
     <option  value="Restaurant">Services</option>
     <option  value="Reservation">Reservation</option>
-    <option  value="Autres">Autres</option>
+    <option  value="Autres">Products</option>
          </select>
       <textarea class="message formEntry"  name="message" placeholder="Message"></textarea>
 
