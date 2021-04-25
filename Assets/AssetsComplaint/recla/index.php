@@ -47,15 +47,7 @@ $liste=$db->query($sql);
 
     </div>
       <?php  } ?>
-        <!-- note item -->
-        <!-- <div class = "note-item">
-          <h3>The Title Goes Here</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit omnis expedita porro adipisci, asperiores facere ea. Voluptates quos quia consequatur explicabo. Perspiciatis, repellat. Ea facere dolorum a iste maiores!</p>
-          <button type = "button" class = "btn delete-note-btn">
-            <span><i class = "fas fa-trash"></i></span>
-            Remove
-          </button>
-        </div> -->
+        
       </div>
 
 

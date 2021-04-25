@@ -31,10 +31,10 @@ session_start();
       <input name="titre" type="text" class="name formEntry">
       <select type="select" name="type" class="select formEntry" >     
 
-    <option  value="Rooms">Animals</option>
-    <option  value="Restaurant">Services</option>
+    <option  value="Animals">Animals</option>
+    <option  value="Services">Services</option>
     <option  value="Reservation">Reservation</option>
-    <option  value="Autres">Products</option>
+    <option  value="Produits">Products</option>
          </select>
       <textarea class="message formEntry"  name="message" placeholder="Message"></textarea>
 
