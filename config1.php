@@ -4,7 +4,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "radisson_blu";
+    $dbname = "paw";
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) 
     {
