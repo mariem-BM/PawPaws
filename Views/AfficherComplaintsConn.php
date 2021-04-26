@@ -14,7 +14,7 @@ $tri=$_GET["tri"];
 
 
     }
-    if (isset($_POST["id"]) && isset ($_POST["titre"]) && isset ($_POST["Message"]) && isset ($_POST["Type"]) && isset ($_POST["Checked"]) && isset ($_POST["modifier"]))
+    if (isset($_POST["id"]) && isset ($_POST["titre"]) && isset ($_POST["Message"])  && isset ($_POST["Type"]) && isset ($_POST["Checked"]) && isset ($_POST["modifier"]))
     {
       Modifier($_POST["titre"], $_POST["Type"],$_POST["Message"],$_POST["id"],$_POST["Checked"]);
     }
@@ -48,6 +48,7 @@ $tri=$_GET["tri"];
           <td align="center" ><input name="titre" value="<?PHP echo $Complaints['Titre']; ?>"></td>
           <td align="center"><input name="Message" value="<?PHP echo $Complaints['Message']; ?>"></td>
           <td align="center"><?PHP echo $Complaints['Date']; ?></td>>
+
 
 
           <td align="center" >

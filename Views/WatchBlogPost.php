@@ -106,10 +106,10 @@ $account="DashboardUser.php";
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="WatchBlogPost.php?tri=AZ">Alphabetique A-Z</a>
+                    <a href="WatchBlogPost.php?tri=AZ">Alphabétique A-Z</a>
                   </li>
                   <li>
-                    <a href="WatchBlogPost.php?tri=ZA">Alphabetique Z-A</a>
+                    <a href="WatchBlogPost.php?tri=ZA">Alphabétique Z-A</a>
                   </li>
                   <li>
                     <a href="WatchBlogPost.php?tri=DC">Date Croissant</a>
@@ -119,7 +119,7 @@ $account="DashboardUser.php";
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="WatchBlogPost.php?tri=DD">Date Decroissant</a>
+                    <a href="WatchBlogPost.php?tri=DD">Date Décroissant</a>
                   </li>
                   <li>
                     <a href="#">Most Active</a>
@@ -148,7 +148,7 @@ $account="DashboardUser.php";
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
     </div>
     <!-- /.container -->
   </footer>

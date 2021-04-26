@@ -60,7 +60,7 @@ function Modifier($titre, $type,$desc,$id,$check) {
             try {
                 $pdo = getConnexion();
                 $query = $pdo->prepare(
-                    'UPDATE complaint SET  Titre=:titre, Type= :type , Message= :Message, Checked=:Checked WHERE id = :id'
+                    'UPDATE complaint SET  Titre=:titre, Type= :type , Message= :Message, Checked=:Checked, WHERE id = :id'
                 );
                 $query->execute([
          'titre' => $titre,
@@ -91,6 +91,7 @@ function Creation_Comp ($titre,$message,$type,$id_user,$nomuser)
                     'type' => $type,
                     'id_user' => $id_user,
                     'nom_user' => $nomuser,
+                    
                 ]);}
              catch (PDOException $e) {
                 echo $e->getMessage();

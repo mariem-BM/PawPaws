@@ -23,7 +23,7 @@ session_start();
 <body>
   <div class="wrapper">
     <form class="form" method ="POST" action="FormComplaint.php">
-      <div class="pageTitle title">FEEDBACK </div>
+      <div class="pageTitle title">FeedBack </div>
     
 
       
@@ -37,7 +37,15 @@ session_start();
     <option  value="Produits">Products</option>
          </select>
       <textarea class="message formEntry"  name="message" placeholder="Message"></textarea>
-
+       <tr>
+            <th align="left">
+                <label for="name" 
+        </label>
+            </th>
+            <th align="left">
+        <input type="file"  name="image" id="image"  required onkeyup="EnableDisable(this)">
+            </th>
+        </tr>
     <button class="submit formEntry" type="submit" name="submit">Submit</button>
     </form>
   </div>

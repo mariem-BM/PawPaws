@@ -25,11 +25,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/style-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
   </head>
 
   <body>
@@ -127,10 +123,10 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                    <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Thémes</span>
+                          <span>FeedBack</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Complaints_Gestion.php">Gérer Les Thémes</a></li>
+                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
                       </ul>
                   </li>
 
