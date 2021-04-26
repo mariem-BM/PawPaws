@@ -47,7 +47,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
             <!--logo end-->
                   <div class="top-menu">
               <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../disconnect.php">Logout</a></li>
+                 <li><a class="logout" href="../disconnect.php">Logout</a></li>
               </ul>
             </div>
         </header>

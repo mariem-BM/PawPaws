@@ -27,12 +27,12 @@ $reservationC =  new reservationC();
     <div class="container h-100">
         <div class="d-flex justify-content-center h-100">
             <div class="searchbar">
-                <input class="search_input"   name="firstname" placeholder="Search...">
+                <input class="search_input"   name="user" placeholder="Search...">
                 <button class=" btn btn-info search_icon"  type="submit" name="search"><i class="fas fa-search"></i></button>
                 <?php
 
-if (isset($_POST['firstname']) && isset($_POST['search'])){
-    $result = $reservationC->getReservationByFirstname($_POST['firstname']);
+if (isset($_POST['user']) && isset($_POST['search'])){
+    $result = $reservationC->getReservationByFirstname($_POST['user']);
     if ($result !== false)
 
     {
