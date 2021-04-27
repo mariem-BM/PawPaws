@@ -228,7 +228,7 @@ function get_post_by_id($id)
   }
   $sql="SELECT Titre, Message, date_p, picture FROM review_post WHERE id=$id";
   $result = $conn->query($sql);
-  if ($result->num_rows > 0)
+  if ($result > 0)
   {
     while($row = $result->fetch_assoc()) 
       {$post->nom=$row["Titre"];
@@ -236,7 +236,7 @@ function get_post_by_id($id)
   $post->text=$row["Message"];
   $post->picture=$row["picture"];}}
   else
-  echo "no result";
+  echo "";
   $conn->close();
   return $post;
 }

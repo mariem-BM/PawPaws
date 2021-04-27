@@ -145,7 +145,7 @@ function afficher_Reponses($id, $id_user, $role)
   }
   $sql="SELECT C.id,C.Nom_User,C.id_user,C.id_Reclamation,C.message,C.date_p,U.Picture FROM Reponses C inner JOIN utilisateur U ON C.id_user=U.id WHERE id_Reclamation=$id ORDER BY date_p DESC ";
   $result = $conn->query($sql);
-  if ($result->num_rows > 0)
+  if ($result>0)
   {
       while($row = $result->fetch_assoc())
       {
@@ -177,7 +177,7 @@ function get_Rec_by_id($id)
   }
   $sql="SELECT *  FROM complaint WHERE id=$id";
   $result = $conn->query($sql);
-  if ($result->num_rows > 0)
+  if ($result>0)
   {
     while($row = $result->fetch_assoc())
       {$post->nom=$row["Titre"];
@@ -186,7 +186,7 @@ function get_Rec_by_id($id)
   $post->type=$row["Type"];
  $post->user=$row["nom_user"];}}
   else
-  echo "no result";
+  echo "";
   $conn->close();
   return $post;
 }
