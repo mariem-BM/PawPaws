@@ -49,7 +49,8 @@
 					Vous n'avez pas de compte ?
 					<a href="Signup.php">Register</a>
 				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Login">
+					<input type="submit" name="register" class="register" value="Login" href="Acceuil.php">
+					
 				</div>
 			</form>
 		</div>

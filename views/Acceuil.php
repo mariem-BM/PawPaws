@@ -52,9 +52,9 @@
     <li><a href = "#header">home</a></li>
    <li><a href = "servicespage.php">services</a></li>
    <li><a href = "WatchBlogPost.php">Blog</a></li>
-   <li><a href = "form.php">activités</a></li>
-   <li><a href = "FormComplaint.php">Reclamation</a></li>
-    <li><a href = "roomspage.php">rooms</a></li>
+  <!-- <li><a href = "form.php">activités</a></li>-->
+   <li><a href = "FormComplaint.php">Products</a></li>
+    <li><a href = "roomspage.php">Rooms</a></li>
     <?php if (isset($_SESSION["e"]))
     {
 
