@@ -90,7 +90,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Activitées</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Act_gestion_conn.php">Afficher Voes Reservations</a></li>
+                          <li ><a  href="Act_gestion_conn.php">Afficher Vos Reservations</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -99,7 +99,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Services</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="Service_Gestion_Conn.php">Afficher Voes Reservations</a></li>
+                          <li><a  href="Service_Gestion_Conn.php">Afficher Vos Reservations</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
