@@ -26,11 +26,13 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> show reservation name </title>
 </head>
 <body>
+      
 <a class="btn btn-info" href="searchreservationS.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;Search reservation</a>
 <a href="showreservationsS.php?tri=P"> Alphabetique A-Z</a>
 <a href="showreservationsS.php?tri=ZA"> Alphabetique Z-A</a>
@@ -114,5 +116,6 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
     }
 
 </style>
+
 </body>
 </html>

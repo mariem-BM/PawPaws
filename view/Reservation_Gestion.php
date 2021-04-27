@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
 {
-  if ($_SESSION["role"]=="admin" || $_SESSION["role"]=="ServiceProvider")
+  if ($_SESSION["role"]=="admin" || $_SESSION["role"]=="ServiceProvider" || $_SESSION["role"]=="client")
   {
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Gestion Blog</title>
+    <title>Gestion Reservation</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">
