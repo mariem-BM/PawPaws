@@ -277,5 +277,27 @@ function recupererUtilisateur($id){
     die('Erreur: '.$e->getMessage());
   }
 }
+
+
+
+
+
+function afficherNotActiveUtilisateurs(){
+  $sql="SELECT * FROM Utilisateur ";
+  $db = config::getConnexion();
+  try{
+    $liste = $db->query($sql);
+    return $liste;
+  }
+  catch (Exception $e){
+    die('Erreur: '.$e->getMessage());
+  }
+}
+
+function validerUtilisateur($id,$email,$name){
+
+}
+
+
 }
 ?>

@@ -78,6 +78,7 @@
                       </a>
                       <ul class="sub">
                           <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
+                          <li ><a  href="validation.php">Validation</a></l>
                       </ul>
                   </li>
                   <li class="sub-menu">
