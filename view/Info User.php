@@ -17,9 +17,14 @@ $x=Get_one_User_Info($_SESSION["e"]);
   <br>
   <h5>Prénom : <?php echo $user["Prenom"] ?> </h2>
   <br>
+  <h5>Email : <?php echo $user["Email"] ?> </h2>
+  <br>
+  <h5>Date de naissance : <?php echo $user["Date_N"] ?> </h2>
+  <br>
   <h5>Sexe : <?php echo $user["sexe"] ?> </h2>
+  <br>
+  <h5>Role : <?php echo $user["role"] ?> </h2>
   <br>
 <!-- <h5>Facture : <?php //echo $user["Facture"] ?> dt </h2>-->
   <br>
-  <h5>Login : <?php echo $user["Login"] ?> </h2>
   <?php } ?>

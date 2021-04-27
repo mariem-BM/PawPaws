@@ -1,8 +1,5 @@
 <?php include "../config.php";
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +44,7 @@
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="signin.php">Logout</a></li>
               </ul>
             </div>
                                 
@@ -144,7 +141,11 @@
 													<th>Nom</th>
 													<th>Prenom</th>
 													<th>Email</th>
-													<th>sexe</th>
+													<th>date de naissance</th>
+                                                    <th>Login</th>
+													<th>Sexe</th>
+													<th>Role</th>
+                                                    
 													<th>Action</th>
 													
 												</tr>
@@ -164,14 +165,17 @@ $db = config::getConnexion();
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.html"><?php echo $row['Nom'];?></a>
+															<a href="profil.php"><?php echo $row['Nom'];?></a>
 														</h2>
 													</td>
 													<td><?php echo $row['Prenom'];?></td>
 													<td><?php echo $row['Email'];?></td>
+                                                    <td><?php echo $row['Date_N'];?></td>
+													<td><?php echo $row['Login'];?></td>
 													<!--<td>14 Jan 2019 <br><small>02.59 AM</small></td>-->
 													
 													<td><?php echo $row['sexe'];?></td>
+                                                    <td><?php echo $row['role'];?></td>
 													
 												
 													<td>

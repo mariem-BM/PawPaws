@@ -1,5 +1,4 @@
 <?php
-
     function getConnexion1 () {
     $servername = "localhost";
     $username = "root";

@@ -66,7 +66,7 @@ function verification_sign_in ($Login, $Password)
                     'Password' =>  $Password]);
       $count=$query->rowCount();
       if ($count==0){
-        echo "le mote de passe ou le pseudo est incorrecte";
+        echo "le mot de passe ou le pseudo est incorrecte";
         return 0;
       }
       else

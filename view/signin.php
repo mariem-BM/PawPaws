@@ -13,36 +13,48 @@
 </head>
 <body class="form-v5">
 	<div class="page-content">
-		<?php 
+		
+		
 
-			include "../controller/UserC.php";
-			require_once "../model/User.php";
+
+	<?php 
+
+include "../controller/UserC.php";
+require_once "../model/User.php";
+
+//$userC=new UserC();
+if (isset($_POST["Login"]) && isset($_POST["password"]))
+{
+	if (!empty($_POST["Login"]) && !empty($_POST["password"]))
+	{
+		 $x=verification_sign_in ($_POST["Login"], $_POST["password"]);
+		 if ($x!==0)
+		 {
+			 $_SESSION['idd']=$x;
+			 echo $x;
+			  Connect ($x);
+			  
+			  if($_SESSION['role'] == "admin"){
+				header('location:ADMIN.php');
+			}else{
+				header('location:user.php');
+			}
 			
-			//$userC=new UserC();
-			if (isset($_POST["Login"]) && isset($_POST["password"]))
-			{
-				if (!empty($_POST["Login"]) && !empty($_POST["password"]))
-				{
-					 $x=verification_sign_in ($_POST["Login"], $_POST["password"]);
-					 if ($x!==0)
-					 {
-						 $_SESSION['idd']=$x;
-						 echo $x;
-					 	 Connect ($x);
+			  //header('Location:user.php'); 
+		 } 
+		
 
-						  header('Location:user.php'); 
-					 } 
-					
-         
-         // on stocke dans le tableau une colonne ayant comme nom "e",
-        //  avec l'email à l'intérieur
-        
-				}
-				else echo "Remplissez les champs";
-			}	
+// on stocke dans le tableau une colonne ayant comme nom "e",
+//  avec l'email à l'intérieur
+
+	}
+	else echo "Remplissez les champs";
+}	
 
 
-		?>
+?>		
+	
+		
 		<div class="form-v5-content">
 			<form class="form-detail" action="signin.php" method="post">
 				<h2>Register Account Form</h2>
