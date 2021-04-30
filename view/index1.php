@@ -4,7 +4,6 @@
 include_once '../model/reservationS.php';
 include_once '../controller/reservationSC.php';
 include_once '../Model/service.php';
-
 session_start();
 if (isset($_SESSION["e"])&& !empty($_SESSION["e"]))
 {
@@ -70,7 +69,7 @@ $_SESSION["e"]
 
     $reservationC = new reservationC();
     $post=new reservationC();
-   $post->firstname= $_SESSION["Nom"];
+   $post->user= $_SESSION["Nom"];
     $post->date = $_POST["date"];
     $post->tel= $_POST["tel"];
    $post->adresse= $_POST["adresse"];

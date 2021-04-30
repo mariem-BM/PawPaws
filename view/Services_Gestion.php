@@ -119,9 +119,10 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Services</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
                           <li><a  href="Ajouter_Service.php">Ajouter Une Service</a></li>
                           <li class="active"><a  href="Services_Gestion.php">Gérer Les Services</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
                       </ul>
                   </li>
                    

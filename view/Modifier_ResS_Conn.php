@@ -2,8 +2,7 @@
 session_start();
 if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
 {
-  if ($_SESSION["role"]=="admin")
-  {
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,13 +13,13 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Gestion Blog</title>
+    <title>Modifier</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
+
     <!-- Custom styles for this template -->
     <link href="../assets3/css/style.css" rel="stylesheet">
     <link href="../assets3/css/style-responsive.css" rel="stylesheet">
@@ -44,17 +43,16 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>Radisson Blu</b></a>
+            <a href="Acceuil.php" class="logo"><b>Paw Paws</b></a>
             <!--logo end-->
-             <div class="top-menu">
+                  <div class="top-menu">
               <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="../disconnect.php">Logout</a></li>
               </ul>
             </div>
-                                
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -63,90 +61,79 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
-              	  <p class="centered"><a href="profile.html"><img src="../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
+
+                  <p class="centered"><a href="profile.html"><img src="../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
                   <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
                   <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
-              	  	
+
                   <li class="mt">
-                      <a href="DashboardAdmin.php">
+                      <a href="DashboardUser.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
-                  <li class="sub-menu">
+                  <li class="sub-menu" >
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>Gérer Comptes</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Affichertoutusers.php">Gérer les Comptes</a></l>
+                          <li ><a  href="ModifiyUserConn.php">Gérer Votre Compte</a></li>
+                            <li><a  href="ModifyUserPass.php">Modifier Mot de passe</a></li>
+                            <li><a  href="SupprimerUserConn.php">Supprimer Votre Compte</a></li>
+                            <li><a  href="SupprimerUserConn.php">Modifier Votre Photo</a></li>
+
+                      </ul>
+                        <li class="sub-menu" >
+                      <a  href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Activitées</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="Act_gestion_conn.php">Afficher Voes Reservations</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
                       <a  href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Blog</span>
+                          <span>Rooms</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
-                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
+                          <li><a  href="Service_Gestion_Conn.php">Afficher Voes Reservations r</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a  href="javascript:;"  class="active">
                           <i class="fa fa-book"></i>
-                          <span>Activité</span>
+                          <span>Reservations Service</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Act_gestion1.php">Gérer Les Activités</a></li>
-                          <li><a  href="Act_Gestion.php">Gérer Les Réservations</a></li>
+                          <li class="active"><a  href="Gestion_ResS_Conn.php">Afficher Vos Reservations</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book"></i>
-                          <span>Services</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="Services_Gestion.php">Gérer chambre</a></li>
-                          <li ><a  href="Res_Serv_Gestion.php">Gérer Les chambres</a></li>
-                      </ul>
-                  </li>
-                                    <li class="sub-menu">
-                      <a href="javascript:;" class="active" >
-                          <i class="fa fa-book"></i>
-                          <span>Services</span>
-                      </a>
-                      <ul class="sub">
-                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li><a  href="Ajouter_Service.php">Ajouter Un Service</a></li>
-                          <li><a  href="Service_Gestion.php">Gérer Les Services</a></li>
-                      </ul>
-                  </li>
-
+                  
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<?php include_once 'searchreservationS.php'; ?>
+          	<?php include_once 'updatereservationS.php'; ?>
           		</div>
           	</div>
-			
+
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
-      
+
       <!--footer end-->
   </section>
 
@@ -164,7 +151,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <script src="../assets3/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
+
   <script>
       //custom select box
 
@@ -176,8 +163,8 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
 
   </body>
 </html>
-<?php }
-else echo "Access denied to non admins";
+<?php
+
 }
 else   echo("<script>location.href = 'signin.php';</script>");
 ?>

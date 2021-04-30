@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
 {
-  if ($_SESSION["role"]=="admin" || $_SESSION["role"]=="ServiceProvider" || $_SESSION["role"]=="client")
+  if ($_SESSION["role"]=="admin")
   {
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Gestion Reservation</title>
+    <title>Gestion Blog</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">
@@ -44,7 +44,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>Paw Paws</b></a>
+            <a href="acceuil.php" class="logo"><b>Radisson Blu</b></a>
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -106,11 +106,11 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <li class="sub-menu">
                       <a href="javascript:;">
                           <i class="fa fa-book"></i>
-                          <span>Rooms</span>
+                          <span>Services</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Rooms_Gestion.php">Gérer Rooms</a></li>
-                          <li ><a  href="Res_Serv_Gestion.php">Gérer Les Réservations</a></li>
+                          <li ><a  href="Services_Gestion.php">Gérer chambre</a></li>
+                          <li ><a  href="Res_Serv_Gestion.php">Gérer Les chambres</a></li>
                       </ul>
                   </li>
                                     <li class="sub-menu">
@@ -119,12 +119,12 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Services</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li class="active"><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
                           <li><a  href="Ajouter_Service.php">Ajouter Un Service</a></li>
-                          <li><a  href="Services_Gestion.php">Gérer Les Services</a></li>
+                          <li><a  href="Service_Gestion.php">Gérer Les Services</a></li>
                       </ul>
-                    </li>
-                      
+                  </li>
+
               </ul>
               <!-- sidebar menu end-->
           </div>
@@ -137,7 +137,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<?php include_once 'showreservationsS.php'; ?>
+          	<?php include_once 'searchreservationS.php'; ?>
           		</div>
           	</div>
 			

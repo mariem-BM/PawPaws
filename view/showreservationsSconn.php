@@ -31,10 +31,10 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
 </head>
 <body>
 <a class="btn btn-info" href="searchreservationS.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;Search reservation</a>
-<a href="Reservation_Gestion.php?tri=AZ"> Alphabetique A-Z</a>
-<a href="Reservation_Gestion.php?tri=ZA"> Alphabetique Z-A</a>
-<a href="Reservation_Gestion.php?tri=D"> Date</a>
-<a href="Reservation_Gestion.php?tri=P"> Date</a>
+<a href="ReservationS_Gestion.php?tri=AZ"> Alphabetique A-Z</a>
+<a href="ReservationS_Gestion.php?tri=ZA"> Alphabetique Z-A</a>
+<a href="ReservationS_Gestion.php?tri=D"> Date</a>
+<a href="ReservationS_Gestion.php?tri=P"> Date</a>
 <hr>
 <div class="container">
     <div >
@@ -89,7 +89,7 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
                     <td>
 
                         <a type="button" class="btn btn-primary shop-item-button"
-                           href="Modifier_Res_Conn.php?idreservation=<?= $reservation['idreservation'] ?>">Update</a>
+                           href="Modifier_ResS_Conn.php?idreservation=<?= $reservation['idreservation'] ?>">Update</a>
                     </td>
                 </tr>
                 <?PHP

@@ -191,10 +191,10 @@ class reservationC{
 
     public function sendmail($reservation)
     {
-        $headers = "From: hotelfarcha5etoile@gmail.com\r\n";
+        $headers = "From: pawp6703@gmail.com\r\n";
         $to = $reservation->email;
         $subject = "confirmation de reservation";
-        $message = "Bonjour Mr/Mme " . $reservation->firstname . " je vous confirme qu'on a bien reçu votre reservation pour le service le " . $reservation->date . " pour " . $reservation->nbn . " nuits. SOYEZ LA BIENVENUE";
+        $message = "Bonjour Mr/Mme " . $reservation->user . " je vous confirme qu'on a bien reçu votre reservation pour le service le " . $reservation->date . " pour " . $reservation->nbn . " nuits. SOYEZ LA BIENVENUE";
         if (mail($to, $subject, $message, $headers))
             echo 'Success!';
         else

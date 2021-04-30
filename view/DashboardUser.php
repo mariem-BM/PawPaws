@@ -108,7 +108,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Service Reservations</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="Gestion_Res_Conn.php">Afficher Vos Reservations</a></li>
+                          <li><a  href="Gestion_ResS_Conn.php">Afficher Vos Reservations</a></li>
                         
                       </ul>
                   </li>

@@ -108,7 +108,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Reservations Service</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="Gestion_Res_Conn.php">Afficher Vos Reservations</a></li>
+                          <li class="active"><a  href="Gestion_ResS_Conn.php">Afficher Vos Reservations</a></li>
                       </ul>
                   </li>
                   
@@ -124,7 +124,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<?php include_once 'showreservationsconn.php'; ?>
+          	<?php include_once 'showreservationsSconn.php'; ?>
           		</div>
           	</div>
 
