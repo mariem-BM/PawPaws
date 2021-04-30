@@ -40,7 +40,8 @@ function Check_Info ($email,$Login)
   $sql="SELECT Login, Email FROM utilisateur WHERE Login=$Login OR Email=$email";
   $result = $conn->query($sql);
   if (isset($result->num_row))
-  {if ($result->num_rows > 0)
+  {
+    if ($result->num_rows > 0)
   {
     while($row = $result->fetch_assoc())
     {
@@ -51,7 +52,8 @@ function Check_Info ($email,$Login)
     }
     return 0;
   }
-  else return 1;}
+  else return 1;
+}
   else return 1;
 }
 
@@ -91,10 +93,6 @@ function verification_sign_in ($Login, $Password)
 
 function connexionUser($email,$password){
   $sql="SELECT * FROM utilisateur WHERE email='" . $email . "' and password = '". $password."'";
-
-////////
-    // $id1="SELECT id FROM Docteur WHERE email='" . $email . "' and password = '". $password."'";
-/////////////
 
 //session_start();
 $db = config::getConnexion();
@@ -282,7 +280,12 @@ function recupererUtilisateur($id){
 
 
 
-function afficherNotActiveUtilisateurs(){
+
+
+function validerUtilisateur($id,$email,$name){}
+
+
+function afficherUtilisateur(){
   $sql="SELECT * FROM Utilisateur ";
   $db = config::getConnexion();
   try{
@@ -294,9 +297,8 @@ function afficherNotActiveUtilisateurs(){
   }
 }
 
-function validerUtilisateur($id,$email,$name){
 
-}
+
 
 
 }

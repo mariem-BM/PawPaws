@@ -1,8 +1,11 @@
 <?php
+//include "../Controller/ComentC.php";
 require_once "../Controller/UserC.php";
 
 $x=Get_one_User_Info($_SESSION["e"]);
+
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +27,7 @@ $x=Get_one_User_Info($_SESSION["e"]);
   <h5>Sexe : <?php echo $user["sexe"] ?> </h2>
   <br>
   <h5>Role : <?php echo $user["role"] ?> </h2>
-  <br>
+
 <!-- <h5>Facture : <?php //echo $user["Facture"] ?> dt </h2>-->
   <br>
   <?php } ?>

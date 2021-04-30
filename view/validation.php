@@ -11,7 +11,7 @@ include "../controller/UserC.php";
 
 
 $utilisateurC=new UserC();
-$listeUsers=$utilisateurC->afficherNotActiveUtilisateurs();
+$listeUsers=$utilisateurC->afficherUtilisateur();
 ?>
 
 <!DOCTYPE html>
