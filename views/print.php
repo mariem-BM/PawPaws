@@ -180,7 +180,7 @@ if (isset($_GET["tri"]))
 $listereservation=$reservationC->afficherActivites($tri);
        foreach($listereservation as $reservation){                                 
     ?>
-    <style>
+    <!--<style>
     @media print{
         body * { 
         visibility: visible; 
@@ -193,8 +193,8 @@ $listereservation=$reservationC->afficherActivites($tri);
     }
 }
 
-</style>
-<button onclick="window.print();" class="dontPrint"> Print</button>
+</style>-->
+<button onclick="window.print();" class="dontPrint" style="width:130px"> Print</button>
 <div class="row print-container"></div>
         <header>
             <h1>Information of Client</h1>

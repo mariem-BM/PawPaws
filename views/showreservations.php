@@ -33,7 +33,24 @@ $listereservation=$reservationC->afficherActivites($tri);
 <a href="showreservations.php?tri=DA"> Date↓</a>
 <a href="showreservations.php?tri=DS"> Date↑</a>
 <hr>
-<div class="container">
+<!--<div class="container">-->
+    <style>
+    @media print{
+        body * { 
+        visibility: visible; 
+    }
+    .print-container, .print-container * {
+        visibility: visible;
+    }
+    .dontPrint * {
+        visibility: hidden;
+    }
+}
+
+</style>
+    <button onclick="window.print();" class="dontPrint" >Print</button>
+
+    <div class="row print-container"></div>
     <div >
         <table class="table table-striped custab">
             <thead>
@@ -53,6 +70,7 @@ $listereservation=$reservationC->afficherActivites($tri);
         <!-- <th>user</th>-->
         <th>delete</th>
         <th>update</th>
+        <th>Print Attestaion</th>
          <th>Print</th>
     </tr>
             </thead>
@@ -74,6 +92,7 @@ $listereservation=$reservationC->afficherActivites($tri);
             <td><?PHP echo $reservation['rp']; ?></td>
 
             <td><?PHP echo $reservation['roomtype']; ?></td>
+
          <!--   <td><?PHP// echo $reservation['Nom']; ?>&nbsp;<?PHP //echo $reservation//['Prenom'];?></td>-->
 <div class="dontPrint">
             <td>
@@ -93,13 +112,20 @@ $listereservation=$reservationC->afficherActivites($tri);
 
 <!--<input type="button" value="Print & Do New Transaction" class="dontPrint" id="payout_print"  onclick="window.print();window.location.href='transaction/admin/new_transaction'">-->
 
-                <a type="button" class="button" href = "print.php?idreservation=<?= $reservation['idreservation']?>" onClick="window.print()">Print Attestaion</a>
+                <a type="button" class=" btn btn-danger" href = "print.php?idreservation=<?= $reservation['idreservation']?>" onClick="window.print()">Print Attestaion</a>
 
 
 </td>
 <td>
-<button onClick="window.print()" style="background-color:#4682B4" style="text:white">Print this page</button>
+<!--<button onclick="window.print();" style="background-color:#4682B4" style="text:white">Print</button>-->
+<a type="button" class=" btn btn-danger" href = "print.php?idreservation=<?= $reservation['idreservation']?>" onClick="window.print()">Print</a>
             </td>
+<!--<td>
+
+
+<button onClick="window.print();" class="dontPrint" >Print</button>
+
+            </td>-->
             </div>
         </tr>
         <?PHP
@@ -129,6 +155,7 @@ $listereservation=$reservationC->afficherActivites($tri);
     .dontPrint{
         visibility: hidden;
     }
+
 
 </style>
 </body>
