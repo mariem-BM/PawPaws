@@ -53,6 +53,7 @@ $listereservation=$reservationC->afficherActivites($tri);
         <!-- <th>user</th>-->
         <th>delete</th>
         <th>update</th>
+         <th>Print</th>
     </tr>
             </thead>
     <?PHP
@@ -74,7 +75,7 @@ $listereservation=$reservationC->afficherActivites($tri);
 
             <td><?PHP echo $reservation['roomtype']; ?></td>
          <!--   <td><?PHP// echo $reservation['Nom']; ?>&nbsp;<?PHP //echo $reservation//['Prenom'];?></td>-->
-
+<div class="dontPrint">
             <td>
                 <form method="POST" action="deletereservation.php">
                     <input type="submit"  class=" btn btn-danger" name="supprimer" value="Delete">
@@ -87,6 +88,19 @@ $listereservation=$reservationC->afficherActivites($tri);
 
                 <a type="button" class="btn btn-primary shop-item-button" href = "updatereservation.php?idreservation=<?= $reservation['idreservation']?>">Update</a>
             </td>
+
+            <td>
+
+<!--<input type="button" value="Print & Do New Transaction" class="dontPrint" id="payout_print"  onclick="window.print();window.location.href='transaction/admin/new_transaction'">-->
+
+                <a type="button" class="button" href = "print.php?idreservation=<?= $reservation['idreservation']?>" onClick="window.print()">Print Attestaion</a>
+
+
+</td>
+<td>
+<button onClick="window.print()" style="background-color:#4682B4" style="text:white">Print this page</button>
+            </td>
+            </div>
         </tr>
         <?PHP
 
@@ -111,6 +125,9 @@ $listereservation=$reservationC->afficherActivites($tri);
         box-shadow: 3px 3px 0px transparent;
         transition: 0.5s;
 
+    }
+    .dontPrint{
+        visibility: hidden;
     }
 
 </style>
