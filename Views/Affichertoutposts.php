@@ -125,12 +125,20 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                       </a>
                       <ul class="sub">
                           <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
+                          <li ><a  href="views/chatAdmin.php">Chat</a></li>
+
                       </ul>
                   </li>
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
+
+
+
+
+
+
       <!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************

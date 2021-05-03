@@ -35,6 +35,8 @@ session_start();
     <option  value="Services">Services</option>
     <option  value="Reservation">Reservation</option>
     <option  value="Produits">Products</option>
+        <option  value="Produits">other</option>
+
          </select>
       <textarea class="message formEntry"  name="message" placeholder="Message"></textarea>
        <tr>
@@ -42,9 +44,7 @@ session_start();
                 <label for="name" 
         </label>
             </th>
-            <th align="left">
-        <input type="file"  name="image" id="image"  required onkeyup="EnableDisable(this)">
-            </th>
+            
         </tr>
     <button class="submit formEntry" type="submit" name="submit">Submit</button>
     </form>
@@ -52,4 +52,4 @@ session_start();
   <script src="../Assets/AssetsComplaint/script.js"></script>
 </body>
 
-</html>
+</html>                                                    

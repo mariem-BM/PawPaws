@@ -1,41 +1,116 @@
 <?php
-    class Service {
-        public $idService = null;
-        public $nom_service;
-        public $num_chambre=null;
-        public $facture;
-		 public  $dateS;
 
-        public function getIdService () {
-            return $this->idService;
-        }
 
-        public function getNom_Service (){
-            return $this->nom_service;
-        }
+class service
+{
 
-        public function getNum_Chambre (){
-            return $this->num_chambre ;
-        }
 
-        public function getFacture (){
-            return $this->facture;
-        }
-  public function getDateS(){
-            return $this->dateS;
-        }
-        public function setNom_Service ($nom_service){
-            $this->nom_service = $nom_service;
-        }
+    private $idservice=null;
+   private $servicetype=null;
+    private $price=null;
+   private $photo;
+   private $qty=null;
 
-        public function setNum_Chambre ($num_chambre){
-            $this->num_chambre = $num_chambre;
-        }
+    /**
+     * room constructor.
+     * @param $idroom
+     * @param $roomtype
+     * @param $price
+     * @param $photo
+     */
+    public function __construct( $servicetype, $price, $photo,$qty)
+    {
 
-        public function setFacture($facture){
-            $this->facture= $facture;
-        }
-		public function setDate($date){
-            $this->date= $date;
-        }
+        $this->servicetype = $servicetype;
+        $this->price = $price;
+        $this->photo = $photo;
+        $this->qty = $qty;
+    }/**
+ * @return mixed
+ */
+
+
+    /**
+     * @return mixed
+     */
+    public function getIdservice()
+    {
+        return $this->idservice;
     }
+
+    /**
+     * @param mixed $idroom
+     */
+    public function setIdservice($idservice)
+    {
+        $this->idservice = $idservice;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getservicetype()
+    {
+        return $this->servicetype;
+    }
+
+    /**
+     * @param mixed $roomtype
+     */
+    public function setservicetype($servicetype)
+    {
+        $this->servicetype = $servicetype;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param mixed $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQty()
+    {
+        return $this->qty;
+    }
+
+    /**
+     * @param mixed $qty
+     */
+    public function setQty($qty): void
+    {
+        $this->qty = $qty;
+    }
+
+
+
+
+}

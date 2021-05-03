@@ -145,7 +145,7 @@ function afficher_Reponses($id, $id_user, $role)
   }
   $sql="SELECT C.id,C.Nom_User,C.id_user,C.id_Reclamation,C.message,C.date_p,U.Picture FROM Reponses C inner JOIN utilisateur U ON C.id_user=U.id WHERE id_Reclamation=$id ORDER BY date_p DESC ";
   $result = $conn->query($sql);
-  if ($result>0)
+  if ($result->num_rows > 0)
   {
       while($row = $result->fetch_assoc())
       {

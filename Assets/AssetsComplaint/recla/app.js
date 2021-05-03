@@ -105,3 +105,4 @@ function deleteAllNotes(){
     }
     noteID = 1; // resetting noteID to 1
 }
+

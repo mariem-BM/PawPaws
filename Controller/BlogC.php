@@ -154,6 +154,10 @@ function addReveiw($post) {
             }
         }
 
+
+
+
+
 function deletePost($id) {
             try {
                 $pdo = getConnexion();
@@ -167,6 +171,8 @@ function deletePost($id) {
                echo $e->getMessage();
             }
         }
+       
+    
 
 function update($post, $id) {
             try {

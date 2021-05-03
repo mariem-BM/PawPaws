@@ -56,6 +56,7 @@ if (isset($search) && !empty($search))
           if (strpos($userc['Titre'],$search)!==false)
       {
       ?>
+
         <tr >
 
           <td align="center" ><?PHP echo $userc['Titre']; ?></td>
@@ -107,7 +108,7 @@ else
             </form>
           </td>
            <td align="center" >
-            <form method="GET" action="read_post.php">
+            <form method="GET" action="WatchBlogPost.php">
             <input style="margin: 5px;"  class="btn btn-primary" type="submit" name="modifier" value="Voir">
             <input  type="hidden" value= "<?PHP echo $userc['id']; ?>" id="id" name="id">
             </form>
@@ -116,3 +117,6 @@ else
       <?PHP
         }}
       ?>
+
+
+

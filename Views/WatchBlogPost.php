@@ -27,6 +27,9 @@ if (isset($_SESSION["e"]))
 else
 $account="DashboardUser.php";
 ?>
+
+
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -43,6 +46,9 @@ $account="DashboardUser.php";
           </li>
           <li class="nav-item">
             <a class="nav-link" href="DashboardUser.php">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="new 1.html">Rate Us</a>
           </li>
         </ul>
       </div>
@@ -80,11 +86,17 @@ $account="DashboardUser.php";
         if (isset($_SESSION["role"]))
           {if ( $_SESSION["role"]=="admin")
           afficherpostsMod($search, $tri);
+
         else
         afficherposts($search, $tri);}
         else
         afficherposts($search, $tri);
         ?>
+
+
+      
+
+        
       </div>
 
         <!-- Search Widget -->
@@ -98,6 +110,9 @@ $account="DashboardUser.php";
                 <button class="btn btn-secondary" type="submit">Go!</button>
               </form>
               </span>
+              <li>
+                    <a href="AddBlogPost.php">Add New Post</a>
+                  </li>
             </div>
              <div class="card my-4">
           <h5 class="card-header">Trier Par</h5>

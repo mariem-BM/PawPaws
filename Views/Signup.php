@@ -2,31 +2,29 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Form-v5 by Colorlib</title>
+	<title>Paw Paws</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Font-->
-	<link rel="stylesheet" type="text/css" href="../Assets/css/roboto-font.css">
-	<link rel="stylesheet" type="text/css" href="../Assets/fonts/font-awesome-5/css/fontawesome-all.min.css">
+	<link rel="stylesheet" type="text/css" href="../Assets2/css/roboto-font.css">
+	<link rel="stylesheet" type="text/css" href="../Assets2/fonts/font-awesome-5/css/fontawesome-all.min.css">
 	<!-- Main Style Css -->
-    <link rel="stylesheet" href="../Assets/css/style.css"/>
+    <link rel="stylesheet" href="../Assets2/css/style.css"/>
 </head>
 <body class="form-v5">
 	<div class="page-content">
 		<div class="form-v5-content">
 			<?php
-			$error="0";
-			$id=0;
-			include "../Controller/UserC.php";
-			require_once "../Model/User.php";	
+			include "../controller/UserC.php";
+			require_once "../model/User.php";
 			if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["Date_N"]) && isset($_POST["sexe"]) && isset($_POST["email"]) && isset($_POST["Login"]) && isset($_POST["password"]) && isset($_POST["password2"])) 
 			{ 
 				$New_User=new User($_POST["nom"],$_POST["prenom"],$_POST["sexe"],$_POST["email"],$_POST["Date_N"],$_POST["Login"],$_POST["password"]);
 				if ($_POST["password"]!=$_POST["password2"])
-					$error= "Les deux mot de passes sont differents";
+					echo "Les deux mot de passes sont differents";
 				else
 				{
-					Check_Info ($New_User->email,$New_User->login,$id);
+					Check_Info ($New_User->email,$New_User->login);
 					if (Check_Info ($New_User->email,$New_User->login))
 					{
  						user_creation($New_User);
@@ -37,9 +35,6 @@
 			?>
 			<form class="form-detail" action="Signup.php" method="post">
 				<h2>Register Account Form</h2>
-				<div class="form-row">
-					<p value="<?php echo $error;?>">
-				</div>
 				<div class="form-row">
 					<label for="full-name">Nom</label>
 					<input type="text" name="nom" id="nom" class="input-text" placeholder="Nom" required>
@@ -87,7 +82,7 @@
 					<a href="signin.php">Login</a>
 				</div>
 				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Register">
+					<input type="submit" name="register" class="register" value="Register" href="Acceuil.php">
 				</div>
 			</form>
 		</div>

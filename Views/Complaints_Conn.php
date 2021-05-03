@@ -113,6 +113,8 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                       </a>
                       <ul class="sub">
                           <li class="active"><a  href="Complaints_Conn.php">Afficher Vos FeedBack</a></li>
+                         <li class="active"><a  href="views/chatAdmin.php">chat</a></li>
+
                       </ul>
                   </li>
               </ul>
@@ -128,6 +130,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       <section id="main-content">
           <section class="wrapper site-min-height">
           	<?php include_once 'AfficherComplaintsConn.php'; ?>
+            
           		</div>
           	</div>
 

@@ -27,7 +27,21 @@ if (isset($_GET["idcomment"]))
     deletecomment($_GET["idcomment"]);
   }
 }
+if(isset($_POST['ajout_news'])) {
+    if(!empty($_POST['titre_news']) && !empty($_POST['contenu_news'])) {
+        $titre = $_POST['titre_news'];
+        $genre = $_POST['genre'];
+        $contenu = $_POST['contenu_news'];
+        $img = $_POST['img'];
+        $date = date('Y-m-d');
+        $addNewsQuery = $bdd->prepare("INSERT INTO `news` VALUES ('', ?, ?, ?, ?, ?, ?)") or die(mysql_error());
+        $addNewsQuery->execute(array($titre, $date, $contenu, $genre, $img, '1')) or die(mysql_error());
+      
+      } 
+        
+  }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,27 +96,36 @@ if (isset($_GET["idcomment"]))
 
     <div class="row">
 
+
       <!-- Post Content Column -->
       <div class="col-lg-8">
 
         <!-- Title -->
+      
         <h1 class="mt-4"><?php echo $post->nom; ?></h1>
 
         <hr>
-
         <!-- Date/Time -->
         <p><?php echo $post->date; ?></p>
-
         <hr>
-
         <!-- Preview Image -->
         <img class="img-fluid rounded" src=<?php echo "../assets/img/blog/".$post->picture." width="."900"." height="."300"; ?>" alt=">
-
         <hr>
 
         <!-- Post Content -->
         <p class="lead"><?php echo $post->text; ?></p>
-        <hr>
+        <hr> 
+     <tr>
+<td align="right" valign="top"><span style="font-weight:bold;">Note:</span>
+</td>
+<td align="left"> <div class="rating">
+<a href="#5" title="Donner 5 étoiles">☆</a>
+<a href="#4" title="Donner 4 étoiles">☆</a>
+<a href="#3" title="Donner 3 étoiles">☆</a>
+<a href="#2" title="Donner 2 étoiles">☆</a>
+<a href="#1" title="Donner 1 étoile">☆</a>
+</div> </td>
+</tr>
 
         <!-- Comments Form -->
        
@@ -120,11 +143,13 @@ if (isset($_GET["idcomment"]))
                 
 
               </div>
+            
               <button type="submit" name="submit" id="submit" class="btn btn-primary" disabled>Submit</button>
               <?php } else {?>
               <a type="button" class="btn btn-primary" href="signin.php">Login</a>
               <a type="button" class="btn btn-primary" href="signup.php">Register</a>
             </form>
+
           </div>
         </div>
         <br>
@@ -159,3 +184,15 @@ if (isset($_GET["idcomment"]))
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
