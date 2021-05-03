@@ -1,3 +1,4 @@
+
 <?php
 
 //index.php
@@ -8,7 +9,8 @@ $connect = new PDO("mysql:host=localhost;dbname=hotel2", "root", "");
 
 function fetch_customer_data($connect)
 {
-	$query = "SELECT * FROM reservation";
+	//$query = "SELECT * FROM reservation";
+	$query = "SELECT * FROM reservation JOIN utilisateur ON utilisateur.id=reservation.iduser JOIN rooms ON rooms.idroom=reservation.idroom";
 	$statement = $connect->prepare($query);
 	$statement->execute();
 	$result = $statement->fetchAll();
@@ -17,17 +19,16 @@ function fetch_customer_data($connect)
 		<table class="table table-striped table-bordered">
 			<tr>
 				<th>id reservation</th>
-				<th>Firstname</th>
-				<th>Lastname</th>
+				<th>Roomtype</th>
+				<th>Nbre of pets</th>
 				<th>Adresse</th>
 				<th>tel</th>
 				<th>Email</th>
 				<th>Nbn</th>
 				<th>Date</th>
-				<th>Room</th>
+				<th>Rooms nbre</th>
 				<th>Special Requirments</th>
-				<th>idroom</th>
-				<th>iduser</th>
+				<th>Nom et Prenom</th>
 			</tr>
 	';
 	foreach($result as $row)
@@ -35,8 +36,8 @@ function fetch_customer_data($connect)
 		$output .= '
 			<tr>
 				<td>'.$row["idreservation"].'</td>
+				<td>'.$row["roomtype"].'</td>
 				<td>'.$row["firstname"].'</td>
-				<td>'.$row["lastname"].'</td>
 				<td>'.$row["adresse"].'</td>
 				<td>'.$row["tel"].'</td>
 				<td>'.$row["email"].'</td>
@@ -44,8 +45,7 @@ function fetch_customer_data($connect)
 				<td>'.$row["date"].'</td>
 				<td>'.$row["room"].'</td>
 				<td>'.$row["rp"].'</td>
-				<td>'.$row["idroom"].'</td>
-				<td>'.$row["iduser"].'</td>
+				<td>'.$row['Nom']." ".$row['Prenom'].'</td>
 			</tr>
 		';
 	}
@@ -101,7 +101,7 @@ if(isset($_POST["action"]))
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Dynamic PDF Send As Attachment with Email in PHP</title>
+		<title>Dynamic PDF Send As Attachment with Email</title>
 		<script src="jquery.min.js"></script>
 		<link rel="stylesheet" href="bootstrap.min.css" />
 		<script src="bootstrap.min.js"></script>
@@ -109,15 +109,17 @@ if(isset($_POST["action"]))
 	<body>
 		<br />
 		<div class="container">
-			<h3 align="center"> Dynamic PDF Send As Attachment with Email in PHP</h3>
+			<h3 align="center"> Reservation Details</h3>
 			<br />
+<div class="dontPrint"></div>
 			<form method="post">
-				<input type="submit" name="action" class="btn btn-danger" value="PDF Send" /><?php echo $message; ?>
+				<input type="submit" name="action" class="btn btn-danger"" value="PDF Send" /><?php echo $message; ?>
 				<td>
 				 <a type="button" class="btn btn-primary shop-item-button" href = "print.php?idreservation=<?= $reservation['idreservation']?>"  onClick="window.print()">Print</a>
 				
 				 </td>
 			</form>
+		</div>
 			<br />
 			<?php
 			echo fetch_customer_data($connect);
@@ -127,8 +129,25 @@ if(isset($_POST["action"]))
 		<br />
 	</body>
 </html>
+<style>
+@media print {
+    * { -webkit-print-color-adjust: exact; }
+    html { background: none; padding: 0; }
+    body { box-shadow: none; margin: 0; }
+    span:empty { display: none; }
+    .add, .cut { display: none; }
 
+    .dontPrint {
+        visibility: hidden;
+    } 
+    .dontPrint1 {
+    	visibility: hidden;
 
-
-
-
+    }
+    .dontPrint1 {
+    	color: #006400;
+    }
+ .btn btn-primary shop-item-button {
+ 	visibility: hidden;
+ }
+</style>
