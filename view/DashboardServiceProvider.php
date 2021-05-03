@@ -122,6 +122,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
                           <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
                           <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
+                          <li><a  href="create-dynamic-pdf-send">rendez-vous Details</a></li>
                       </ul>
                   </li>
                    

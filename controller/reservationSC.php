@@ -42,6 +42,8 @@ class reservationC{
 
 
             ]);
+            
+            print "Your reservation was saved successfuly!";
         } catch (Exception $e) {
             echo 'Erreur: ' . $e->getMessage();
         }
@@ -51,6 +53,19 @@ class reservationC{
     {
 
         $sql = "SELECT * FROM reservation ";
+        $db = config::getConnexion();
+        try {
+            $liste = $db->query($sql);
+
+            return $liste;
+        } catch (Exception $e) {
+            die('Erreur: ' . $e->getMessage());
+        }
+    }
+    function afficherReservation10($idreservation)
+    {
+
+        $sql = "SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN services ON services.idservice=reservation.idservice WHERE idreservation = :idreservation  ";
         $db = config::getConnexion();
         try {
             $liste = $db->query($sql);

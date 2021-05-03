@@ -47,14 +47,13 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
                 <th>Phone</th>
                 <th>Date</th>
                 <th>Email</th>
-                
-                <th>Petss</th>
+                <th>Pets</th>
                 <th>Extra</th>
                 <th>service Type</th>
                 <th>User</th>
-
                 <th>delete</th>
                 <th>update</th>
+                
             </tr>
             </thead>
             <?PHP
@@ -91,6 +90,7 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
                         <a type="button" class="btn btn-primary shop-item-button"
                            href="Modifier_ResS_Conn.php?idreservation=<?= $reservation['idreservation'] ?>">Update</a>
                     </td>
+                   
                 </tr>
                 <?PHP
 

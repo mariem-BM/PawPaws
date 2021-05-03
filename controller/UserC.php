@@ -1,7 +1,7 @@
 <?php
 include "../config.php";
 include "../config1.php";
-require_once "../Model/User.php";  
+require_once "../model/User.php";  
 function user_creation ($New_User)
 {
             try

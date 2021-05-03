@@ -45,8 +45,6 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
             <thead>
     <tr>
         <th>Idreservation</th>
-        
-        
         <th>Adress</th>
         <th>Phone</th>
         <th>Rendez-vous</th>
@@ -57,6 +55,9 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
         <th>user</th>
         <th>delete</th>
         <th>update</th>
+        <th>Generate PDF</th>
+        
+        
     </tr>
             </thead>
     <?PHP
@@ -65,15 +66,12 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
         <tr>
 
             <td><?PHP echo $reservation['idreservation']; ?></td>
-            
             <td><?PHP echo $reservation['adresse']; ?></td>
             <td><?PHP echo $reservation['tel']; ?></td>
             <td><?PHP echo $reservation['date']; ?></td>
             <td><?PHP echo $reservation['email']; ?></td>
             <td><?PHP echo $reservation['nbn']; ?></td>
-            
             <td><?PHP echo $reservation['rp']; ?></td>
-
             <td><?PHP echo $reservation['servicetype']; ?></td>
             <td><?PHP echo $reservation['Nom']; ?>&nbsp;<?PHP echo $reservation['Prenom'];?></td>
 
@@ -89,6 +87,11 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
 
                 <a type="button" class="btn btn-primary shop-item-button" href = "updatereservationS.php?idreservation=<?= $reservation['idreservation']?>">Update</a>
             </td>
+            <td>
+
+<a type="button" class="btn btn-primary shop-item-button" href = "page_document.php?idreservation=<?= $reservation['idreservation']?>">Generate PDF</a>
+            </td>
+            
         </tr>
         <?PHP
 
@@ -98,8 +101,16 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
 
     ?>
 </table>
-    </div>
-</div>
+<table>
+   <!-- </td>
+    <button onClick="window.print()" style="background-color:#4682B4" style="text:white">Print this page</button>
+            
+</td>-->
+<td>
+    <a type="button" class="btn btn-primary shop-item-button" href = "confirm-send?idreservation=<?= $reservation['idreservation']?>">send/print all informations</a>
+            
+</td>
+</table>
 <style>
     .custab{
         border: 1px solid #ccc;

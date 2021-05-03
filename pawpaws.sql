@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2021 at 02:28 PM
+-- Generation Time: May 03, 2021 at 07:03 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -31,7 +31,7 @@ CREATE TABLE `reservation` (
   `idreservation` int(50) NOT NULL,
   `adresse` varchar(20) NOT NULL,
   `tel` int(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `nbn` int(11) NOT NULL,
   `date` text NOT NULL,
   `rp` varchar(25) NOT NULL,
@@ -44,9 +44,13 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`idreservation`, `adresse`, `tel`, `email`, `nbn`, `date`, `rp`, `idservice`, `iduser`) VALUES
-(117, 'adresse', 555, 'zeineb.rahmani@espri', 5, '06 - 1 - 2021', 'loool', 25, 6),
-(135, 'ariana', 98404074, 'zeineb.rahmani@espri', 4, '24 - 4 - 2021', 'nnnnnn', 0, 6),
-(136, 'ariana', 98404074, 'zeineb.rahmani@espri', 3, '30 - 4 - 2021', 'fdghjk', 0, 6);
+(146, 'ariana', 125, 'zeineb.rahmani@esprit.tn', 1, '18 - 4 - 2021', 'hgjhk', 27, 5),
+(147, 'ariana', 98404074, 'zeineb.rahmani@esprit.tn', 2, '01 - 4 - 2021', 'nb', 27, 6),
+(148, 'ariana', 98404074, 'zeineb.rahmani@esprit.tn', 2, '28 - 4 - 2021', 'none', 27, 6),
+(149, 'ariana', 98404074, 'zeineb.rahmani@esprit.tn', 2, '27 - 4 - 2021', 'bvbjhnk', 27, 6),
+(150, 'ariana', 98404074, 'zeineb.rahmani@esprit.tn', 2, '29 - 4 - 2021', 'gchvgjbk', 27, 6),
+(156, 'ariana', 98404074, 'zeineb.rahmani@esprit.tn', 2, '03 - 5 - 2021', 'dfxgchvjbknlj', 25, 6),
+(157, 'ariana', 98404074, 'zeineb.rahmani@esprit.tn', 3, '03 - 5 - 2021', 'fhgjbknl', 25, 6);
 
 -- --------------------------------------------------------
 
@@ -68,7 +72,7 @@ CREATE TABLE `services` (
 
 INSERT INTO `services` (`idservice`, `servicetype`, `price`, `photo`, `qty`) VALUES
 (25, 'pet grooming', '100', 'background.jpg', 11),
-(26, 'pet training', '500', 'background.jpg', 9),
+(26, 'pet training', '500', 'background.jpg', 7),
 (27, 'vet appointments', '500', 'background.jpg', 12);
 
 -- --------------------------------------------------------
@@ -96,8 +100,9 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `Nom`, `Prenom`, `Email`, `Date_N`, `Facture`, `Picture`, `Login`, `Password`, `sexe`, `Role`) VALUES
-(5, 'rahmani', 'zeineb', 'zeineb@gmail.com', '2000-02-06', 0, 'Unknown.png', 'tazarkour', 'eya123456', 'Femme', 'client'),
-(6, 'rahmani', 'eya', 'zeineb.rahmani@esprit.tn', '2000-02-06', 0, 'Unknown.png', 'eya123', 'eya123456', 'Femme', 'admin');
+(5, 'provider', 'zeineb', 'zeineb@esprit.com', '2000-02-06', 0, 'Unknown.png', 'provider', 'eya123456', 'Femme', 'ServiceProvider'),
+(6, 'rahmani', 'eya', 'zeineb.rahmani@esprit.tn', '2000-02-06', 0, 'Unknown.png', 'admin', 'eya123456', 'Femme', 'admin'),
+(7, 'rahmani', 'zeineb', 'zeineb@gmail.com', '2000-02-06', 0, 'Unknown.png', 'client1', 'eya123456', 'Femme', 'client');
 
 --
 -- Indexes for dumped tables
@@ -131,13 +136,13 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `idreservation` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+  MODIFY `idreservation` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `idservice` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idservice` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `utilisateur`

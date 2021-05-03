@@ -54,7 +54,7 @@ $_SESSION["e"]
         $qty= $_GET["qty"];
         $idroom= $_GET["idservice"];
         try
-        {$reservationC-> ajouterReservation($Reservation,$qty,$idroom,$_SESSION['e']);}
+        {$reservationC-> ajouterReservation($Reservation,$qty,$idservice,$_SESSION['e']);}
         catch (Exception $e){
             echo $e->getMessage();
 
@@ -89,18 +89,34 @@ $_SESSION["e"]
 
 <!DOCTYPE html>
 <script>
+    function CheckDate()
+{date = window.document.getElementById('dp1').value;
+    console.log(date);
+ var a=new Date();        // date courante
+
+ if(date < a){
+ alert("Please enter a valid date");}
+ }
 function test() {
-//1.saisie de control sur nom et prenom
+//1.saisie de control sur date
+/*date = window.document.getElementById('dp1').value;
+    console.log(date);
+ var a=new Date();        // date courante
 
+ if(date < a){
+ alert("false");}
+ else{alert("true");}*/
 
-//3.sasie de control sur numero de telephone
+//2.sasie de control sur numero de telephone
+phone = window.document.getElementById('tel').value;
+    console.log(phone);
+    z = phone.length;
+    console.log(z);
+    if (z < 8) {
+        alert('your phone number must include more than 8 numbers');
+    }
 
-
-// 4.sasie de control sur profession
-
-
-
-//saise de control sur style de musique
+//3.saise de control sur style de musique
 var x=document.getElementById('email').value;
 var atposition=x.indexOf("@");
 var dotposition=x.lastIndexOf(".");
@@ -170,7 +186,7 @@ return false;}
                 <div class="form-row">
 
                     <div class="form-holder">
-                        <input type="text" class="form-control datepicker-here pl-85" data-language='en' data-date-format="dd - m - yyyy" id="dp1" name="date" >
+                        <input type="text" class="form-control datepicker-here pl-85" data-language='en' data-date-format="dd - m - yyyy" id="dp1" name="date">
                         <span class="lnr lnr-chevron-down"></span>
                         <span class="placeholder">date :</span>
                     </div>
@@ -189,7 +205,7 @@ return false;}
                         </select>
                     </div>
                 </div>
-                <button class="forward">NEXT
+                <button class="forward" onclick="CheckDate()">NEXT
                     <i class="zmdi zmdi-long-arrow-right"></i>
                 </button>
 
