@@ -43,6 +43,7 @@ class reservationC{
 
 
             ]);
+             echo "Votre reservation est validée";
         } catch (Exception $e) {
             echo 'Erreur: ' . $e->getMessage();
         }
