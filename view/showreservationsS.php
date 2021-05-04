@@ -33,7 +33,7 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
 </head>
 <body>
       
-<a class="btn btn-info" href="searchreservationS.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;Search reservation</a>
+<a class="btn btn-info" href="searchreservationS.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;Search reservation by user</a>
 <a href="showreservationsS.php?tri=P"> Alphabetique A-Z</a>
 <a href="showreservationsS.php?tri=ZA"> Alphabetique Z-A</a>
 <a href="showreservationsS.php?tri=DA"> Date↓</a>
@@ -102,10 +102,6 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
     ?>
 </table>
 <table>
-   <!-- </td>
-    <button onClick="window.print()" style="background-color:#4682B4" style="text:white">Print this page</button>
-            
-</td>-->
 <td>
     <a type="button" class="btn btn-primary shop-item-button" href = "confirm-send?idreservation=<?= $reservation['idreservation']?>">send/print all informations</a>
             

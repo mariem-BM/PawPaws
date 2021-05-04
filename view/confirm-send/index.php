@@ -76,7 +76,7 @@ if(isset($_POST["action"]))
 	$mail->Password = PASS;					//Sets SMTP password
 	$mail->SMTPSecure = 'tls';							//Sets connection prefix. Options are "", "ssl" or "tls"
 	$mail->From = 'pawp6703@gmail.com';			//Sets the From email address for the message
-	$mail->FromName = 'gmail.com';			//Sets the From name of the message
+	$mail->FromName = 'Paw Paws';			//Sets the From name of the message
 	$mail->AddAddress('zeinebeyarahmani@gmail.com', 'zeineb');		//Adds a "To" address
 	$mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
 	$mail->IsHTML(true);							//Sets message type to HTML				

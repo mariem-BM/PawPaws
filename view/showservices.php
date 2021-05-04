@@ -1,11 +1,57 @@
 <?php
 include '../controller/serviceC.php';
-$serviceC1= new serviceC1();
+/*$serviceC1= new serviceC1();
 
 $liste=$serviceC1->affiche();
 
+*/
+$search="";
+$serviceC1=new serviceC1() ;
+if(isset($_POST['valueToSearch']))
+{   
+    $search=$_POST['valueToSearch'];
+        
+}
+$liste=$serviceC1->searchservice2($search);
+if(isset($_POST['tri']))
+{
+if($_POST['tri']=="defaut")
+{
+    $tri=0;
+    $liste=$serviceC1->trierservice($tri);
+}
+else if($_POST['tri']=="price asc")
+{
+    $tri=1;
+    $liste=$serviceC1->trierservice($tri);
+}
+else if($_POST['tri']=="servicetype asc")
+{
+    $tri=2;
+    $liste=$serviceC1->trierservice($tri);
+}
+else if($_POST['tri']=="price desc")
+{
+    $tri=3;
+    $liste=$serviceC1->trierservice($tri);
+}
+else if($_POST['tri']=="servicetype desc")
+{
+    $tri=4;
+    $liste=$serviceC1->trierservice($tri);
+}
+else if($_POST['tri']=="place valable asc")
+{
+    $tri=5;
+    $liste=$serviceC1->trierservice($tri);
+}
+else if($_POST['tri']=="place valable desc")
+{
+    $tri=6;
+    $liste=$serviceC1->trierservice($tri);
+}
 
-
+}
 
 
 
@@ -34,6 +80,29 @@ $liste=$serviceC1->affiche();
        
 <a class="btn btn-info" href="addservice.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;add service</a>
 <hr>
+<form class="contact__form" method="post" action="">
+    <div align="center"  class="control-group form-group">   
+<input type="text" name="tri" list="tri" >
+    <datalist id="tri">
+      <option value="defaut">
+        <option value="price asc">
+      <option value="servicetype asc">
+      
+        <option value="price desc">
+        <option value="servicetype desc">
+      <option value="place valable asc">
+        <option value="place valable desc">
+      <div class="col-12 mt-4">
+
+    </div>
+    </datalist>
+            <input name="confirm" type="submit" class=" btn btn-hero btn-circled" value="Trier">
+    </div>
+    </form>
+    <form align="center" action="" method="post">
+    <input type="text" name="valueToSearch", placeholder="Article to search">
+    <input type="submit" name="search" value="search"><br><br>
+</form>
 <div class="container">
     <div class="row col-md-6 col-md-offset-2 custyle">
         <table class="table table-striped custab">
@@ -45,8 +114,8 @@ $liste=$serviceC1->affiche();
         <th>photo</th>
         <th>Places available</th>
 
-        <th>supprimer</th>
-        <th>modifier</th>
+        <th>delete</th>
+        <th>update</th>
     </tr>
             </thead>
     <?PHP
@@ -79,6 +148,7 @@ $liste=$serviceC1->affiche();
 
     ?>
 </table>
+
     </div>
 </div>
 <style>

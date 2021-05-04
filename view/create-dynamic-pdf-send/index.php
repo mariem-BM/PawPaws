@@ -1,14 +1,12 @@
 <?php
 
-//index.php
-
 $message = '';
-
 $connect = new PDO("mysql:host=localhost;dbname=pawpaws", "root", "");
 
 function fetch_customer_data($connect)
 {
-	$query = "SELECT * FROM reservation";
+	$query = "SELECT * FROM reservation JOIN utilisateur ON utilisateur.id=reservation.iduser JOIN services ON services.idservice=reservation.idservice";
+
 	$statement = $connect->prepare($query);
 	$statement->execute();
 	$result = $statement->fetchAll();
@@ -23,11 +21,12 @@ function fetch_customer_data($connect)
 				<th>pets</th>
 				<th>Date</th>
 				<th>Special Requirments</th>
-				<th>idservice</th>
-				<th>iduser</th>
+				<th>service</th>
+				<th>user</th>
 			</tr>
 	';
-	foreach($result as $row)
+foreach($result as $row)
+
 	{
 		$output .= '
 			<tr>
@@ -38,8 +37,8 @@ function fetch_customer_data($connect)
 				<td>'.$row["nbn"].'</td>
 				<td>'.$row["date"].'</td>
 				<td>'.$row["rp"].'</td>
-				<td>'.$row["idservice"].'</td>
-				<td>'.$row["iduser"].'</td>
+				<td>'.$row["servicetype"].'</td>
+				<td>'.$row['Nom']." ".$row['Prenom'].'</td>
 			</tr>
 		';
 	}
@@ -77,7 +76,7 @@ if(isset($_POST["action"]))
 	$mail->Password = PASS;					//Sets SMTP password
 	$mail->SMTPSecure = 'tls';							//Sets connection prefix. Options are "", "ssl" or "tls"
 	$mail->From = 'pawp6703@gmail.com';			//Sets the From email address for the message
-	$mail->FromName = 'gmail.com';			//Sets the From name of the message
+	$mail->FromName = 'Paw Paws';			//Sets the From name of the message
 	$mail->AddAddress('zeinebeyarahmani@gmail.com', 'zeineb');		//Adds a "To" address
 	$mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
 	$mail->IsHTML(true);							//Sets message type to HTML				

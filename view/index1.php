@@ -52,7 +52,7 @@ if (
 $_SESSION["e"]
         );
         $qty= $_GET["qty"];
-        $idroom= $_GET["idservice"];
+        $idservice= $_GET["idservice"];
         try
         {$reservationC-> ajouterReservation($Reservation,$qty,$idservice,$_SESSION['e']);}
         catch (Exception $e){

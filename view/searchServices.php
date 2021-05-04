@@ -3,7 +3,7 @@
 include_once '../model/service.php';
 include_once '../controller/reservationSC.php';
 
-    $ServicesC=  new serviceC();
+ 
 
 ?>
 
@@ -42,9 +42,32 @@ include_once '../controller/reservationSC.php';
 	</section>
 
 	<?php
-		if (isset($_POST['nom_service']) && isset($_POST['search'])){
-			$result = $albumC->getServiceByTitle($_POST['nom_service']);
-			if ($result !== false) {
+	$search="";
+		$serviceC=new serviceC() ;
+if(isset($_POST['valueToSearch']))
+{   
+	$search=$_POST['valueToSearch'];
+		
+}
+$liste=$serviceC->searchservice($search);
+if(isset($_POST['tri']))
+{
+if($_POST['tri']=="defaut")
+{
+	$tri=0;
+	$liste=$serviceC->trierservice($tri);
+}
+else if($_POST['tri']=="alphabet")
+{
+	$tri=2;
+	$liste=$serviceC->trierservice($tri);
+}
+else if($_POST['tri']=="prix")
+{
+	$tri=1;
+	$liste=$serviceC->trierservice($tri);
+}
+}
 	?>
 		<section class="container">
 			<h2>Nom services</h2>
@@ -52,10 +75,10 @@ include_once '../controller/reservationSC.php';
 			<div class="shop-items">
 				
 				<div class="shop-item">
-					<strong class="shop-item-title"> <?= $result['nom_service'] ?> </strong>
-					<img src="../assets/images/<?= $result['date'] ?>" class="shop-item-image">
+					<strong class="shop-item-title"> <?= $result['servicetype'] ?> </strong>
+					<img src="../assets/images/<?= $result['price'] ?>" class="shop-item-image">
 					<div class="shop-item-details">
-						<span class="shop-item-price"><?= $result['date'] ?> dt.</span>
+						<span class="shop-item-price"><?= $result['price'] ?> dt.</span>
 					</div>
 				</div>
 				

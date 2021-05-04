@@ -157,8 +157,12 @@ tr:hover .cut { opacity: 1; }
         </style>
         
     </head>
+
     <body>
-    
+    </td>
+    <button onClick="window.print()" style="text:white">Print</button>
+            
+</td>
     
     
     

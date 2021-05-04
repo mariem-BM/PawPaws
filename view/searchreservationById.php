@@ -31,8 +31,8 @@ $reservationC =  new reservationC();
                 <button class=" btn btn-info search_icon"  type="submit" name="search"><i class="fas fa-search"></i></button>
                 <?php
 
-if (isset($_POST['user']) && isset($_POST['search'])){
-    $result = $reservationC->getReservationByFirstname($_POST['user']);
+if (isset($_POST['idreservation']) && isset($_POST['search'])){
+    $result = $reservationC->getReservationById($_POST['idreservation']);
     if ($result !== false)
 
     {
@@ -50,7 +50,7 @@ if (isset($_POST['user']) && isset($_POST['search'])){
 
 
 
-                          Phone Number  <strong class="shop-item-price"><?= $result['tel'] ?> </strong>
+                          Phone Number:  <strong class="shop-item-price"><?= $result['tel'] ?> </strong>
                         <br>
                             Address:    <strong class="shop-item-price"><?= $result['adresse'] ?> </strong>
                         <br>

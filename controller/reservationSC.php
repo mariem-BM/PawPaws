@@ -1,8 +1,7 @@
 <?php
 
+//include "../config.php";
 include "../config.php";
-
-
 
 class reservationC{
 
@@ -147,6 +146,23 @@ class reservationC{
         }
     }
 
+    /*public function getReservationById($idreservation)
+    {
+        try {
+            $db = config::getConnexion();
+            $query = $db->prepare(
+                'SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN services ON services.idservice=reservation.idservice WHERE idreservation = :idreservation'
+            );
+            $query->execute([
+                'idreservation' => $idreservation
+            ]);
+            return $query->fetch();
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+
+
+    }*/
     public function getReservationById($idreservation)
     {
         try {
@@ -246,6 +262,7 @@ class serviceC
 
 }
 
+
 function afficherservices($search)
 {  $db = config::getConnexion();
 
@@ -320,6 +337,8 @@ function afficherservices($search)
 
 
                                     <p> Sorry, Not available For the Time being!</p>                                <?php }  ?>
+
+                                    
                             </form>
                         </li>
                     </ul>
