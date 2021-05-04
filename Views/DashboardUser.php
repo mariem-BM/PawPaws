@@ -93,6 +93,16 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="Act_gestion_conn.php">Afficher Voes Reservations</a></li>
                       </ul>
                   </li>
+                      <li class="sub-menu">
+                      <a  href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Blog</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="WatchBlogPost.php">Afficher les postes </a></li>
+                          <li><a  href="AddBlogPost.php">ajouter un post </a></li>
+                      </ul>
+                  </li>
                   <li class="sub-menu">
                       <a  href="javascript:;" >
                           <i class="fa fa-book"></i>
@@ -112,6 +122,17 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                         
                       </ul>
                   </li>
+                    <li class="sub-menu">
+                      <a  href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>FeedBack</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="FormComplaint.php">Ajouter FeedBack </a></li>
+                          <li><a  href="views/chat.php">Chat Room </a></li>
+                      </ul>
+                  </li>
+
                   
               </ul>
               <!-- sidebar menu end-->

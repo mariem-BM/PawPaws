@@ -42,20 +42,13 @@
     </head>
     <body>
 
-		<button><a href="form.php">Ajouter Clients</a></button><br>
 		<button><a href="chat.php">Chat</a></button><br>
-		<button><a href="recla/">reclamation</a></button>
 		<hr>
 		<table>
 			<thead>
 							<tr class="table100-head">
-				<th class="column1">#</th>
-				<th class="column2">Nom</th>
-				<th class="column3">Prenom</th>
-				<th class="column4">Email</th>
-				<th class="column4">Message</th>
-				<th class="column5">supprimer</th>
-				<th class="column6">modifier</th>
+				<th class="column1">welcome to PawPaws chat room!</th>
+				
 			</tr>
 		</thead>
 		<tbody>
