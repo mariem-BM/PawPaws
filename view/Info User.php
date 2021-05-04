@@ -1,5 +1,4 @@
 <?php
-//include "../Controller/ComentC.php";
 require_once "../Controller/UserC.php";
 
 $x=Get_one_User_Info($_SESSION["e"]);
@@ -27,7 +26,19 @@ $x=Get_one_User_Info($_SESSION["e"]);
   <h5>Sexe : <?php echo $user["sexe"] ?> </h2>
   <br>
   <h5>Role : <?php echo $user["role"] ?> </h2>
-
-<!-- <h5>Facture : <?php //echo $user["Facture"] ?> dt </h2>-->
   <br>
   <?php } ?>
+
+  <!-- ajout coment -->
+<!--
+  <div class="wrapper">
+		<form action="" method="post" class="form">
+			<input type="text" class="nom" name="nom" placeholder="Nom">
+			<br>
+			<textarea name="message" cols="110" rows="5" class="message" placeholder="Message"></textarea>
+			<br>
+			<button type="submit" class="btn" name="post_coment">Post Comment</button>
+		</form>
+	</div>
+	<div class="content">
+-->

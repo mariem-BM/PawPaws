@@ -80,7 +80,7 @@ session_start();
                       <ul class="sub">
                             <li><a  href="profil_user.php"> votre profil</a></li>
                             <li><a  href="profil.php"> Modifier votre compte</a></li>
-                            <li><a  href="liste_des_profil.php"> liste des profiles</a></li>
+                            <li><a  href="liste_des_profil.php"> liste des utilisateurs</a></li>
 
                       </ul>
                       <li class="sub-menu">
@@ -124,7 +124,7 @@ session_start();
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-            <!-- include user info -->
+          	<?php include_once 'Info User.php'; ?>
           		</div>
           	</div>
 
@@ -165,4 +165,6 @@ session_start();
 </html>
 <?php
 
+//}
+//else   echo("<script>location.href = 'signin.php';</script>");
 ?>

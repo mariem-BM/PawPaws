@@ -1,32 +1,37 @@
 <?php
-class Coment
+class Comment
 {
-	public $id;
-	public $nom;
+	public $id_coment;
+	public $id_sender;
+	public $id_reciever;
 	public $message;
-    public $date;
+	public $date_com;
 
 
-	 function __construct($id,$nom,$message,$date)
+	 function __construct($id_sender,$id_reciever,$message,$date_com)
 	
 	{
-		 $this->nom=$nom;
+		 $this->id_sender=$id_sender;
+		 $this->id_reciever=$id_reciever;
 		 $this->message=$message;
-		 $this->date=$date;
+		 $this->date_com=$date_com;
+		 //$this->date=$date;
 	}
 
-			 function getId(): int{
-				return $this->id;
+			function getid_sender(): int{
+				return $this->id_sender;
 			}
-			function getNom(): string{
-				return $this->nom;
+			function getid_reciever(): int{
+				return $this->id_reciever;
 			}
             function getMessage(): string{
 				return $this->message;
 			}
-            function getdate(): string{
+			/*
+            function getdate(): string{          // date
 				return $this->date;
 			}
+			*/
 
 }
 

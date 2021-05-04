@@ -192,7 +192,7 @@ session_start();
                <div class="card-body">
                   <img src="../img/profil.jpg" class="rounded-circle" width="150">
                   <div class="mt-3">
-                     <h3> User Name </h3>
+                    <!-- <h3> User Name </h3> -->
                  <!-- <a href=""> home </a>
                       <a href=""> work </a>
                       <a href=""> support </a>
@@ -234,51 +234,30 @@ session_start();
                         <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">role</label>
-                            <div class="col-sm-9">
-                              <input class="form-control" name="role" value='<?php echo  $user['role']; ?>'  />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Date de naissance</label>
                             <div class="col-sm-9">
                               <input class="form-control" name="Date_N" value='<?php echo $user['Date_N']; ?>'  />
                             </div>
                           </div>
                         </div>
-                      </div>
-                      </div>
-                      <div class="row">
                         <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">role</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" name="role" value='<?php echo  $user['role']; ?>'  />
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      <div class="row">
+                      <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
                               <input type="text" name="email" class="form-control" value='<?php echo  $user['Email']; ?>' />
                             </div>
                           </div>
-                     
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Login</label>
-                            <div class="col-sm-9">
-                              <input type="text" name="login" class="form-control" value='<?php echo $user['Login']; ?>' />
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Password</label>
-                            <div class="col-sm-9">
-                              <input type="text" name="password" class="form-control" value='<?php echo $user['Password']; ?>' />
-                            </div>
-                          </div>
-                        
                         <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">gender</label>
@@ -288,7 +267,23 @@ session_start();
                           </div>
                         </div>
                       </div>
-                      </div>
+                      <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Login</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="login" class="form-control" value='<?php echo $user['Login']; ?>' />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="password" class="form-control" value='<?php echo $user['Password']; ?>' />
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div style="margin-top:3%">
               <button type="submit" class="btn btn-primary mr-2"> Enregistrer modification </button>

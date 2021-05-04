@@ -235,9 +235,9 @@ function modifierUtilisateur($utilisateur,$id){
         Nom = :Nom, 
         Prenom = :Prenom,
         Date_N =:Date_N,
-        sexe =:sexe,
+        /*sexe =:sexe,*/
         email = :email,
-        role = :role,
+        /*role = :role, */
         login = :login,
         Password = :Password
       WHERE id = :id'
@@ -261,6 +261,46 @@ function modifierUtilisateur($utilisateur,$id){
     $e->getMessage();
   }
 }
+
+function getUserByNom_Prenom($Nom,$Prenom) {
+  try {
+      $db = config::getConnexion();
+      $query = $db->prepare(
+          'SELECT * FROM utilisateur WHERE Nom = :Nom AND Prenom= :Prenom'
+      );
+      $query->execute([
+          'Nom' => $Nom,
+          'Prenom' => $Prenom
+      ]);
+      return $query->fetch();
+  } catch (PDOException $e) {
+      $e->getMessage();
+  }
+}
+
+
+
+
+
+function sort_Nom(){
+  try {
+    $db = config::getConnexion();
+    $query = $db->prepare(
+        'SELECT * FROM utilisateur ORDER BY Nom ASC'
+    );
+    $query->execute();
+    return $query->fetch();
+  } catch (PDOException $e){
+    $e->getMessage();
+  }
+}
+
+
+
+
+
+
+
 function recupererUtilisateur($id){
   $sql="SELECT * from utilisateur where id=$id";
   $db = config::getConnexion();
@@ -275,11 +315,6 @@ function recupererUtilisateur($id){
     die('Erreur: '.$e->getMessage());
   }
 }
-
-
-
-
-
 
 
 function validerUtilisateur($id,$email,$name){}

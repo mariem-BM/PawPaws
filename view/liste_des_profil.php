@@ -1,5 +1,6 @@
 <?php 
             require_once '../Controller/UserC.php';
+session_start();
 
             $UserC =  new UserC();
 ?>
@@ -19,7 +20,7 @@
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
+
     <!-- Custom styles for this template -->
     <link href="../assets3/css/style.css" rel="stylesheet">
     <link href="../assets3/css/style-responsive.css" rel="stylesheet">
@@ -43,17 +44,16 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>Paw Paws</b></a>
+            <a href="Acceuil.php" class="logo"><b>Paw Paws</b></a>
             <!--logo end-->
-             <div class="top-menu">
+                  <div class="top-menu">
               <ul class="nav pull-right top-menu">
                     <li><a class="logout" href="signin.php">Logout</a></li>
               </ul>
             </div>
-                                
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -62,84 +62,71 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
-                  <!-- <p class="centered"><a href="profile.html"><img src="../assets3/img/" class="img-circle" width="60"></a></p>
-                  
-                  <h5 class="centered"><?php //echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
-                  <h6 class="centered"><?php //echo $_SESSION["role"]?></h6> -->
-                    
-                  <li class="mt" class="active">
-                      <a href="ADMIN.php">
-                          <i class="fa fa-dashboard"></i>
+
+                  <p class="centered"><a href="profil_user.php"><img src="../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
+                  <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
+                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
+
+                  <li class="mt">
+                      <a href="user.php">
+                          <i class="fa fa-dashboard"  class="active"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>
-                          <span>Gérer les comptes</span>
+                          <span> Gérer votre compte </span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
-                          <li ><a  href="validation.php">Validation</a></l>
+                            <li><a  href="profil_user.php"> votre profil</a></li>
+                            <li><a  href="profil.php"> Modifier votre compte</a></li>
+                            <li><a  href="liste_des_profil.php"> liste des utilisateurs</a></li>
+
                       </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <li class="sub-menu">
+                      <a  href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Blog</span>
+                          <span>Activitées</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
-                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
+                          <li><a  href="Act_gestion_conn.php">Afficher Voes Reservations</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Activité</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="Act_gestion1.php">Gérer Les Activités</a></li>
-                          <li><a  href="Act_Gestion.php">Gérer Les Réservations</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a  href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Rooms</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Rooms_Gestion.php">Gérer Room</a></li>
-                          <li ><a  href="Res_room_Gestion.php">Gérer Les Réservations</a></li>
+                          <li><a  href="Room_Gestion_Conn.php">Afficher Voes Reservations</a></li>
                       </ul>
                   </li>
-            <li class="sub-menu">
-                      <a href="javascript:;" >
+                  <li class="sub-menu">
+                      <a  href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Sevices</span>
+                          <span>Service Reservations</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
-                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
+                          <li><a  href="Gestion_Res_Conn.php">Afficher Vos Reservations</a></li>
+                        
                       </ul>
                   </li>
-                   
-
+                  
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          <table class="datatable table table-hover table-center mb-0">
+            <!-- include user info -->
+            <table class="datatable table table-hover table-center mb-0">
 											<thead>
 												<tr>
 													<th>Nom</th>
@@ -179,13 +166,14 @@ $db = config::getConnexion();
 													
 													<td><?php echo $row['sexe'];?></td>
                                                     <td><?php echo $row['role'];?></td>
-													
+                                                   
+											
 												
 													<td>
-						<form method="POST" action="supprimerutilisateur.php">
-						<input type="submit" name="supprimer" value="delete">
-						<input type="hidden" value=<?PHP echo $row['id']; ?> name="id">
-						</form>
+                        <?php
+                                                    $test='<a class="apt-btn add_comm" href="../view/profil/index.php?id='.$row['id'].'">add comment</a>';
+echo $test;
+                                                    ?>
 					</td>
                                    
 												</tr>
@@ -203,19 +191,21 @@ $db = config::getConnexion();
 		<div class="form-container">
             <form action="" method = 'POST'>
                 <div class="row">
-                    <div class="col-25">                
+                    <div class="col-25">  
+                                 
                         <label>Search User: </label>
                     </div>
                     <div class="col-75">
-                        <input type = "text" name = 'nom' placeholder="Nom"> 
+                        <input type = "text" name = 'nom' placeholder="Nom">  <!-- nom heya album -->
                     </div>
                     <div class="col-75">
-                        <input type = "text" name = 'prenom' placeholder="Prenom">  
+                        <input type = "text" name = 'prenom' placeholder="Prenom">  <!-- prenom heya album -->
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <input type = "submit" value = "Search" name ="search">
+                    
                 </div>
             </form>
 		</div>
@@ -256,10 +246,10 @@ $db = config::getConnexion();
                                                     <td><?php echo $result['role'];?></td>
 													
 													<td>
-						<form method="POST" action="supprimerutilisateur.php">
-						<input type="submit" name="supprimer" value="delete">
-						<input type="hidden" value=<?PHP echo $result['id']; ?> name="id">
-						</form>
+                        <?php
+                                                    $test='<a class="apt-btn add_comm" href="../view/profil/index.php?id='.$row['id'].'">add comment</a>';
+echo $test;
+                                                    ?>
 					</td>
                                         </tbody>
 			</table>
@@ -273,9 +263,8 @@ $db = config::getConnexion();
 	    ?>
         <br>
 
-
-        <!-- tri par nom -->
-        <form method="POST" action="">
+                <!-- tri par nom -->
+                <form method="POST" action="">
         <div class="sort">
           <input type = "submit" value = "Sort by nom" name ="sort_n">
           <input type = "submit" value = "Sort by prenom" name ="sort_p">
@@ -329,10 +318,10 @@ $db = config::getConnexion();
 													
 											
 													<td>
-						<form method="POST" action="supprimerutilisateur.php">
-						<input type="submit" name="supprimer" value="delete">
-						<input type="hidden" value=<?PHP echo $row['id']; ?> name="id">
-						</form>
+                        <?php
+                                                    $test='<a class="apt-btn add_comm" href="../view/profil/index.php?id='.$row['id'].'">add comment</a>';
+echo $test;
+                                                    ?>
 					</td>
                                    
 												</tr>
@@ -387,12 +376,12 @@ $db = config::getConnexion();
 													<td><?php echo $row['sexe'];?></td>
                                                     <td><?php echo $row['role'];?></td>
 													
-												
+
 													<td>
-						<form method="POST" action="supprimerutilisateur.php">
-						<input type="submit" name="supprimer" value="delete">
-						<input type="hidden" value=<?PHP echo $row['id']; ?> name="id">
-						</form>
+                        <?php
+                                                    $test='<a class="apt-btn add_comm" href="../view/profil/index.php?id='.$row['id'].'">add comment</a>';
+echo $test;
+                                                    ?>
 					</td>
                                    
 												</tr>
@@ -449,11 +438,11 @@ $result =$query->fetchall() ;
                                                 
                                             
                                                 <td>
-                    <form method="POST" action="supprimerutilisateur.php">
-                    <input type="submit" name="supprimer" value="delete">
-                    <input type="hidden" value=<?PHP echo $row['id']; ?> name="id">
-                    </form>
-                </td>
+                        <?php
+                                                    $test='<a class="apt-btn add_comm" href="../view/profil/index.php?id='.$row['id'].'">add comment</a>';
+echo $test;
+                                                    ?>
+					</td>
                                
                                             </tr>
                                             <?php
@@ -466,14 +455,13 @@ $result =$query->fetchall() ;
 ?>
 
 
-        
-      
-    </section><! --/wrapper -->
+
+		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
-      
+
       <!--footer end-->
   </section>
 
@@ -491,7 +479,7 @@ $result =$query->fetchall() ;
     <script src="../assets3/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
+
   <script>
       //custom select box
 
@@ -503,3 +491,6 @@ $result =$query->fetchall() ;
 
   </body>
 </html>
+<?php
+
+?>
