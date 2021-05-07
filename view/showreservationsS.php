@@ -32,7 +32,17 @@ if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST
     <title> show reservation name </title>
 </head>
 <body>
-      
+      <div  align="center" class="container-fluid">
+        <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <div class="row">
 <a class="btn btn-info" href="searchreservationS.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;Search reservation by user</a>
 <a href="showreservationsS.php?tri=P"> Alphabetique A-Z</a>
 <a href="showreservationsS.php?tri=ZA"> Alphabetique Z-A</a>

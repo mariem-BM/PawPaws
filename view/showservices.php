@@ -77,6 +77,17 @@ else if($_POST['tri']=="place valable desc")
 </head>
 
 <body>
+    <div  align="center" class="container-fluid">
+        <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <div class="row">
        
 <a class="btn btn-info" href="addservice.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;add service</a>
 <hr>
