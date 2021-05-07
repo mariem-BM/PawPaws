@@ -9,7 +9,7 @@ class reservationC{
     {
         echo('hhh');
         $db = config::getConnexion();
-        $sql = "INSERT INTO reservation (idreservation,adresse,tel,email,nbn,date,rp,idservice,iduser)
+        $sql = "INSERT INTO reservations (idreservation,adresse,tel,email,nbn,date,rp,idservice,iduser)
 			VALUES (:idreservation,:adresse,:tel,:email,:nbn,:date,:rp,:idservice,:iduser)";
 
 
@@ -51,7 +51,7 @@ class reservationC{
     function afficherReservation()
     {
 
-        $sql = "SELECT * FROM reservation ";
+        $sql = "SELECT * FROM reservations ";
         $db = config::getConnexion();
         try {
             $liste = $db->query($sql);
@@ -64,7 +64,7 @@ class reservationC{
     function afficherReservation10($idreservation)
     {
 
-        $sql = "SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN services ON services.idservice=reservation.idservice WHERE idreservation = :idreservation  ";
+        $sql = "SELECT * FROM reservations LEFT JOIN utilisateur ON utilisateur.id=reservations.iduser LEFT JOIN services ON services.idservice=reservations.idservice WHERE idreservation = :idreservation  ";
         $db = config::getConnexion();
         try {
             $liste = $db->query($sql);
@@ -77,7 +77,7 @@ class reservationC{
 
     function supprimerReservation($idreservation, $idservice)
     {
-        $sql = "DELETE FROM reservation WHERE idreservation= :idreservation";
+        $sql = "DELETE FROM reservations WHERE idreservation= :idreservation";
         $sql1 = " UPDATE services SET qty = qty + 1 where idservice= :idservice";
         $db = config::getConnexion();
         $req = $db->prepare($sql);
@@ -98,7 +98,7 @@ class reservationC{
             echo('hhhh');
             $db = config::getConnexion();
             $query = $db->prepare(
-                "UPDATE reservation SET idreservation=:idreservation, adresse=:adresse,tel=:tel,email=:email,nbn:=nbn,date=:date,rp=:rp ,idservice=:idservice,iduser=:iduser WHERE idreservation = :idreservation"
+                "UPDATE reservations SET idreservation=:idreservation, adresse=:adresse,tel=:tel,email=:email,nbn:=nbn,date=:date,rp=:rp ,idservice=:idservice,iduser=:iduser WHERE idreservation = :idreservation"
             );
             echo "pass";
             echo
@@ -135,7 +135,7 @@ class reservationC{
         try {
             $db = config::getConnexion();
             $query = $db->prepare(
-                'SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser WHERE Prenom= :Prenom'
+                'SELECT * FROM reservations LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser WHERE Prenom= :Prenom'
             );
             $query->execute([
                 'Prenom' => $user
@@ -168,7 +168,7 @@ class reservationC{
         try {
             $db = config::getConnexion();
             $query = $db->prepare(
-                'SELECT * FROM reservation WHERE idreservation = :idreservation'
+                'SELECT * FROM reservations WHERE idreservation = :idreservation'
             );
             $query->execute([
                 'idreservation' => $idreservation
@@ -187,28 +187,28 @@ class reservationC{
         try {
             $db = config::getConnexion();
             $query = $db->prepare(
-                'SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN services ON services.idservice=reservation.idservice '
+                'SELECT * FROM reservations LEFT JOIN utilisateur ON utilisateur.id=reservations.iduser LEFT JOIN services ON services.idservice=reservations.idservice '
             );
             if (isset($tri)) {
                 if ($tri == "DA") {
                     $query = $db->prepare(
-                        'SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN services ON services.idservice=reservation.idservice ORDER BY date  ASC'
+                        'SELECT * FROM reservations LEFT JOIN utilisateur ON utilisateur.id=reservations.iduser LEFT JOIN services ON services.idservice=reservations.idservice ORDER BY date  ASC'
                     );
                 }
 
                 if ($tri == "DS") {
                     $query = $db->prepare(
-                        'SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN services ON services.idservice=reservation.idservice ORDER BY date  DESC '
+                        'SELECT * FROM reservations LEFT JOIN utilisateur ON utilisateur.id=reservations.iduser LEFT JOIN services ON services.idservice=reservations.idservice ORDER BY date  DESC '
                     );
                 }
                 if ($tri == "ZA") {
                     $query = $db->prepare(
-                        'SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN services ON services.idservice=reservation.idservice ORDER BY Nom  DESC '
+                        'SELECT * FROM reservations LEFT JOIN utilisateur ON utilisateur.id=reservations.iduser LEFT JOIN services ON services.idservice=reservations.idservice ORDER BY Nom  DESC '
                     );
                 }
                 if ($tri == "P") {
                     $query = $db->prepare(
-                        'SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN services ON services.idservice=reservation.idservice ORDER BY Nom  ASC '
+                        'SELECT * FROM reservations LEFT JOIN utilisateur ON utilisateur.id=reservations.iduser LEFT JOIN services ON services.idservice=reservations.idservice ORDER BY Nom  ASC '
                     );
                 }
             }

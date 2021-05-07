@@ -5,7 +5,7 @@ $connect = new PDO("mysql:host=localhost;dbname=pawpaws", "root", "");
 
 function fetch_customer_data($connect)
 {
-	$query = "SELECT * FROM reservation JOIN utilisateur ON utilisateur.id=reservation.iduser JOIN services ON services.idservice=reservation.idservice";
+	$query = "SELECT * FROM reservations JOIN utilisateur ON utilisateur.id=reservations.iduser JOIN services ON services.idservice=reservations.idservice";
 
 	$statement = $connect->prepare($query);
 	$statement->execute();

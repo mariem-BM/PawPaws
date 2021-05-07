@@ -180,7 +180,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
   // $sql = "SELECT idreservation,adresse,tel,email,nbn,date,rp,idservice,iduser FROM reservation";
-   $sql = "SELECT * FROM reservation JOIN utilisateur ON utilisateur.id=reservation.iduser JOIN services ON services.idservice=reservation.idservice";
+   $sql = "SELECT * FROM reservations JOIN utilisateur ON utilisateur.id=reservations.iduser JOIN services ON services.idservice=reservations.idservice";
 $result = $conn->query($sql); 
                        if ($result->num_rows > 0) {
     // output data of each row
