@@ -218,11 +218,13 @@ class roomC
         try {
             $db = config::getConnexion();
             $query = $db->prepare(
-                'INSERT INTO rooms (idroom, roomtype, price,photo,qty) 
-                VALUES (:idroom, :roomtype, :price,:photo,:qty)'
+                'INSERT INTO rooms (idroom, hoteladresse, roomtype, price,photo,qty) 
+                VALUES (:idroom, :hoteladresse, :roomtype, :price,:photo,:qty)'
             );
             $query->execute([
+                
                 'idroom' => $Room->getIdroom(),
+                'hoteladresse' => $Room->getHoteladresse(),
                 'roomtype' => $Room->getRoomtype(),
                 'price' => $Room->getPrice(),
                 'photo' => $Room->getPhoto(),
@@ -241,7 +243,7 @@ function afficherrooms($search)
 {  $db = config::getConnexion();
 
 
-    $sql="SELECT idroom, roomtype, price, photo,qty FROM rooms ORDER BY price DESC";
+    $sql="SELECT idroom, hoteladresse,roomtype, price, photo,qty FROM rooms ORDER BY price DESC";
     $result = $db->query($sql);
 
     if (!isset($search) || $search===""){ ?>  <div class="row"> <?php
