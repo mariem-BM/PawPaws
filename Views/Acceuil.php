@@ -106,10 +106,13 @@ if (!isset($_SESSION["e"]))
     
               
     <!-- SERVICES -->          
+
+           
+    
   
 <iframe src="Service.php" width="100%" height="1000" title="Services" style="border:none;"> </iframe>
-                <!-- ROOMS --> 
-
+                
+ <!-- ROOMS --> 
 <iframe src="Rooms.php" width="100%" height="1000" title="Rooms" style="border:none;"> </iframe>
 
 

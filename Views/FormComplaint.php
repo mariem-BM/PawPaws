@@ -1,5 +1,5 @@
 <?php 
-include "../Controller/RatingsC.php";
+include "../controller/RatingsC.php";
 session_start();
   if (!isset($_SESSION['e'])) {
     header('Location: signin.php');

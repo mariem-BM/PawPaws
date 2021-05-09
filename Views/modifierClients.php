@@ -5,8 +5,8 @@
     header('Location: login.php');
   }
 
-require "../Controller/ClientsC.php";
-require "../models/client.php";
+require "../controller/ClientsC.php";
+require "../model/client.php";
 $ClientsC=new ClientsC();
         if (isset($_GET['id']))
         {

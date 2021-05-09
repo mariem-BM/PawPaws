@@ -1,6 +1,6 @@
 <?php
-include "../Controller/RatingsC.php";
-include "../Model/Reclamation.php";
+include "../controller/RatingsC.php";
+include "../model/Reclamation.php";
 $post=new post();
 $id=$_GET["id"];
 session_start();

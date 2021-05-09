@@ -64,7 +64,8 @@ include_once '../controller/reservationSC.php';
 
 </div>
          </section>
-
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="../assets3/js/script.js"></script>
     </body>
 </html>

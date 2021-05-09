@@ -17,13 +17,13 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <title>Gestion Blog</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets3/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/style-responsive.css" rel="stylesheet">
+    <link href="../assets3/css/style.css" rel="stylesheet">
+    <link href="../assets3/css/style-responsive.css" rel="stylesheet">
 
 
   </head>
@@ -70,13 +70,31 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Dashboard</span>
                       </a>
                   </li>
-                  <li class="sub-menu">
+                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Gérer Comptes</span>
+                          <i class="fa fa-book"></i>
+                          <span>Rooms</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Affichertoutusers.php">Gérer les Comptes</a></l>
+                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
+                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservations Details</a></li>
+                      </ul>
+                  </li>
+            <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Sevices</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
+                        
+                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
+                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -98,6 +116,8 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                       </a>
                       <ul class="sub">
                           <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
+                           <li ><a  href="chat.php">Chat Room</a></l>
+
                       </ul>
                   </li>
 
@@ -127,17 +147,17 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="../assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="../assets/js/jquery.scrollTo.min.js"></script>
-    <script src="../assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="../assets3/js/jquery.js"></script>
+    <script src="../assets3/js/bootstrap.min.js"></script>
+    <script src="../assets3/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="../assets3/js/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="../assets3/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="../assets3/js/jquery.scrollTo.min.js"></script>
+    <script src="../assets3/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--common script for all pages-->
-    <script src="../assets/js/common-scripts.js"></script>
+    <script src="../assets3/js/common-scripts.js"></script>
 
     <!--script for this page-->
     

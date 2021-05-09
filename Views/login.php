@@ -1,6 +1,6 @@
 <?php 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        include "../Core/UserCore.php";
+        include "../controller/UserCore.php";
         $UserC = new UserCore();
         $user = NULL;
         $user = $UserC->logIn($_POST['username'],$_POST['password']);

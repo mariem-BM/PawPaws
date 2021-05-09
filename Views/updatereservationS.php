@@ -47,22 +47,22 @@ $_POST['iduser']
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Paw Paws</title>
+    <title>PawPaws</title>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="colorlib.com">
     <!-- LINEARICONS -->
-    <link rel="stylesheet" href="fonts/linearicons/style.css">
+    <link rel="stylesheet" href="../assets3/Assets_Res/fonts/linearicons/style.css">
 
     <!-- MATERIAL DESIGN ICONIC FONT -->
-    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="../assets3/Assets_Res/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
 
     <!-- DATE-PICKER -->
-    <link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
+    <link rel="stylesheet" href="../assets3/Assets_Res/vendor/date-picker/css/datepicker.min.css">
 
     <!-- STYLE CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets3/Assets_Res/style.css">
 </head>
 <div id="error">
     <?php echo $error; ?>
@@ -203,17 +203,19 @@ else {
     </div>
 </div>
 
-<script src="js/jquery-3.3.1.min.js"></script>
+<script src="../assets3/Assets_Res/js/jquery-3.3.1.min.js"></script>
 
 <!-- JQUERY STEP -->
-<script src="js/jquery.steps.js"></script>
+<script src="../assets3/Assets_Res/js/jquery.steps.js"></script>
 
 <!-- DATE-PICKER -->
-<script src="vendor/date-picker/js/datepicker.js"></script>
-<script src="vendor/date-picker/js/datepicker.en.js"></script>
+<script src="../assets3/Assets_Res/vendor/date-picker/js/datepicker.js"></script>
+<script src="../assets3/Assets_Res/vendor/date-picker/js/datepicker.en.js"></script>
 
-<script src="js/main.js"></script>
+<script src="../assets3/Assets_Res/js/main.js"></script>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <!-- Template created and distributed by Colorlib -->
-
+<script src="../assets3/Assets_Res/js/script2.js"></script>
 </body>
 </html>

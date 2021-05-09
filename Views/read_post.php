@@ -1,6 +1,6 @@
 <?php
-include "../Controller/BlogC.php";
-include "../Model/bloc.php";
+include "../controller/BlogC.php";
+include "../model/bloc.php";
 $post=new post();
 $id=$_GET["id"];
 session_start();

@@ -101,7 +101,28 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
                       </ul>
                     </li>
-                       
+                     <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Blog</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
+                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
+                      </ul>
+                  </li>
+                   <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>FeedBack</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
+                          <li ><a  href="chat.php">Chat Room</a></l>
+                      </ul>
+                  </li>
+                 
+                     
               </ul>
               <!-- sidebar menu end-->
           </div>

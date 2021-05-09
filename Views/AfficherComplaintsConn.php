@@ -1,5 +1,5 @@
 <?php
-require_once "../Controller/RatingsC.php";
+require_once "../controller/RatingsC.php";
 $tri="";
 if (isset($_GET["tri"]))
 $tri=$_GET["tri"];

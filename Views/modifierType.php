@@ -1,6 +1,6 @@
 <?php
-require "../Controller/ServicesC.php";
-require "../Model/service.php";
+require "../controller/ServicesC.php";
+require "../model/service.php";
 $ServicesC=new ServicesC();
     if (!isset($_GET['id'])) {
     	header('Location: Service_Gestion.php');

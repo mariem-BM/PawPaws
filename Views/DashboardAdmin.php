@@ -44,7 +44,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="Acceuil.php" class="logo"><b>Paw Paws</b></a>
+            <a href="Acceuil.php" class="logo"><b>PawPaws</b></a>
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -120,7 +120,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                       </a>
                       <ul class="sub">
                           <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
-                          <li ><a  href="views/chat.php">Chat Room</a></l>
+                          <li ><a  href="chat.php">Chat Room</a></l>
                       </ul>
                   </li>
                  

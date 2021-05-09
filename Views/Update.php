@@ -1,5 +1,5 @@
 <?php
-require "../Controller/BlogC.php";
+require "../controller/BlogC.php";
 require "../model/bloc.php";
         if (isset($_POST['id']))
         {

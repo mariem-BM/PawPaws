@@ -1,5 +1,5 @@
 <?php
-require_once "../Controller/UserC.php";
+require_once "../controller/UserC.php";
 
 $x=Get_one_User_Info($_SESSION["e"]);
 ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-require_once "../Controller/BlogC.php";
+require_once "../controller/BlogC.php";
 require_once "../model/bloc.php";
 
 session_start();

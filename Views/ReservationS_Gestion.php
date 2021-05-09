@@ -44,7 +44,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>Paw Paws</b></a>
+            <a href="acceuil.php" class="logo"><b>PawPaws</b></a>
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -101,7 +101,26 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
                       </ul>
                     </li>
-                      
+                      <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Blog</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
+                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
+                      </ul>
+                  </li>
+                   <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>FeedBack</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
+                          <li ><a  href="chat.php">Chat Room</a></l>
+                      </ul>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>

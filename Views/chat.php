@@ -7,7 +7,7 @@ alert('Connectez-vous');
 </script>";
 }
 
-if($_SESSION['role'] == 'Admin')
+if($_SESSION['role'] == 'admin')
 {
 echo "<script>document.location.href = 'chatAdmin.php';
 </script>";
@@ -16,7 +16,7 @@ echo "<script>document.location.href = 'chatAdmin.php';
 ?>
 <?php
 //include '../../DB/ConfigGate.php';
-include '../Core/UserCore.php';
+include '../controller/UserCore.php';
 $userC= new UserCore();
 $listUsers=$userC->afficherUsersExceptMe($_SESSION['id']);
 
@@ -154,7 +154,7 @@ $listUsers=$userC->afficherUsersExceptMe($_SESSION['id']);
 <script type="text/javascript">
 function LoadUsers() {
     $.ajax({
-            url:'../Core/GetUsers.php',
+            url:'../controller/GetUsers.php',
             data:{"source":<?=$_SESSION['id']?>},
             type:'get',
             dataType:"JSON",
@@ -182,7 +182,7 @@ function LoadUsers() {
 <script type="text/javascript">
     function Loadmsg(i) {
     $.ajax({
-            url:'../Core/GetMessages.php',
+            url:'../controller/GetMessages.php',
             data:{"source":<?=$_SESSION['id']?>,"destinataire":i},
             type:'get',
             dataType:"JSON",
@@ -220,7 +220,7 @@ function LoadUsers() {
     function MarkRead(i)
     {
         $.ajax({
-            url:'../Core/MarkRead.php',
+            url:'../controller/MarkRead.php',
             data:{"source":i,"destinataire":<?=$_SESSION['id']?>},
             type:'get',
             
@@ -242,7 +242,7 @@ function LoadUsers() {
     
         
          $.ajax({
-            url:'../Core/SendMessage.php',
+            url:'../controller/SendMessage.php',
             data:{"source":<?=$_SESSION['id']?>,"destinataire":$('#destinatairemsg').val(),"contenu":$('#inputcontenu').val()},
             type:'get',
             success:function(result){

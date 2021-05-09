@@ -3,7 +3,7 @@
 
 include_once '../model/reservationS.php';
 include_once '../controller/reservationSC.php';
-include_once '../Model/service.php';
+include_once '../model/service.php';
 session_start();
 if (isset($_SESSION["e"])&& !empty($_SESSION["e"]))
 {

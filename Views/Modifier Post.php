@@ -17,13 +17,13 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <title>Modify Post</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets3/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/style-responsive.css" rel="stylesheet">
+    <link href="../assets3/css/style.css" rel="stylesheet">
+    <link href="../assets3/css/style-responsive.css" rel="stylesheet">
 
    
   </head>
@@ -217,17 +217,17 @@ require "../model/bloc.php";
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="../assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="../assets/js/jquery.scrollTo.min.js"></script>
-    <script src="../assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="../assets3/js/jquery.js"></script>
+    <script src="../assets3/js/bootstrap.min.js"></script>
+    <script src="../assets3/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="../assets3/js/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="../assets3/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="../assets3/js/jquery.scrollTo.min.js"></script>
+    <script src="../assets3/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--common script for all pages-->
-    <script src="../assets/js/common-scripts.js"></script>
+    <script src="../assets3/js/common-scripts.js"></script>
 
     <!--script for this page-->
     

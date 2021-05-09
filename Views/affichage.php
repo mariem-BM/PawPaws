@@ -1,5 +1,5 @@
 <?php
-require_once "../Controller/BlogC.php";
+require_once "../controller/BlogC.php";
 require_once "../model/bloc.php";
 if (isset ($_GET["search"]))
 $search=$_GET["search"];
