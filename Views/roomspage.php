@@ -57,7 +57,7 @@ include_once '../controller/reservationC.php';
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="DashboardUser.php">Account</a>
+            <a class="nav-link" href="Info User.php">Account</a>
           </li>
         </ul>
       </div>

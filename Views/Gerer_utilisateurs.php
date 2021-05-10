@@ -92,6 +92,34 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
+                          <span>Sevices</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
+                        
+                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
+                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
+                      </ul>
+                  </li>
+
+<li class="sub-menu">
+                      <a href="javascript:;">
+                          <i class="fa fa-book"></i>
+                          <span>Rooms</span>
+                      </a>
+                      <ul class="sub">
+                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
+                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
                           <span>Blog</span>
                       </a>
                       <ul class="sub">
@@ -99,35 +127,14 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
+                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Activité</span>
+                          <span>FeedBack</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Act_gestion1.php">Gérer Les Activités</a></li>
-                          <li><a  href="Act_Gestion.php">Gérer Les Réservations</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Rooms</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="Rooms_Gestion.php">Gérer Room</a></li>
-                          <li ><a  href="Res_room_Gestion.php">Gérer Les Réservations</a></li>
-                      </ul>
-                  </li>
-            <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Sevices</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
-                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
+                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
+                          <li ><a  href="chat.php">Chat Room</a></l>
                       </ul>
                   </li>
               </ul>

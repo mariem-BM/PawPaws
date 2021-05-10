@@ -56,36 +56,37 @@
    <li><a href = "WatchBlogPost.php">Blog</a></li>
 
    <li><a href = "form.php">Shop</a></li>
+    <li><a href = "roomspage.php">Rooms</a></li>
 
     <li><a href = "chatAdmin.php">Chat</a></li>
 
    <li><a href = "FormComplaint.php">Reclamation</a></li>
 
-    <li><a href = "roomspage.php">Rooms</a></li>
+   
+
 
 
     <?php 
-    /*if (isset($_SESSION["e"]))
+ /* if (isset($_SESSION["role"]) && $_SESSION["role"]=="hotelmanager")
     {
 
-    //echo "<li><a href = 'DashboardUser.php'>Account</a></li>";
-       
-    } */
+  echo "<li><a href = 'DashboardHotelManager.php'>HotelManager Space</a></li>";
 
+}
   if (isset($_SESSION["role"]) && $_SESSION["role"]=="ServiceProvider")
     {
 
   echo "<li><a href = 'DashboardServiceProvider.php'>ServiceProvider Space</a></li>";
 
-}
- else if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
+}*/
+if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
     {
 
   echo "<li><a href = 'DashboardAdmin.php'>Admin Space</a></li>";
 }
-else if (isset($_SESSION["e"])){
+if (isset($_SESSION["e"])){
 
-    echo "<li><a href = 'DashboardUser.php'>Account</a></li>";
+    echo "<li><a href = 'Info User.php'>User Space</a></li>";
        
     } 
 
@@ -99,7 +100,7 @@ if (!isset($_SESSION["e"]))
     
     
     }
-
+echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
 ?>
 </ul>
 
@@ -108,34 +109,51 @@ if (!isset($_SESSION["e"]))
 
     
               
-    <!-- SERVICES -->          
-
-           
-    
-  
-<iframe src="Service.php" width="100%" height="1000" title="Services" style="border:none;"> </iframe>
-                
+    <!-- SERVICES -->  
+           <div class = "title">
+                <h3 style="color:#FF5733;">Services</h3>
+            </div>         
+<div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3 style="color:#FF5733;">Services for every pet</h3>
+                        <p>Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
+                                    CHECK THE <li><a href = "servicespage.php">Services Page</a></li>
+                    </div>
+                    
+                </div>
+               
+            </div>
+                </div>
+            </div>
  <!-- ROOMS --> 
-<iframe src="Rooms.php" width="100%" height="1000" title="Rooms" style="border:none;"> </iframe>
+            <div class = "title">
+                <h3 style="color:#FF5733;">Rooms</h3>
+            </div> 
+<div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3 style="color:#FF5733;">Because your pet deserves the best</h3>
+                        <p>When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
+                                    CHECK THE <li><a href = "roomspage.php">Rooms Page</a></li>
+                    </div>
+                    
+                </div>
+               
+            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
 
 
         <section class = "customers" id = "customers">
             <div class = "sec-width">
                 <div class = "title">
-                    <h2>customers</h2>
+                    <h3 style="text-align: center;color:#FF5733;">CUSTOMORES</h3>
                 </div>
                 <div class = "customers-container">
                     <!-- single customer -->
@@ -165,7 +183,7 @@ if (!isset($_SESSION["e"]))
                         <h3>Comfortable Living</h3>
                         <p>This is a comfortable PAWPAWS hotel. All facilities were good and there was an amazing selection in Ceramique restaurant both for breakfast and dinner, including local and international dishes. However, our final night was interrupted by an alarm which went off at 04.30 in the next room</p>
                         <img src = "../assets3/img/customor2.jpg" alt = "customer image">
-                        <span>Customer Name, Country</span>
+                        <span>Mohamed, Country</span>
                     </div>
                     <!-- end of single customer -->
                     <!-- single customer -->
@@ -180,11 +198,11 @@ if (!isset($_SESSION["e"]))
                         <h3>Excellent</h3>
                         <p>This is a very good hotel. All Staff is so attentive. They do more than their best to assist with a smile. Food and other services are also good. I would especially thank Mohamad, Husseim, Ahmed and Mohamad Ali from reception for their special help. We really loved to be there.</p>
                         <img src = "../assets3/img/customor3.jpg" alt = "customer image">
-                        <span>Customer Name, Country</span>
+                        <span>Olfa, Country</span>
                     </div>
                     <!-- end of single customer -->
                 </div>
-            </div>
+           </div>
         </section>
         <!-- end of body content -->
         

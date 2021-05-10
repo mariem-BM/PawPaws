@@ -74,20 +74,16 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Dashboard</span>
                       </a>
                   </li>
-                  
                   <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book"></i>
-                          <span>Rooms</span>
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Gérer les comptes</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
-                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
-                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
                       </ul>
                   </li>
+                  
                                     <li class="sub-menu">
                       <a href="javascript:;" class="active" >
                           <i class="fa fa-book"></i>
@@ -101,6 +97,20 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
                       </ul>
                     </li>
+
+                    <li class="sub-menu">
+                      <a href="javascript:;">
+                          <i class="fa fa-book"></i>
+                          <span>Rooms</span>
+                      </a>
+                      <ul class="sub">
+                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
+                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                      </ul>
+                  </li>
                       <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>

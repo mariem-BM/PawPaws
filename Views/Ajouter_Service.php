@@ -44,7 +44,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>Paw Paws</b></a>
+            <a href="acceuil.php" class="logo"><b>PawPaws</b></a>
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -74,20 +74,16 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Dashboard</span>
                       </a>
                   </li>
-                 
-                  <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book"></i>
-                          <span>Rooms</span>
+                 <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Gérer les comptes</span>
                       </a>
-                       <ul class="sub">
-                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li class="active"><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
-                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
-                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                      <ul class="sub">
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
                       </ul>
                   </li>
+                  
                                     <li class="sub-menu">
                       <a href="javascript:;"  class="active">
                           <i class="fa fa-book"></i>
@@ -101,7 +97,19 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
                       </ul>
                   </li>
-                   
+                   <li class="sub-menu">
+                      <a href="javascript:;">
+                          <i class="fa fa-book"></i>
+                          <span>Rooms</span>
+                      </a>
+                       <ul class="sub">
+                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li class="active"><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
+                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                      </ul>
+                  </li>
 <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>

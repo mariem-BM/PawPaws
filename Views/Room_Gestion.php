@@ -74,7 +74,15 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Dashboard</span>
                       </a>
                   </li>
-                  
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Gérer les comptes</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
+                      </ul>
+                  </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
