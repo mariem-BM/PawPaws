@@ -29,7 +29,7 @@ require "../model/bloc.php";
 ?>
 <!DOCTYPE html>
 <html>
-<script src="../Assets/Controledesaisiejs/Control_Blog.js"></script>
+<script src="../Assets3/Controledesaisiejs/Control_Blog.js"></script>
     <head>
          <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,10 +39,10 @@ require "../model/bloc.php";
   <title>Blog</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets3/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../assets/css/blog-home.css" rel="stylesheet">
+  <link href="../assets3/css/blog-home.css" rel="stylesheet">
         <meta charset="utf-8"/>
         <title>Inscription</title>
         <script src="script.js"></script>
