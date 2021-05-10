@@ -25,6 +25,14 @@
 					 if ($x!==0)
 					 {
 					 	 Connect ($x);
+						  header('location:Acceuil.php');
+						  /*
+						 if($_SESSION['role'] == "admin"){
+							header('location:DashboardAdmin.php');
+						}else{
+							header('location:Acceuil.php');
+						}
+						*/
 					 }
 				}
 				else echo "Remplissez les champs";
@@ -49,7 +57,7 @@
 					Vous n'avez pas de compte ?
 					<a href="Signup.php">Register</a>
 				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Login" href="Acceuil.php">
+					<input type="submit" name="register" class="register" value="Login" >
 				</div>
 			</form>
 		</div>

@@ -17,9 +17,9 @@
 			<?php
 			include "../controller/UserC.php";
 			require_once "../model/User.php";
-			if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["Date_N"]) && isset($_POST["sexe"]) && isset($_POST["email"]) && isset($_POST["Login"]) && isset($_POST["password"]) && isset($_POST["password2"])) 
+			if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["Date_N"])&& isset($_POST["role"]) && isset($_POST["sexe"]) && isset($_POST["email"]) && isset($_POST["Login"]) && isset($_POST["password"]) && isset($_POST["password2"])) 
 			{ 
-				$New_User=new User($_POST["nom"],$_POST["prenom"],$_POST["sexe"],$_POST["email"],$_POST["Date_N"],$_POST["Login"],$_POST["password"]);
+				$New_User=new User($_POST["nom"],$_POST["prenom"],$_POST["sexe"],$_POST["email"],$_POST["Date_N"],$_POST["role"],$_POST["Login"],$_POST["password"]);
 				if ($_POST["password"]!=$_POST["password2"])
 					echo "Les deux mot de passes sont differents";
 				else
@@ -31,7 +31,7 @@
  						header("Location: Register_Sccuess.html");
 					}
 				}
-			} 
+			}
 			?>
 			<form class="form-detail" action="Signup.php" method="post">
 				<h2>Register Account Form</h2>
@@ -53,28 +53,38 @@
  				</select>
 				</div>
 				<div class="form-row">
+					<label for="full-name">Role</label>
+					<select class="input-text" name="role" id="role">
+					<option value="admin">admin</option>
+ 					<option value="Responsable hotel">Responsable hotel</option>
+					<option value="Vétérinaire">Vétérinaire</option>
+ 					<option value="Dresseur">Dresseur</option>
+					<option value="Toiletteur">Toiletteur</option>
+ 				</select>
+				</div>
+				<div class="form-row">
 					<label for="your-email">Email</label>
-					<input type="text" name="email" id="email" class="input-text" placeholder="Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					<input type="email" name="email" id="email" class="input-text" placeholder="Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
 					<i class="fas fa-envelope"></i>
 				</div>
 				<div class="form-row">
 					<label for="your-email">Date De Naissance</label>
-					<input type="date" name="Date_N" id="Date_N" class="input-date" >
+					<input type="date" name="Date_N" id="Date_N" value="2018-07-22" min="1920-01-01" max="2021-12-31" class="input-date" >
 				</div>
 				<br>
 				<div class="form-row">
 					<label for="full-name">Login</label>
-					<input type="text" name="Login" id="Login" class="input-text" placeholder="Login" required>
+					<input type="text" name="Login" id="Login" class="input-text" placeholder="Login"  minlength="3" maxlength="10" required>
 					<i class="fas fa-user"></i>
 				</div>
 				<div class="form-row">
 					<label for="password">Mot de Passe</label>
-					<input type="password" name="password" id="password" class="input-text" placeholder="Mot de Passe" required>
+					<input type="password" name="password" id="password" class="input-text" placeholder="Mot de Passe"  minlength="3" maxlength="20" required>
 					<i class="fas fa-lock"></i>
 				</div>
 				<div class="form-row">
 					<label for="password">Confirmer Votre Mot De passe</label>
-					<input type="password" name="password2" id="password2" class="input-text" placeholder="Confirmer Votre Mot De passe" required>
+					<input type="password" name="password2" id="password2" class="input-text" placeholder="Confirmer Votre Mot De passe"  minlength="3" maxlength="20" required>
 					<i class="fas fa-lock"></i>
 				</div>
 				<div class="form-row">
@@ -82,7 +92,7 @@
 					<a href="signin.php">Login</a>
 				</div>
 				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Register" href="Acceuil.php">
+					<input type="submit" name="register" class="register" value="Register" >
 				</div>
 			</form>
 		</div>

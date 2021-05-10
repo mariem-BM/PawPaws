@@ -2,20 +2,21 @@
 include "../config.php";
 include "../config1.php";
 require_once "../model/User.php";  
-function user_creation ($New_User)
+function user_creation ($New_User)     
 {
             try
               {
                   $db = config::getConnexion();
                 $zero=0;
                 $query = $db->prepare(
-                    'INSERT INTO utilisateur (Nom, Prenom, Email, Date_N, Login, Password, sexe) VALUES (:Nom, :Prenom, :email, :Date_N, :login, :Password, :sexe)'
+                    'INSERT INTO utilisateur (Nom, Prenom, Email, Date_N, role, Login, Password, sexe) VALUES (:Nom, :Prenom, :email, :Date_N, :role, :login, :Password, :sexe)'
                 );
                 $query->execute([
                     'Nom' => $New_User->nom,
                     'Prenom' => $New_User->prenom,
                     'email' => $New_User->email,
                     'Date_N' => $New_User->date,
+                    'role' => $New_User->role,
                     'login' => $New_User->login,
                     'Password' => $New_User->password,
                     'sexe' => $New_User->sexe
@@ -27,6 +28,7 @@ function user_creation ($New_User)
 
 
 }
+
 
 function Check_Info ($email,$Login)
 {
@@ -70,7 +72,7 @@ function verification_sign_in ($Login, $Password)
       else
       {
         $x=$query->fetch();
-        $User_info = new User ($x["Nom"],$x["Prenom"],$x["sexe"],$x["Email"],$x["Date_N"],$x["Login"],$x["Password"]);
+        $User_info = new User ($x["Nom"],$x["Prenom"],$x["sexe"],$x["Email"],$x["Date_N"],$x["role"],$x["Login"],$x["Password"]);
         $User_info->id=$x["id"];
 
         return $User_info->id; 
@@ -158,6 +160,152 @@ function Get_one_User_Info($id)
         echo $e->getMessage();
     }
 }
+
+
+
+class UserC{
+  
+  function afficherUtilisateurs(){
+        
+    $sql="SELECT * FROM utilisateur";
+    $db = config::getConnexion();
+    try{
+      $liste = $db->query($sql);
+      return $liste;
+    }
+    catch (Exception $e){
+      die('Erreur: '.$e->getMessage());
+    }	
+  }
+  
+  function supprimerUtilisateur($id){
+    $sql="DELETE FROM utilisateur WHERE id= :id";
+    $db = config::getConnexion();
+    $req=$db->prepare($sql);
+    $req->bindValue(':id',$id);
+    try{
+      $req->execute();
+    }
+    catch (Exception $e){
+      die('Erreur: '.$e->getMessage());
+    }
+  }
+
+  function modifierUtilisateur($utilisateur,$id){
+    try {
+      $db = config::getConnexion();
+      $query = $db->prepare(
+        'UPDATE utilisateur SET 
+          Nom = :Nom, 
+          Prenom = :Prenom,
+          Date_N =:Date_N,
+          sexe =:sexe, 
+          email = :email,
+          role = :role,
+          login = :login,
+          Password = :Password
+        WHERE id = :id'
+      );
+      
+      $query->execute([
+        'Nom' => $utilisateur->nom,
+                      'Prenom' => $utilisateur->prenom,
+                      'email' => $utilisateur->email,
+                      'Date_N' => $utilisateur->date,
+                      'role' => $utilisateur->role,
+                      'login' => $utilisateur->login,
+                      'Password' => $utilisateur->password,
+                      'sexe' => $utilisateur->sexe,
+        'id' => $id
+      ]);
+     
+      echo $query->rowCount() . " records UPDATED successfully <br>";
+      
+    } catch (PDOException $e) {
+      $e->getMessage();
+    }
+  }
+  
+  function getUserByNom_Prenom($Nom,$Prenom) {
+    try {
+        $db = config::getConnexion();
+        $query = $db->prepare(
+            'SELECT * FROM utilisateur WHERE Nom = :Nom AND Prenom= :Prenom'
+        );
+        $query->execute([
+            'Nom' => $Nom,
+            'Prenom' => $Prenom
+        ]);
+        return $query->fetch();
+    } catch (PDOException $e) {
+        $e->getMessage();
+    }
+  }
+  
+  
+  
+  function sort_Nom(){
+    try {
+      $db = config::getConnexion();
+      $query = $db->prepare(
+          'SELECT * FROM utilisateur ORDER BY Nom ASC'
+      );
+      $query->execute();
+      return $query->fetch();
+    } catch (PDOException $e){
+      $e->getMessage();
+    }
+  }
+  
+  
+  
+  
+  function recupererUtilisateur($id){
+    $sql="SELECT * from utilisateur where id=$id";
+    $db = config::getConnexion();
+    try{
+      $query=$db->prepare($sql);
+      $query->execute();
+  
+      $user=$query->fetch();
+      return $user;
+    }
+    catch (Exception $e){
+      die('Erreur: '.$e->getMessage());
+    }
+  }
+  
+  
+  function validerUtilisateur($id,$email,$name){}
+  
+  
+  function afficherUtilisateur(){
+    $sql="SELECT * FROM Utilisateur ";
+    $db = config::getConnexion();
+    try{
+      $liste = $db->query($sql);
+      return $liste;
+    }
+    catch (Exception $e){
+      die('Erreur: '.$e->getMessage());
+    }
+  }
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ?>

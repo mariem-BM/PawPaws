@@ -1,4 +1,5 @@
 <?php
+include "../config.php";
 session_start();
 if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
 {
@@ -64,9 +65,10 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><a href="profile.html"><img src="../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
+                   <p class="centered"><a href="profil_admin.php"><img src="../assets3/img/Unknown.png" class="img-circle" width="60"></a></p>
+                  
                   <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
-                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
+                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6> 
                     
                   <li class="mt" class="active">
                       <a href="DashboardAdmin.php">
@@ -76,33 +78,13 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Rooms</span>
+                          <i class="fa fa-cogs"></i>
+                          <span>Gérer les comptes</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
-                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
-                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservations Details</a></li>
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
                       </ul>
                   </li>
-            <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Sevices</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
-                        
-                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
-                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
-                          <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
-                      </ul>
-                  </li>
-
-
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
@@ -113,17 +95,37 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
                       </ul>
                   </li>
-                   <li class="sub-menu">
+                  <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>FeedBack</span>
+                          <span>Activité</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
-                          <li ><a  href="chat.php">Chat Room</a></l>
+                          <li ><a  href="Act_gestion1.php">Gérer Les Activités</a></li>
+                          <li><a  href="Act_Gestion.php">Gérer Les Réservations</a></li>
                       </ul>
                   </li>
-                 
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Rooms</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="Rooms_Gestion.php">Gérer Room</a></li>
+                          <li ><a  href="Res_room_Gestion.php">Gérer Les Réservations</a></li>
+                      </ul>
+                  </li>
+            <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Sevices</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
+                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
+                      </ul>
+                  </li>
                    
 
               </ul>
@@ -138,9 +140,9 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-            <?php include_once 'Info User.php'; ?>
               </div>
             </div>
+
       
     </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->

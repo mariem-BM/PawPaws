@@ -6,11 +6,12 @@ class User
 	public $sexe;
 	public $email;
 	public $date;
+	public $role;
 	public $login;
 	public $password;
 	public $id;
 
-	 function __construct($nom,$prenom,$sexe,$email,$date,$login,$password)
+	 function __construct($nom,$prenom,$sexe,$email,$date,$role,$login,$password)
 	
 	{
 			 $this->nom=$nom;
@@ -18,6 +19,7 @@ class User
 		 $this->email=$email;
 		 $this->sexe=$sexe;
 		 $this->date=$date;
+		 $this->role=$role;
 		 $this->login=$login;
 		 $this->password=$password;	
 		 	}

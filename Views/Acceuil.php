@@ -64,27 +64,30 @@
     <li><a href = "roomspage.php">Rooms</a></li>
 
 
-    <?php if (isset($_SESSION["e"]))
+    <?php 
+    /*if (isset($_SESSION["e"]))
     {
 
-    echo "<li><a href = 'DashboardUser.php'>Account</a></li>";
+    //echo "<li><a href = 'DashboardUser.php'>Account</a></li>";
        
-    } 
+    } */
 
   if (isset($_SESSION["role"]) && $_SESSION["role"]=="ServiceProvider")
     {
 
   echo "<li><a href = 'DashboardServiceProvider.php'>ServiceProvider Space</a></li>";
 
-
 }
- if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
+ else if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
     {
 
   echo "<li><a href = 'DashboardAdmin.php'>Admin Space</a></li>";
-
-
 }
+else if (isset($_SESSION["e"])){
+
+    echo "<li><a href = 'DashboardUser.php'>Account</a></li>";
+       
+    } 
 
 
 if (!isset($_SESSION["e"]))

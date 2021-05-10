@@ -57,7 +57,65 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
-      
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+
+                  <p class="centered"><a href="profil_user.php"><img src="../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
+                  <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
+                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
+
+                  <li class="mt">
+                      <a href="DashboardUser.php">
+                          <i class="fa fa-dashboard"  class="active"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span> Gérer votre compte </span>
+                      </a>
+                      <ul class="sub">
+                            <li><a  href="profil_user.php"> votre profil</a></li>
+                            <li><a  href="profil.php"> Modifier votre compte</a></li>
+                            <li><a  href="liste_des_profil.php"> liste des profiles</a></li>
+
+                      </ul>
+                      <li class="sub-menu">
+                      <a  href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Activitées</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="Act_gestion_conn.php">Afficher Voes Reservations</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a  href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Rooms</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="Room_Gestion_Conn.php">Afficher Voes Reservations</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a  href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Service Reservations</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="Gestion_Res_Conn.php">Afficher Vos Reservations</a></li>
+                        
+                      </ul>
+                  </li>
+                  
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
       <!--sidebar end-->
 
       <!-- **********************************************************************************************************************************************************
@@ -66,7 +124,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<?php include_once 'Info User.php'; ?>
+            <!-- include user info -->
           		</div>
           	</div>
 
