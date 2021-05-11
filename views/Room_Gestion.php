@@ -14,7 +14,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Gestion Blog</title>
+    <title>Rooms Gestion</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">
@@ -44,7 +44,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>PAWPAWS</b></a>
+            <a href="acceuil.php" class="logo"><b>PawPaws</b></a>
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -64,10 +64,10 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="../assets/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
+                  <p class="centered"><a href="profile.html"><img src="../assets/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
                   <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
                   <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
-              	  	
+                    
                   <li class="mt">
                       <a href="DashboardAdmin.php">
                           <i class="fa fa-dashboard"></i>
@@ -77,30 +77,10 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>
-                          <span>Gérer Comptes</span>
+                          <span>Gérer les comptes</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Affichertoutusers.php">Gérer les Comptes</a></l>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a  href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Blog</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
-                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Activité</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="Act_gestion1.php">Gérer Les Activités</a></li>
-                          <li><a  href="Act_Gestion.php">Gérer Les Réservations</a></li>
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -109,8 +89,11 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Services</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Services_Gestion.php">Gérer Services</a></li>
-                          <li ><a  href="Res_Serv_Gestion.php">Gérer Les Réservations</a></li>
+                          <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Ajouter_Service.php">Ajouter Une Service</a></li>
+                          <li class="active"><a  href="Services_Gestion.php">Gérer Les Services</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
                       </ul>
                   </li>
                                     <li class="sub-menu">
@@ -126,15 +109,28 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
                       </ul>
                   </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Blog</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
+                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
+                      </ul>
+                  </li>
                    <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Complaints</span>
+                          <span>FeedBack</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Complaints_Gestion.php">Gérer Les Requetes</a></li>
+                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
+                          <li ><a  href="chat.php">Chat Room</a></l>
                       </ul>
                   </li>
+                 
+                    
 
               </ul>
               <!-- sidebar menu end-->
@@ -148,11 +144,11 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<?php include_once 'showrooms.php'; ?>
-          		</div>
-          	</div>
-			
-		</section><! --/wrapper -->
+            <?php include_once 'showrooms.php'; ?>
+              </div>
+            </div>
+      
+    </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->

@@ -1,17 +1,17 @@
-<?php
+<?php
 
 include "../config.php";
 
 
 
-class reservationC{
+class reservationsC{
 
-    public function ajouterReservation($Reservation, $qty, $idroom, $user)
+    public function ajouterReservation($Reservationh, $qty, $idroom, $user)
     {
         echo('hhh');
         $db = config::getConnexion();
         $sql = "INSERT INTO reservation ( idreservation,firstname, lastname, adresse,tel,email,nbn,date,room,rp,idroom,iduser)
-			VALUES (:idreservation,:firstname,:lastname,:adresse,:tel,:email,:nbn,:date,:room,:rp,:idroom,:iduser)";
+            VALUES (:idreservation,:firstname,:lastname,:adresse,:tel,:email,:nbn,:date,:room,:rp,:idroom,:iduser)";
 
 
         $sql1 = " UPDATE rooms SET qty = :qty - 1 where idroom= :idroom";
@@ -26,18 +26,18 @@ class reservationC{
             ]);
             $query->execute([
 
-                /*nom de colonne*/ 'idreservation' => $Reservation->getIdreservation(),
-                'firstname' => $Reservation->getFirstname(),
-                'lastname' => $Reservation->getLastname(),
-                'adresse' => $Reservation->getAdresse(),
-                'tel' => $Reservation->getTel(),
-                'email' => $Reservation->getEmail(),
-                'date' => $Reservation->getDate(),
+                /*nom de colonne*/ 'idreservation' => $Reservationh->getIdreservation(),
+                'firstname' => $Reservationh->getFirstname(),
+                'lastname' => $Reservationh->getLastname(),
+                'adresse' => $Reservationh->getAdresse(),
+                'tel' => $Reservationh->getTel(),
+                'email' => $Reservationh->getEmail(),
+                'date' => $Reservationh->getDate(),
 
-                'nbn' => $Reservation->getNbn(),
-                'room' => $Reservation->getRoom(),
-                'rp' => $Reservation->getRp(),
-                'idroom' => $Reservation->getIdroom(),
+                'nbn' => $Reservationh->getNbn(),
+                'room' => $Reservationh->getRoom(),
+                'rp' => $Reservationh->getRp(),
+                'idroom' => $Reservationh->getIdroom(),
 
                 'iduser' => $user
 
@@ -52,7 +52,7 @@ class reservationC{
     function afficherReservation()
     {
 
-        $sql = "SELECT * FROM reservation ";
+        $sql = "SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom ";
         $db = config::getConnexion();
         try {
             $liste = $db->query($sql);
@@ -80,7 +80,7 @@ class reservationC{
         }
     }
 
-    function updateReservation($Reservation, $idreservation)
+    function updateReservation($Reservationh, $idreservation)
     {
         try {
             echo('hhhh');
@@ -90,30 +90,30 @@ class reservationC{
             );
             echo "pass";
             echo
-                $Reservation->getFirstname() . " "
-                . $Reservation->getLastname() . " "
-                . $Reservation->getAdresse() . " "
-                . $Reservation->getTel() . " "
-                . $Reservation->getEmail() . " "
-                . $Reservation->getNbn() . " "
-                . $Reservation->getDate() . " "
-                . $Reservation->getRoom() . " "
-                . $Reservation->getRp() . " "
-                . $Reservation->getIdroom() . " "
+                $Reservationh->getFirstname() . " "
+                . $Reservationh->getLastname() . " "
+                . $Reservationh->getAdresse() . " "
+                . $Reservationh->getTel() . " "
+                . $Reservationh->getEmail() . " "
+                . $Reservationh->getNbn() . " "
+                . $Reservationh->getDate() . " "
+                . $Reservationh->getRoom() . " "
+                . $Reservationh->getRp() . " "
+                . $Reservationh->getIdroom() . " "
                 . $idreservation,
             $query->execute([
 
-                'firstname' => $Reservation->getFirstname(),
-                'lastname' => $Reservation->getLastname(),
-                'adresse' => $Reservation->getAdresse(),
-                'tel' => $Reservation->getTel(),
-                'email' => $Reservation->getEmail(),
-                'nbn' => $Reservation->getNbn(),
-                'date' => $Reservation->getDate(),
-                'room' => $Reservation->getRoom(),
-                'rp' => $Reservation->getRp(),
-                'idroom' => $Reservation->getIdroom(),
-                'iduser' => $Reservation->getIduser(),
+                'firstname' => $Reservationh->getFirstname(),
+                'lastname' => $Reservationh->getLastname(),
+                'adresse' => $Reservationh->getAdresse(),
+                'tel' => $Reservationh->getTel(),
+                'email' => $Reservationh->getEmail(),
+                'nbn' => $Reservationh->getNbn(),
+                'date' => $Reservationh->getDate(),
+                'room' => $Reservationh->getRoom(),
+                'rp' => $Reservationh->getRp(),
+                'idroom' => $Reservationh->getIdroom(),
+                'iduser' => $Reservationh->getIduser(),
                 'idreservation' => $_GET["idreservation"]
             ]);
             echo "pass";
@@ -222,7 +222,6 @@ class roomC
                 VALUES (:idroom, :hoteladresse, :roomtype, :price,:photo,:qty)'
             );
             $query->execute([
-                
                 'idroom' => $Room->getIdroom(),
                 'hoteladresse' => $Room->getHoteladresse(),
                 'roomtype' => $Room->getRoomtype(),
@@ -243,7 +242,7 @@ function afficherrooms($search)
 {  $db = config::getConnexion();
 
 
-    $sql="SELECT idroom, hoteladresse,roomtype, price, photo,qty FROM rooms ORDER BY price DESC";
+    $sql="SELECT idroom, hoteladresse, roomtype, price, photo,qty FROM rooms ORDER BY price DESC";
     $result = $db->query($sql);
 
     if (!isset($search) || $search===""){ ?>  <div class="row"> <?php
@@ -266,9 +265,10 @@ function afficherrooms($search)
                         <img class="card-img-top" src= <?php echo "img/".$row["photo"]." width="."750"." height="."300";?> >
 </div>
     <li class="list-group-item">
-                            <form method="GET" action="index1.php">
+                            <form method="GET" action="index2.php">
 
                                 <input class="form-control" type="hidden"  name="idroom"  value="<?= $row["idroom"] ?>"/>
+                                <input class="form-control" type="hidden"  name="hoteladresse"  value="<?= $row["hoteladresse"] ?>"/>
                                 <input class="form-control" type="hidden"  name="qty"  value="<?= $row["qty"] ?>"/>
                                 <button type="button" class="btn" data-toggle="modal" data-target="#myModal">
                                     <i class="fa fa-list" aria-hidden="true"></i>
@@ -302,13 +302,13 @@ function afficherrooms($search)
                                 </div>
                                 <!-- Button trigger modal -->
                                           <?php if($row["qty"]  > 0){  ?>
-                                <button href="index1.php?idroom=<?php echo $row["idroom"]?> " name="submit" type="submit" class="btn"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                <button href="index2.php?idroom=<?php echo $row["idroom"]?> " name="submit" type="submit" class="btn"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                                     &nbsp; Book Now</button>
 
                                           <?php }  ?>
                                 <?php if($row["qty"]  == 0){  ?>
 
-                                    <button href="index1.php" name="submit" type="submit" onclick="disabled=true;" class="btn disabled " ><i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                    <button href="index2.php" name="submit" type="submit" onclick="disabled=true;" class="btn disabled " ><i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                                         &nbsp;Book Now </button>
 
 
@@ -327,15 +327,6 @@ function afficherrooms($search)
     }
     if ($result->rowCount() ==0)
         echo "no result";
-
-
-
-
-
-
-
-
-
 
 
 
@@ -374,4 +365,3 @@ function afficherrooms1($search)
     }
     ?> </div> <?php
 }
-

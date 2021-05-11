@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Paw Paws</title>
+	<title>PawPaws</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	    <title>Paw Paws</title>
+	    <title>PawPaws</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Paw PAws</a>
+      <a class="navbar-brand" href="#">PawPaws</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

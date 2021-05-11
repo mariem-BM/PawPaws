@@ -44,7 +44,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>Paw Paws</b></a>
+            <a href="acceuil.php" class="logo"><b>PawPaws</b></a>
             <!--logo end-->
              <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -140,14 +140,14 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-      <section id="main-content">
+    <!--  <section id="main-content">
           <section class="wrapper site-min-height">
-            <?php include_once 'Info User.php'; ?>
+            <?php //include_once 'Info User.php'; ?>
               </div>
             </div>
       
     </section><! --/wrapper -->
-      </section><!-- /MAIN CONTENT -->
+    <!--  </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
