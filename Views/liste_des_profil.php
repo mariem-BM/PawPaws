@@ -5,145 +5,133 @@ session_start();
             $UserC =  new UserC();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Dashboard</title>
+<!doctype html>
+<html class="no-js" lang="zxx">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../assets3/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<head>
+     <meta charset="utf-8">
+  <title>PawPaws</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../assets3/css/main2.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+   <link rel = "icon" href = "../assets3/img/logo.png" type = "image/png">
+       <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Custom styles for this template -->
-    <link href="../assets3/css/style.css" rel="stylesheet">
-    <link href="../assets3/css/style-responsive.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/roompagestyle.css">
+  
+</head>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+<body>
+       <!-- header -->
+   <header class = "header" id = "header">
+   <div class = "head-top">
+   <div class = "site-name">
+    <span>PawPaws</span>
+    </div>
+    <div class = "site-nav">
+    <span id = "nav-btn">MENU <i class = "fas fa-bars"></i></span>
+    </div>
+    </div>
+    <div class = "head-bottom flex">
+   <h2>Liste des profils</h2>
+    </div>
+    </header>
+    <!-- end of header -->
 
-  <body>
+   <!-- side navbar -->
+   <div class = "sidenav" id = "sidenav">
+    <span class = "cancel-btn" id = "cancel-btn">
+    <i class = "fas fa-times"></i>
+    </span>
+    <ul class = "navbar">
+    <li><a href = "Acceuil.php">Home</a></li>
 
-  <section id="container" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-      <!--header start-->
-      <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <!--logo start-->
-            <a href="Acceuil.php" class="logo"><b>Paw Paws</b></a>
-            <!--logo end-->
-                  <div class="top-menu">
-              <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../disconnect.php">Logout</a></li>
-              </ul>
-            </div>
-        </header>
-      <!--header end-->
+   <li><a href = "servicespage.php">services</a></li>
 
-      <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
+   <li><a href = "WatchBlogPost.php">Blog</a></li>
 
-                  <p class="centered"><a href="profil_user.php"><img src="../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
-                  <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
-                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
+   <li><a href = "form.php">Shop</a></li>
 
-                  <li class="mt" class="active">
-                      <a href="DashboardAdmin.php">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
+    <li><a href = "chatAdmin.php">Chat</a></li>
+
+   <li><a href = "FormComplaint.php">Reclamation</a></li>
+
+    <li><a href = "roomspage.php">Rooms</a></li>
+
+
+    <?php 
+  if (isset($_SESSION["role"]) && $_SESSION["role"]=="hotelmanager")
+    {
+
+   echo " <li class='sub-menu'>
+                      <a href='javascript:;'' >
+                          <i class='fa fa-book'></i>
+                              <span>Hotels</span>
                       </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span> Gérer votre compte </span>
-                      </a>
-                      <ul class="sub">
-                           
-                            <li><a  href="liste_des_profil.php"> liste des utilisateurs</a></li>
-
+                      <ul class='sub'>
+                          <li ><a  href='Reservation_Gestion.php'>Gérer Les Reservations</a></li>
+                          <li><a  href='Ajouter_Room.php'>Ajouter Une Chambre</a></li>
+                          <li><a  href='Room_Gestion.php'>Gérer Les Chambres</a></li>
+                          <li><a  href='sendemail'>Send Email</a></li>
+                          <li><a  href='create-dynamic-pdf-send-as-attachment-with-email-in-php-demo'>Reservations Details</a></li>
                       </ul>
-                    </li>
-                      <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
+                  </li><a>Hotel Manager</a>";
+
+}
+  if (isset($_SESSION["role"]) && $_SESSION["role"]=="ServiceProvider")
+    {
+
+  echo " <li class='sub-menu'>
+                      <a href='javascript:;'' >
+                          <i class='fa fa-book'></i>
                           <span>Sevices</span>
                       </a>
-                      <ul class="sub">
-                          <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
-                        
-                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
-                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
-                          <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
+                      <ul class='sub'>
+                          <li ><a  href='ReservationS_Gestion.php'>Gérer Les Reservations</a></li>
+                          <li><a  href='Ajouter_Service.php'>Ajouter Une Sevice</a></li>
+                          <li><a  href='Services_Gestion.php'>Gérer Les Sevices</a></li>
+                          <li><a  href='create-dynamic-pdf-send'>rendez-vous Details</a></li>
                       </ul>
-                  </li>
+                  </li><a>Service Provider</a>";
 
-                      <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book"></i>
-                          <span>Rooms</span>
-                      </a>
-                      <ul class="sub">
-                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
-                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
-                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Blog</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
-                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
-                      </ul>
-                  </li>
-                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>FeedBack</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
-                          <li ><a  href="chat.php">Chat Room</a></l>
-                      </ul>
-                  </li>
-                  
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
+}
+if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
+    {
 
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="main-content">
+  echo "<li><a href = 'DashboardAdmin.php'>Admin Space</a></li>";
+}
+
+if (isset($_SESSION["e"])){
+
+    echo "<li><a href = 'profil.php'>User Space</a></li>";
+       
+    } 
+
+
+if (!isset($_SESSION["e"]))
+    {
+
+
+ echo "<a class = 'btn sign-up' href='Signup.php'>sign up</a>";
+  echo  "<a class = 'btn log-in' href='signin.php'>log in</a>";
+    
+    
+       }
+       echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
+?>
+</ul>
+
+    </div>
+
+          <!--main content start-->
+          <section id="main-content">
           <section class="wrapper site-min-height">
             <!-- include user info -->
             <table class="datatable table table-hover table-center mb-0">
@@ -163,7 +151,7 @@ session_start();
 
 <?php
 $db = config::getConnexion();
-											$sql = "SELECT * FROM utilisateur";
+											$sql = "SELECT * FROM utilisateur where role !='admin'";
   $query=$db->prepare($sql);
   $query->execute();
   $result =$query->fetchall() ;
@@ -217,21 +205,19 @@ $db = config::getConnexion();
                         <label>Search User: </label>
                     </div>
                     <div class="col-75">
-                        <input type = "text" name = 'nom' placeholder="Nom">  <!-- nom heya album -->
+                        <input type = "text" name = 'nom' placeholder="Nom">  
                     </div>
                     <div class="col-75">
-                        <input type = "text" name = 'prenom' placeholder="Prenom">  <!-- prenom heya album -->
+                        <input type = "text" name = 'prenom' placeholder="Prenom">  
                     </div>
                 </div>
-                <br>
                 <div class="row">
-                    <input type = "submit" value = "Search" name ="search">
-                    
+                     <input type = "submit" value = "Search" name ="search">
                 </div>
             </form>
 		</div>
 	    </section>
-        <br>
+        
         <?php
 		if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['search'])){
 			$result = $UserC->getUserByNom_Prenom($_POST['nom'],$_POST['prenom']);
@@ -284,7 +270,7 @@ $db = config::getConnexion();
 	    }
 	    ?>
         <br>
-
+        
                 <!-- tri par nom -->
                 <form method="POST" action="">
         <div class="sort">
@@ -314,7 +300,7 @@ $db = config::getConnexion();
 
 <?php
 $db = config::getConnexion();
-											$sql = "SELECT * FROM utilisateur ORDER BY NOM ASC";
+											$sql = "SELECT * FROM utilisateur where role!='admin' ORDER BY NOM ASC";
   $query=$db->prepare($sql);
   $query->execute();
   $result =$query->fetchall() ;
@@ -375,7 +361,7 @@ $db = config::getConnexion();
 
 <?php
 $db = config::getConnexion();
-											$sql = "SELECT * FROM utilisateur ORDER BY PRENOM ASC";
+											$sql = "SELECT * FROM utilisateur where role!='admin' ORDER BY PRENOM ASC";
   $query=$db->prepare($sql);
   $query->execute();
   $result =$query->fetchall() ;
@@ -435,7 +421,7 @@ $db = config::getConnexion();
 
 <?php
 $db = config::getConnexion();
-                                        $sql = "SELECT * FROM utilisateur ORDER BY EMAIL ASC";
+                                        $sql = "SELECT * FROM utilisateur where role!='admin' ORDER BY EMAIL ASC";
 $query=$db->prepare($sql);
 $query->execute();
 $result =$query->fetchall() ;
@@ -476,44 +462,22 @@ $result =$query->fetchall() ;
 <?php
 }
 ?>
+   <br>
+   <br>
 
+       <footer class = "footer">
+            <div class = "footer-container">
+              
 
+                
 
-		</section><! --/wrapper -->
-      </section><!-- /MAIN CONTENT -->
+               
+                
+            </div>
+        </footer>
+        <!-- end of footer -->
+        
+        <script src="../assets3/js/script.js"></script>
+</body>
 
-      <!--main content end-->
-      <!--footer start-->
-
-      <!--footer end-->
-  </section>
-
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="../assets3/js/jquery.js"></script>
-    <script src="../assets3/js/bootstrap.min.js"></script>
-    <script src="../assets3/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="../assets3/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="../assets3/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="../assets3/js/jquery.scrollTo.min.js"></script>
-    <script src="../assets3/js/jquery.nicescroll.js" type="text/javascript"></script>
-
-
-    <!--common script for all pages-->
-    <script src="../assets3/js/common-scripts.js"></script>
-
-    <!--script for this page-->
-
-  <script>
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
-  </script>
-
-  </body>
 </html>
-<?php
-
-?>

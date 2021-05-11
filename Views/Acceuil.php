@@ -84,6 +84,12 @@ if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
 
   echo "<li><a href = 'DashboardAdmin.php'>Admin Space</a></li>";
 }
+if (isset($_SESSION["role"]) && $_SESSION["role"]!="admin")
+    {
+
+    echo "<li><a href = 'liste_des_profil.php'>Liste des profils</a></li>";
+}
+
 if (isset($_SESSION["e"])){
 
     echo "<li><a href = 'profil.php'>User Space</a></li>";

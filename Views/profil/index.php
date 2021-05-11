@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -51,7 +49,7 @@ $db = config::getConnexion();
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="text-light bg-dark">Full Name</h6>
+                      <h6 class="text-light bg-dark">Reciever</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <?php echo $row['Nom'];?>
@@ -109,7 +107,7 @@ $db = config::getConnexion();
                         $query->execute();
                         $result1 =$query->fetchall() ;
                         ?>
-                        <h6 class="text-light bg-dark">Commentaires</h6> 
+                        <h6 class="text-light bg-dark">Coments</h6> 
   
 												<?php 
 												foreach($result1 as $row1) {
@@ -118,7 +116,7 @@ $db = config::getConnexion();
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="text-light bg-dark">Full name</h6>
+                      <h6 class="text-light bg-dark">Sender</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <?php echo $row1['Nom'];?>
@@ -129,7 +127,7 @@ $db = config::getConnexion();
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="text-light bg-dark">Comentaire</h6>
+                      <h6 class="text-light bg-dark">Coment</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     <?php echo $row1['message'];?>

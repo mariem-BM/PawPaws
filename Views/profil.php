@@ -153,6 +153,12 @@ if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
   echo "<li><a href = 'DashboardAdmin.php'>Admin Space</a></li>";
 }
 
+if (isset($_SESSION["role"]) && $_SESSION["role"]!="admin")
+    {
+
+    echo "<li><a href = 'liste_des_profil.php'>Liste des profils</a></li>";
+}
+
 
 
 if (!isset($_SESSION["e"]))
@@ -243,7 +249,7 @@ if (!isset($_SESSION["e"]))
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">role</label>
                             <div class="col-sm-9">
-                              <input class="form-control" name="role" value='<?php echo  $user['Role']; ?>' />
+                              <input class="form-control" name="role" value='<?php echo  $user['Role']; ?>' disabled />
                             </div>
                           </div>
                         </div>
@@ -261,7 +267,7 @@ if (!isset($_SESSION["e"]))
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">gender</label>
                             <div class="col-sm-9">
-                              <input type="text" name="sexe" class="form-control" value='<?php echo $user['sexe']; ?>'  />
+                              <input type="text" name="sexe" class="form-control" value='<?php echo $user['sexe']; ?>' disabled />
                             </div>
                           </div>
                         </div>

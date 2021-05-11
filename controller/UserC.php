@@ -230,7 +230,7 @@ class UserC{
     try {
         $db = config::getConnexion();
         $query = $db->prepare(
-            'SELECT * FROM utilisateur WHERE Nom = :Nom AND Prenom= :Prenom'
+            'SELECT * FROM utilisateur WHERE role !="admin" AND Nom = :Nom AND Prenom= :Prenom'
         );
         $query->execute([
             'Nom' => $Nom,
