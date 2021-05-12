@@ -17,7 +17,6 @@ function fetch_customer_data($connect)
 				<th>id reservation</th>
 				<th>Adresse</th>
 				<th>tel</th>
-				<th>Email</th>
 				<th>pets</th>
 				<th>Date</th>
 				<th>Special Requirments</th>
@@ -33,7 +32,6 @@ foreach($result as $row)
 				<td>'.$row["idreservation"].'</td>
 				<td>'.$row["adresse"].'</td>
 				<td>'.$row["tel"].'</td>
-				<td>'.$row["email"].'</td>
 				<td>'.$row["nbn"].'</td>
 				<td>'.$row["date"].'</td>
 				<td>'.$row["rp"].'</td>
