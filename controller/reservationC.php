@@ -122,7 +122,53 @@ class reservationsC{
             echo $e->getMessage();
         }
     }
-
+function searchreservation($search){
+$sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom WHERE adresse LIKE  '%$search%' OR tel LIKE '%$search%' OR nbn LIKE '%$search%' OR rp LIKE '%$search%' OR idreservation LIKE '%$search%' OR Prenom LIKE '%$search%' OR Nom LIKE '%$search%' OR roomtype LIKE '%$search%' ";
+                $db = config::getConnexion();
+                try{
+                    $liste = $db->query($sql);
+                    return $liste;
+                }
+                catch (Exception $e){
+                    die('Erreur: '.$e->getMessage());
+                } 
+            }
+            function trireservation($tri){
+            switch ($tri) {
+                case 0:
+                    $sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom";
+                       break;
+                case 1:
+                    $sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom ORDER BY date ASC ";
+                  break;
+                case 2:
+                    $sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom ORDER BY roomtype ASC";
+                       break ;
+                case 3:
+                    $sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom ORDER BY date DESC";
+                  break;
+                case 4:
+                    $sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom ORDER BY roomtype DESC";
+                       break ;
+                case 5:
+                    $sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom ORDER BY nbn ASC";
+                  break;
+                case 6:
+                    $sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom ORDER BY nbn DESC";
+                       break ;
+            
+                  }
+        
+                $db = config::getConnexion();
+                try{
+                    $liste = $db->query($sql);
+                    return $liste;
+                }
+                catch (Exception $e){
+                    die('Erreur: '.$e->getMessage());
+                }   
+        
+            }
     public function getReservationByFirstname($user) {
         try {
             $db = config::getConnexion();

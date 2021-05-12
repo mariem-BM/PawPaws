@@ -1,47 +1,151 @@
+<?php
+include "../config.php";
+session_start();
+if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
+{
+  if ($_SESSION["role"]=="admin")
+  {
+?>
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Paw Paws</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	    <title>Paw Paws</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
+    <link href="../../assets3/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        
     <!-- Custom styles for this template -->
-    <link href="../css/modern-business.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../css/roompagestyle.css">
+    <link href="../../assets3/css/style.css" rel="stylesheet">
+    <link href="../../assets3/css/style-responsive.css" rel="stylesheet">
 
-</head>
-<body>
-	   <!-- Navigation -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Paw PAws</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="../Acceuil.php">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../DashboardUser.php">Account</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-<br>
-<br>
-<br>
-<br>
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="../Acceuil.php" class="logo"><b>PawPaws</b></a>
+            <!--logo end-->
+             <div class="top-menu">
+              <ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="../../disconnect.php">Logout</a></li>
+              </ul>
+            </div>
+                                
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+                   <p class="centered"><a href="profil.php"><img src="../assets3/img/Unknown.png" class="img-circle" width="60"></a></p>
+                  
+                  <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
+                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6> 
+                    
+                  <li class="mt" class="active">
+                      <a href="DashboardAdmin.php">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Gérer les comptes</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
+                         
+                      </ul>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Sevices</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
+                        
+                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
+                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
+                      </ul>
+                  </li>
+
+                      <li class="sub-menu">
+                      <a href="javascript:;">
+                          <i class="fa fa-book"></i>
+                          <span>Rooms</span>
+                      </a>
+                      <ul class="sub">
+                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
+                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
+                          <li><a  href="sendemail">Send Email</a></li>
+                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Blog</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
+                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
+                      </ul>
+                  </li>
+                   <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>FeedBack</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
+                          <li ><a  href="chat.php">Chat Room</a></l>
+                      </ul>
+                  </li>
+                   
+                   <li><a  href="sendemail">Send Email</a></li>
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
 <div class="container">
 <h1 class="text-center">Sending Emails</h1>
 
@@ -74,14 +178,15 @@
 			$mail->isHTML(true);                                  // Set email format to HTML
 
 			$mail->Subject = $_POST['subject'];
-			$mail->Body    = '<div style="border:2px solid red;">This is the HTML message body</div>';
+			//$mail->Body    = '<div style="border:2px solid red;">This is the HTML message body</div>';
+      $mail->Body    = $_POST['message'];
 			$mail->AltBody = $_POST['message'];
 
 			if(!$mail->send()) {
-			    echo 'Message could not be sent.';
-			    echo 'Mailer Error: ' . $mail->ErrorInfo;
+			    echo '                                             Message could not be sent.';
+			    echo '                                         Mailer Error: ' . $mail->ErrorInfo;
 			} else {
-			    echo 'Message has been sent';
+			    echo '                                                       Message has been sent';
 			}
 		}
 	 ?>
@@ -122,5 +227,34 @@
         </form>
 	</div>
 </div>
-</body>
+ <!-- js placed at the end of the document so the pages load faster -->
+    <script src="../../assets3/js/jquery.js"></script>
+    <script src="../../assets3/js/bootstrap.min.js"></script>
+    <script src="../../assets3/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="../../assets3/js/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="../../assets3/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="../../assets3/js/jquery.scrollTo.min.js"></script>
+    <script src="../../assets3/js/jquery.nicescroll.js" type="text/javascript"></script>
+
+
+    <!--common script for all pages-->
+    <script src="../../assets3/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    
+  <script>
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
+
+  </body>
 </html>
+<?php }
+else echo "Access denied to non admins";
+}
+else   echo("<script>location.href = '../signin.php';</script>");
+?>

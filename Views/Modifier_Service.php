@@ -124,7 +124,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li class="active"><a  href="Service_Gestion.php">Gérer Les Service</a></li>
                       </ul>
                   </li>
-                   
+                   <li><a  href="sendemail">Send Email</a></li>
               </ul>
               <!-- sidebar menu end-->
           </div>

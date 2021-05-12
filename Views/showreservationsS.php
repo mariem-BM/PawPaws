@@ -1,23 +1,53 @@
 <?php
 include '../controller/reservationSC.php';
 
+$search="";
 $reservationC= new reservationC();
-
-$liste=$reservationC->afficherReservation();
-
-
-$tri='';
-if (isset($_GET["tri"]))
-    $tri=$_GET["tri"];
-
-
-$listereservation=$reservationC->afficherActivites($tri);
-
-if (isset($_POST["idreservation"])&& isset($_POST["idservice"]) && isset ($_POST["supprimer"])){
-    $reservationC->supprimerReservation($_POST["idreservation"],$_POST["idservice"]);
-    echo("<script>location.href = 'Reservation_Gestion.php';</script>");
+if(isset($_POST['valueToSearch']))
+{   
+    $search=$_POST['valueToSearch'];
+        
+}
+$liste=$reservationC->searchres($search);
+if(isset($_POST['tri']))
+{
+if($_POST['tri']=="defaut")
+{
+    $tri=0;
+    $liste=$reservationC->trieres($tri);
+}
+else if($_POST['tri']=="date asc")
+{
+    $tri=1;
+    $liste=$reservationC->trieres($tri);
+}
+else if($_POST['tri']=="servicetype asc")
+{
+    $tri=2;
+    $liste=$reservationC->trieres($tri);
+}
+else if($_POST['tri']=="date desc")
+{
+    $tri=3;
+    $liste=$reservationC->trieres($tri);
+}
+else if($_POST['tri']=="servicetype desc")
+{
+    $tri=4;
+    $liste=$reservationC->trieres($tri);
+}
+else if($_POST['tri']=="nb pets asc")
+{
+    $tri=5;
+    $liste=$reservationC->trieres($tri);
+}
+else if($_POST['tri']=="nb pets desc")
+{
+    $tri=6;
+    $liste=$reservationC->trieres($tri);
 }
 
+}
 
 
 ?>
@@ -43,11 +73,29 @@ function googleTranslateElementInit() {
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
           <div class="row">
-<a class="btn btn-info" href="searchreservationS.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;Search reservation by user</a>
-<a href="showreservationsS.php?tri=P"> Alphabetique A-Z</a>
-<a href="showreservationsS.php?tri=ZA"> Alphabetique Z-A</a>
-<a href="showreservationsS.php?tri=DA"> Date↓</a>
-<a href="showreservationsS.php?tri=DS"> Date↑</a>
+<form class="contact__form" method="post" action="">
+    <div align="center"  class="control-group form-group">   
+<input type="text" name="tri" list="tri" >
+    <datalist id="tri">
+      <option value="defaut">
+        <option value="date asc">
+      <option value="servicetype asc">
+      
+        <option value="date desc">
+        <option value="servicetype desc">
+      <option value="nb pets asc">
+        <option value="nb pets desc">
+      <div class="col-12 mt-4">
+
+    </div>
+    </datalist>
+            <input name="confirm" type="submit" class=" btn btn-hero btn-circled" value="Trier">
+    </div>
+    </form>
+    <form align="center" action="" method="post">
+    <input type="text" name="valueToSearch", placeholder="Reservations to search">
+    <input type="submit" name="search" value="search"><br><br>
+</form>
 <hr>
 <div class="container">
     <div >
@@ -71,7 +119,7 @@ function googleTranslateElementInit() {
     </tr>
             </thead>
     <?PHP
-    foreach($listereservation as $reservation){ //echo reservation 9dima//
+    foreach($liste as $reservation){ //echo reservation 9dima//
         ?>
         <tr>
 

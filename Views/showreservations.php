@@ -1,7 +1,7 @@
 <?php
 include '../controller/reservationC.php';
 
-$reservationsC= new reservationsC();
+/*$reservationsC= new reservationsC();
 
 $liste=$reservationsC->afficherReservation();
 
@@ -11,7 +11,54 @@ if (isset($_GET["tri"]))
     $tri=$_GET["tri"];
 
 
-$listereservation=$reservationsC->afficherActivites($tri);
+$listereservation=$reservationsC->afficherActivites($tri);*/
+$search="";
+$reservationsC= new reservationsC();
+if(isset($_POST['valueToSearch']))
+{   
+    $search=$_POST['valueToSearch'];
+        
+}
+$liste=$reservationsC->searchreservation($search);
+if(isset($_POST['tri']))
+{
+if($_POST['tri']=="defaut")
+{
+    $tri=0;
+    $liste=$reservationsC->trireservation($tri);
+}
+else if($_POST['tri']=="date asc")
+{
+    $tri=1;
+    $liste=$reservationsC->trireservation($tri);
+}
+else if($_POST['tri']=="roomtype asc")
+{
+    $tri=2;
+    $liste=$reservationsC->trireservation($tri);
+}
+else if($_POST['tri']=="date desc")
+{
+    $tri=3;
+    $liste=$reservationsC->trireservation($tri);
+}
+else if($_POST['tri']=="roomtype desc")
+{
+    $tri=4;
+    $liste=$reservationsC->trireservation($tri);
+}
+else if($_POST['tri']=="Nights asc")
+{
+    $tri=5;
+    $liste=$reservationsC->trireservation($tri);
+}
+else if($_POST['tri']=="Nights desc")
+{
+    $tri=6;
+    $liste=$reservationsC->trireservation($tri);
+}
+
+}
 
 
 
@@ -27,11 +74,34 @@ $listereservation=$reservationsC->afficherActivites($tri);
     <title> show reservation name </title>
 </head>
 <body>
-<a class="btn btn-info" href="searchreservation.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;Search reservation</a>
+<!--<a class="btn btn-info" href="searchreservation.php"> <i class="glyphicon glyphicon-plus" > </i> &nbsp;Search reservation</a>
 <a href="showreservations.php?tri=P"> Alphabetique A-Z</a>
 <a href="showreservations.php?tri=ZA"> Alphabetique Z-A</a>
 <a href="showreservations.php?tri=DA"> Date↓</a>
-<a href="showreservations.php?tri=DS"> Date↑</a>
+<a href="showreservations.php?tri=DS"> Date↑</a>-->
+<form class="contact__form" method="post" action="">
+    <div align="center"  class="control-group form-group">   
+<input type="text" name="tri" list="tri" >
+    <datalist id="tri">
+      <option value="defaut">
+        <option value="date asc">
+      <option value="roomtype asc">
+      
+        <option value="date desc">
+        <option value="roomtype desc">
+      <option value="Nights asc">
+        <option value="nights desc">
+      <div class="col-12 mt-4">
+
+    </div>
+    </datalist>
+            <input name="confirm" type="submit" class=" btn btn-hero btn-circled" value="Trier">
+    </div>
+    </form>
+    <form align="center" action="" method="post">
+    <input type="text" name="valueToSearch", placeholder="Reservations to search">
+    <input type="submit" name="search" value="search"><br><br>
+</form>
 <hr>
 <!--<div class="container">-->
     <style>
@@ -77,7 +147,7 @@ $listereservation=$reservationsC->afficherActivites($tri);
     </tr>
             </thead>
     <?PHP
-    foreach($listereservation as $reservationh){ //echo reservation 9dima//
+    foreach($liste as $reservationh){ //echo reservation 9dima//
         ?>
         <tr>
 

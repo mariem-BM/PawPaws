@@ -124,7 +124,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                            <li ><a  href="chat.php">Chat Room</a></l>
                       </ul>
                   </li>
-                  
+                  <li><a  href="sendemail">Send Email</a></li>
               </ul>
               <!-- sidebar menu end-->
           </div>

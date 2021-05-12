@@ -4,12 +4,41 @@
 <?php session_start();
 ?>
     <head>
+        <meta charset="utf-8">
+     <style>
+       .css1 {
+        font-family: Arial,Heveltica, sans-serif;
+        color: tomato;
+        font-style: italic;
+       }
+
+       .css2 {
+        font-family: Arial,Heveltica, sans-serif;
+        color: black;
+        font-style: italic;
+       }
+       .css3 {
+       
+        text-decoration: none;
+        background-color: tomato;
+        color: black;
+       
+        text-align: center;
+        width: 100px;
+      margin-bottom: 1px;
+       }
+       .css4.css5{
+         font-family: Arial,Heveltica, sans-serif;
+         font-size: 29px;
+       }
+   </style>
    <meta charset="utf-8">
   <title>PawPaws</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="../assets3/css/main2.css">
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
-   <link rel = "icon" href = "../assets3/img/logo.png" type = "image/png">
+     <!-- hne yet7at el logo ama tfas5etli el taswira w eli 3ana sghirabarcha -->
+   <link rel = "icon" href = "../assets3/img/PawPaws_Logo2.png" type = "image/png">
        <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,17 +57,19 @@
    <header class = "header" id = "header">
    <div class = "head-top">
    <div class = "site-name">
+    <img src = "../assets3/img/Logo.png" alt = "logo image" height="50px" width="50px" style="margin: auto;">
     <span>PawPaws</span>
+
     </div>
     <div class = "site-nav">
     <span id = "nav-btn">MENU <i class = "fas fa-bars"></i></span>
     </div>
     </div>
    <div class = "head-bottom flex">
-   <h2>Welcome</h2>
-   <p>PawPaws best website for all yours and your pets needs!</p>
+   <h2 style="color: tomato";>Welcome to PawPaws</h2>
+   <p class="css4";>PawPaws best website for your pets and their needs!</p>
 
-    <button type = "button" class = "head-btn" onclick="bouton()">GET STARTED</button>
+    <button type = "button" class = "head-btn" onclick="bouton()" style="color: tomato";>GET STARTED</button>
     </div>
     </header>
     <!-- end of header -->
@@ -116,7 +147,42 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
     
               
     <!-- SERVICES -->  
-           <div class = "title">
+
+
+<section class = "customers" id = "customers">
+            <div class = "sec-width">
+                <div class = "title">
+                    <h3 style="text-align: center;color:#FF5733;">OUR WEBSITE PROVIDES</h3>
+                </div>
+                <div class = "customers-container">
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <div class = "title">
+                <h3 style="color:#FF5733;">Services</h3>
+            </div>
+                        
+                        <h3 class="css1">Services for every pet</h3>
+                        <p class="css2">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
+                                    CHECK THE <li><a a style="text-align: center;" class="css3" href = "servicespage.php">Services Page</a></li>
+                        <img src = "../assets3/img/customor1.jpg" alt = "customer image">
+                        <span herf = "servicespage.php">Services Page</span>
+                    </div>
+                 <div class = "customer">
+                    <div class = "title">
+                <h3 style="color:#FF5733;">Rooms</h3>
+            </div>
+                       
+                        <h3 class="css1">Because your pet deserves the best</h3>
+                        <p class="css2">When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
+                                    CHECK THE <li><a style="text-align: center;" class="css3" href = "roomspage.php">Rooms Page</a></li>
+                        <img src = "../assets3/img/customor1.jpg" alt = "customer image">
+                         <span herf = "roomsspage.php">Rooms Page</span>
+                    </div>
+        </section>
+
+
+
+        <!--   <div class = "title">
                 <h3 style="color:#FF5733;">Services</h3>
             </div>         
 <div class="service_area">
@@ -124,9 +190,9 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                        <h3 style="color:#FF5733;">Services for every pet</h3>
-                        <p>Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
-                                    CHECK THE <li><a href = "servicespage.php">Services Page</a></li>
+                        <h3 class="css1">Services for every pet</h3>
+                        <p class="css2">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
+                                    CHECK THE <li><a style="text-align: center;" class="css3"  href = "servicespage.php">Services Page</a></li>
                     </div>
                     
                 </div>
@@ -135,7 +201,7 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
                 </div>
             </div>
  <!-- ROOMS --> 
-            <div class = "title">
+        <!--    <div class = "title">
                 <h3 style="color:#FF5733;">Rooms</h3>
             </div> 
 <div class="service_area">
@@ -144,8 +210,10 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
                         <h3 style="color:#FF5733;">Because your pet deserves the best</h3>
-                        <p>When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
-                                    CHECK THE <li><a href = "roomspage.php">Rooms Page</a></li>
+                         <img src = "../assets3/img//rooms_Acceuil.png" alt = "room image" width="900px" height="200px">
+                        <p class="css2">When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
+                        
+                                    CHECK THE <li><a style="text-align: center;" class="css3" href = "roomspage.php">Rooms Page</a></li>
                     </div>
                     
                 </div>
@@ -155,7 +223,7 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
 </div>
 </div>
 
-
+-->
         <section class = "customers" id = "customers">
             <div class = "sec-width">
                 <div class = "title">

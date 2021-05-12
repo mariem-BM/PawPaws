@@ -118,6 +118,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
 
                       </ul>
                   </li>
+                  <li><a  href="sendemail">Send Email</a></li>
               </ul>
               <!-- sidebar menu end-->
           </div>

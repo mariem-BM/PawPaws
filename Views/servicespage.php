@@ -16,8 +16,21 @@ include_once '../Views/navbar.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+     <style>
+         .servicescss {
+        font-family: Arial,Heveltica, sans-serif;
+        color: tomato;
+        font-style: italic;
+       }
+       .css9{
+        font-family: Arial,Heveltica, sans-serif;
+        color: black;
+        font-style: italic;
+       }
 
-    <title>Paw Paws</title>
+    </style>
+
+    <title>PawPaws</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +42,7 @@ include_once '../Views/navbar.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/roompagestyle.css">
   
-    <title>Paw Paws</title>
+    <title>PawPaws</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,7 +68,7 @@ function googleTranslateElementInit() {
           <div class="row">
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Paw PAws</a>
+      <a class="navbar-brand" href="Acceuil.php">PawPaws</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -84,8 +97,8 @@ function googleTranslateElementInit() {
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                        <h3 style="color:#FF5733;">Services for every pet</h3>
-                        <p>Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
+                        <h3 class="servicescss" style="color:#FF5733;" >Services for every pet</h3>
+                        <p class="css9";>Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
 
                     </div>
                     

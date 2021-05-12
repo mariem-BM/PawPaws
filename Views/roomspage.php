@@ -16,6 +16,19 @@ include_once '../controller/reservationC.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+     <style>
+         .roomscss {
+        font-family: Arial,Heveltica, sans-serif;
+        color: tomato;
+        font-style: italic;
+       }
+       .css8{
+        font-family: Arial,Heveltica, sans-serif;
+        color: black;
+        font-style: italic;
+       }
+
+    </style>
 
     <title>PawPaws</title>
 
@@ -45,7 +58,7 @@ include_once '../controller/reservationC.php';
 
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">PawPaws</a>
+      <a class="navbar-brand" href="Acceuil.php">PawPaws</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -76,8 +89,8 @@ include_once '../controller/reservationC.php';
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                        <h3 style="color:#FF5733;">BECAUSE YOUR PET DESERVES THE BEST</h3>
-                        <p>When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
+                        <h3 class="roomscss" style="color:#FF5733;">BECAUSE YOUR PET DESERVES THE BEST</h3>
+                        <p class="css8";>When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
 
                     </div>
                     

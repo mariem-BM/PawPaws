@@ -99,7 +99,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li class="active"><a  href="Gestion_ResS_Conn.php">Afficher Vos Reservations</a></li>
                       </ul>
                   </li>
-                  
+                  <li><a  href="sendemail">Send Email</a></li>
               </ul>
               <!-- sidebar menu end-->
           </div>

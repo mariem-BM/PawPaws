@@ -129,6 +129,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                             <li><a  href="Complaints_Conn.php">Afficher Vos Complaintes</a></li>
                       </ul>
                   </li>
+                  <li><a  href="sendemail">Send Email</a></li>
               </ul>
               <!-- sidebar menu end-->
           </div>

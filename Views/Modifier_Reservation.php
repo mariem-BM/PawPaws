@@ -136,6 +136,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li ><a  href="Complaints_Gestion.php">Gérer Les Requetes</a></li>
                       </ul>
                   </li>
+                  <li><a  href="sendemail">Send Email</a></li>
               </ul>
               <!-- sidebar menu end-->
           </div>
