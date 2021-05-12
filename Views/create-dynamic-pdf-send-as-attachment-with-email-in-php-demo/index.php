@@ -23,12 +23,9 @@ function fetch_customer_data($connect)
 				<th>Nbre of pets</th>
 				<th>Adresse</th>
 				<th>tel</th>
-				<th>Email</th>
+				
 				<th>HoteAdress</th>
 				<th>Nbn</th>
-				<th>Date</th>
-				<th>Rooms nbre</th>
-				<th>Special Requirments</th>
 				<th>Nom et Prenom</th>
 			</tr>
 	';
@@ -41,12 +38,10 @@ function fetch_customer_data($connect)
 				<td>'.$row["firstname"].'</td>
 				<td>'.$row["adresse"].'</td>
 				<td>'.$row["tel"].'</td>
-				<td>'.$row["email"].'</td>
+				
 				<td>'.$row["hoteladresse"].'</td>
 				<td>'.$row["nbn"].'</td>
-				<td>'.$row["date"].'</td>
-				<td>'.$row["room"].'</td>
-				<td>'.$row["rp"].'</td>
+				
 				<td>'.$row['Nom']." ".$row['Prenom'].'</td>
 			</tr>
 		';
