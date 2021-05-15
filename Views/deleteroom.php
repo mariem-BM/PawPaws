@@ -8,6 +8,6 @@
 
 	if (isset($_POST["idroom"])){
         $roomC1->deleteroom($_POST["idroom"]);
-        header('Location:showrooms.php');
+        header('Location:Room_Gestion.php');
     }
 

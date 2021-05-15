@@ -38,7 +38,7 @@ $_POST['iduser']
         );
        $idreservation=$_POST["idreservation"];
         $reservationsC->updateReservation($Reservationh, $idreservation);
-        header('Location:showreservations.php');
+        header('Location:Reservation_Gestion.php');
     }
 
 
@@ -231,7 +231,7 @@ $_POST['iduser']
 }
 }
 else {
-    header('Location:showreservations.php');
+    header('Location:Reservation_Gestion.php');
 }
 ?>
 

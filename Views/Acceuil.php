@@ -31,6 +31,13 @@
          font-family: Arial,Heveltica, sans-serif;
          font-size: 29px;
        }
+       #bg {
+        width: 100px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: top-right;
+
+       }
    </style>
    <meta charset="utf-8">
   <title>PawPaws</title>
@@ -54,11 +61,13 @@
     <body>
     
   <!-- header -->
+
    <header class = "header" id = "header">
+    <img src = "../assets3/img/PawPaws_Logo2.png" id="bg" alt = "logo image" height="50px" width="50px">
    <div class = "head-top">
    <div class = "site-name">
-    <img src = "../assets3/img/Logo.png" alt = "logo image" height="50px" width="50px" style="margin: auto;">
-    <span>PawPaws</span>
+    
+    <span>PawPaws</i></span>
 
     </div>
     <div class = "site-nav">
@@ -93,7 +102,10 @@
 
    <li><a href = "FormComplaint.php">Reclamation</a></li>
 
+  
+   <li><a href = "Frontt/accessoires.php">Produits</a></li>
    
+   <li><a href = "Frontt/promotion.php">Promotions</a></li>
 
 
 
@@ -143,17 +155,21 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
 
     </div>
     <!-- end of side navbar -->
-
+<div class = "sec-width">
+                <div class = "title">
+                    <h3 style="text-align: center;color:#FF5733;">OUR WEBSITE PROVIDES</h3>
+                </div>
     
               
     <!-- SERVICES -->  
 
 
 <section class = "customers" id = "customers">
-            <div class = "sec-width">
+	<div class = "sec-width">
                 <div class = "title">
-                    <h3 style="text-align: center;color:#FF5733;">OUR WEBSITE PROVIDES</h3>
+                    <h3 style="text-align: center;color:#FF5733;">We Provide</h3>
                 </div>
+            
                 <div class = "customers-container">
                     <!-- single customer -->
                     <div class = "customer">
@@ -224,13 +240,13 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
 </div>
 
 -->
-        <section class = "customers" id = "customers">
+       <!-- <section class = "customers" id = "customers">
             <div class = "sec-width">
                 <div class = "title">
                     <h3 style="text-align: center;color:#FF5733;">CUSTOMORES</h3>
                 </div>
                 <div class = "customers-container">
-                    <!-- single customer -->
+                   
                     <div class = "customer">
                         <div class = "rating">
                             <span><i class = "fas fa-star"></i></span>
@@ -244,8 +260,7 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
                         <img src = "../assets3/img/customor1.jpg" alt = "customer image">
                         <span>Samir, Country</span>
                     </div>
-                    <!-- end of single customer -->
-                    <!-- single customer -->
+                    
                     <div class = "customer">
                         <div class = "rating">
                             <span><i class = "fas fa-star"></i></span>
@@ -259,8 +274,7 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
                         <img src = "../assets3/img/customor2.jpg" alt = "customer image">
                         <span>Mohamed, Country</span>
                     </div>
-                    <!-- end of single customer -->
-                    <!-- single customer -->
+                   
                     <div class = "customer">
                         <div class = "rating">
                             <span><i class = "fas fa-star"></i></span>
@@ -274,12 +288,17 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
                         <img src = "../assets3/img/customor3.jpg" alt = "customer image">
                         <span>Olfa, Country</span>
                     </div>
-                    <!-- end of single customer -->
+                  
                 </div>
            </div>
-        </section>
+        </section> -->
         <!-- end of body content -->
-        
+        <section>
+        	<div class = "sec-width">
+                <div class = "title">
+                    <h3 style="text-align: center;color:#FF5733;">Paw Paws</h3>
+                </div>
+        </section>
         <!-- footer -->
         <footer class = "footer">
             <div class = "footer-container">

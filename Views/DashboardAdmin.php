@@ -109,8 +109,22 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
                           <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
                           <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                        
                       </ul>
                   </li>
+                 <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Gestion Produit</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="back/gestion_produit.php">Gestion Produit</a></li>
+                          <li ><a  href="back/ajouter_produit.php">ajouter Produit</a></li>
+                          <li ><a  href="back/gestion_promo.php">Gestion promo</a></li>
+                          <li ><a  href="back/ajouter_promo.php">ajouter promo</a></li>
+                      </ul>
+                      </li>
+            
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>

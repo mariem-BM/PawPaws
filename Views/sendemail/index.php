@@ -82,7 +82,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Gérer les comptes</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
+                          <li ><a  href="../Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
                          
                       </ul>
                   <li class="sub-menu">
@@ -91,12 +91,12 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Sevices</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
+                          <li ><a  href="../ReservationS_Gestion.php">Gérer Les Reservations</a></li>
                         
-                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
-                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
-                          <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
+                          <li><a  href="../Ajouter_Service.php">Ajouter Une Sevice</a></li>
+                          <li><a  href="../Services_Gestion.php">Gérer Les Sevices</a></li>
+                          <li><a  href="../sendemail">Send Email</a></li>
+                          <li><a  href="../create-dynamic-pdf-send">Rendez-vous Details</a></li>
                       </ul>
                   </li>
 
@@ -106,21 +106,30 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Rooms</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
-                          <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
-                          <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                          <li class="active"><a  href="../Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="../Ajouter_Room.php">Ajouter Une Chambre</a></li>
+                          <li><a  href="../Room_Gestion.php">Gérer Les Chambres</a></li>
+                          <li><a  href="../sendemail">Send Email</a></li>
+                          <li><a  href="../create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
                       </ul>
                   </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Gestion Produit</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="../back/gestion_produit.php">Gestion Produit</a></l>
+                         
+                      </ul>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Blog</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="blank.php">Ajouter un Blog Post</a></li>
-                          <li><a  href="Affichertoutposts.php">Afficher les Blog Posts</a></li>
+                          <li ><a  href="../blank.php">Ajouter un Blog Post</a></li>
+                          <li><a  href="../Affichertoutposts.php">Afficher les Blog Posts</a></li>
                       </ul>
                   </li>
                    <li class="sub-menu">
@@ -129,8 +138,8 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>FeedBack</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Complaints_Gestion.php">Gérer Les FeedBack</a></li>
-                          <li ><a  href="chat.php">Chat Room</a></l>
+                          <li ><a  href="../Complaints_Gestion.php">Gérer Les FeedBack</a></li>
+                          <li ><a  href="../chat.php">Chat Room</a></l>
                       </ul>
                   </li>
                    
