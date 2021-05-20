@@ -38,7 +38,34 @@
         background-position: top-right;
 
        }
+       .button {
+       	font-family: Arial,Heveltica, sans-serif;
+
+   font-style: bold 20px italic;
+  text-decoration: none;
+  background-color: tomato;
+  color: black;
+  padding: 20px 60px 20px 60px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+.button2 {
+       	font-family: Arial,Heveltica, sans-serif;
+
+   font-style: bold 20px italic;
+  text-decoration: none;
+  background-color: tomato;
+  color: black;
+  padding: 10px 30px 10px 30px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
    </style>
+   
    <meta charset="utf-8">
   <title>PawPaws</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -154,93 +181,150 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
 </ul>
 
     </div>
-    <!-- end of side navbar -->
-<div class = "sec-width">
+    <section>
+    <div  align="center" class="container-fluid">
+        <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div></section>
+       
+     <div class = "sec-width">
                 <div class = "title">
                     <h3 style="text-align: center;color:#FF5733;">OUR WEBSITE PROVIDES</h3>
                 </div>
     
               
-    <!-- SERVICES -->  
-
-
-<section class = "customers" id = "customers">
-	<div class = "sec-width">
-                <div class = "title">
-                    <h3 style="text-align: center;color:#FF5733;">We Provide</h3>
+            <br>
+            <br>
+            <br>
+<div class = "title">
+              <h3 style="color:#FF5733;">Services</h3>
+            </div>  
+<br>
+<div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                      <img src = "../assets3/service.png" alt = "customer image" height="250px" width="400px">
+                      <br>
+                       <h3 class="css1">Services for every pet</h3>
+                       <p class="css2">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
+                       <br>
+                         <a href="servicespage.php" class="button">Service Page</a>
+                                    
+                    </div>
+                    
                 </div>
+               
+            </div>
+                </div>
+            </div>
+<br>
+<br>
+<div class = "title">
+              <h3 style="color:#FF5733;">Products</h3>
+            </div>   
+            <br>
+            <br>      
+<div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                       <img src = "../assets3/products.png" alt = "customer image" height="250px" width="400px">
+                       <br>
+                        <h3 class="css1">Products for every pet</h3>
+                        <br>
+                        <p class="css2">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
+                       
+                                   
+                                    <a href="Frontt/accessoires.php" class="button">Products Page</a>
+                    </div>
+                    
+                </div>
+               
+            </div>
+                </div>
+            </div>
+<br>
+<br>
+<br>
+
+            <div class = "title">
+                <h3 style="color:#FF5733;">Rooms</h3>
+            </div>    
+            <br>
+            <br>     
+<div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                       <img src = "../assets3/hotel.png" alt = "hotel image"height="250px" width="400px">
+                       <br>
+                        <br>
+                        <h3 class="css1">Because your Pet deserves the best!</h3>
+                       <p class="css2">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
+                        <br>
+                      
+                                    
+                                   <a href="roomspage.php" class="button">Rooms Page</a>
+
+                    </div>
+                    
+                </div>
+               
+            </div>
+                </div>
+            </div>
+ 
+
+
+<!--<section class = "services" id = "services">
+	<div class = "sec-width">
             
-                <div class = "customers-container">
-                    <!-- single customer -->
-                    <div class = "customer">
+                <div class = "services-container">
+                   
+                    <div class = "services">
                         <div class = "title">
                 <h3 style="color:#FF5733;">Services</h3>
             </div>
                         
                         <h3 class="css1">Services for every pet</h3>
-                        <p class="css2">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
-                                    CHECK THE <li><a a style="text-align: center;" class="css3" href = "servicespage.php">Services Page</a></li>
-                        <img src = "../assets3/img/customor1.jpg" alt = "customer image">
-                        <span herf = "servicespage.php">Services Page</span>
+                        <p class="css2"><img src = "../assets3/service.png" alt = "services image">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
+                                     <a class="button2" href = "servicespage.php">Services Page</a>
+                        
+                        
                     </div>
-                 <div class = "customer">
+    </div>
+</div>
+                    </section>
+                    <section class = "services" id = "services">
+                    	<div class = "sec-width">
+                 <div class = "services">
                     <div class = "title">
                 <h3 style="color:#FF5733;">Rooms</h3>
             </div>
                        
                         <h3 class="css1">Because your pet deserves the best</h3>
-                        <p class="css2">When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
-                                    CHECK THE <li><a style="text-align: center;" class="css3" href = "roomspage.php">Rooms Page</a></li>
-                        <img src = "../assets3/img/customor1.jpg" alt = "customer image">
-                         <span herf = "roomsspage.php">Rooms Page</span>
-                    </div>
-        </section>
-
-
-
-        <!--   <div class = "title">
-                <h3 style="color:#FF5733;">Services</h3>
-            </div>         
-<div class="service_area">
-        <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-lg-7 col-md-10">
-                    <div class="section_title text-center mb-95">
-                        <h3 class="css1">Services for every pet</h3>
-                        <p class="css2">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
-                                    CHECK THE <li><a style="text-align: center;" class="css3"  href = "servicespage.php">Services Page</a></li>
-                    </div>
-                    
-                </div>
-               
-            </div>
-                </div>
-            </div>
- <!-- ROOMS --> 
-        <!--    <div class = "title">
-                <h3 style="color:#FF5733;">Rooms</h3>
-            </div> 
-<div class="service_area">
-        <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-lg-7 col-md-10">
-                    <div class="section_title text-center mb-95">
-                        <h3 style="color:#FF5733;">Because your pet deserves the best</h3>
-                         <img src = "../assets3/img//rooms_Acceuil.png" alt = "room image" width="900px" height="200px">
-                        <p class="css2">When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
+                        <p class="css2"><img src = "../assets3/rooms.jpg" alt = "services image">When you leave your pet somewhere overnight, you want to be sure they’re well taken care of.pawpaws Resorts Luxury Pet Hotel are award-winning, internationally recognized pet care resorts that will make your pup feel right at home. All our trained and certified staff members are true animal lovers and will care for your pet as if they were our own.</p>
+                                     <a class="button2" href = "roomspage.php">Rooms Page</a>
                         
-                                    CHECK THE <li><a style="text-align: center;" class="css3" href = "roomspage.php">Rooms Page</a></li>
+                         
                     </div>
-                    
                 </div>
-               
-            </div>
+        </section>-->
 
-</div>
-</div>
 
--->
-       <!-- <section class = "customers" id = "customers">
+
+        
+        <section class = "customers" id = "customers">
             <div class = "sec-width">
                 <div class = "title">
                     <h3 style="text-align: center;color:#FF5733;">CUSTOMORES</h3>
@@ -291,14 +375,9 @@ echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
                   
                 </div>
            </div>
-        </section> -->
+        </section> 
         <!-- end of body content -->
-        <section>
-        	<div class = "sec-width">
-                <div class = "title">
-                    <h3 style="text-align: center;color:#FF5733;">Paw Paws</h3>
-                </div>
-        </section>
+      
         <!-- footer -->
         <footer class = "footer">
             <div class = "footer-container">

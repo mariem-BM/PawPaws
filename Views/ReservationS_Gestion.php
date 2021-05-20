@@ -203,7 +203,7 @@ else if($_POST['tri']=="nb pets desc")
     <title> show reservation name </title>
 </head>
 <body>
-      <div  align="center" class="container-fluid">
+    <div  align="center" class="container-fluid">
         <div id="google_translate_element"></div>
 
 <script type="text/javascript">
@@ -213,7 +213,8 @@ function googleTranslateElementInit() {
 </script>
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-          <div class="row">
+</div>
+    <div class="row">
 <form class="contact__form" method="post" action="">
     <div align="center"  class="control-group form-group">   
 <input type="text" name="tri" list="tri" >

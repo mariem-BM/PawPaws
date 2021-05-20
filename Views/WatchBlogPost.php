@@ -115,12 +115,12 @@ $AddBlogPost="DashboardUser.php";
               <input type="text" class="form-control" id="search" name="search" placeholder="Search for...">
               <span class="input-group-append">
                 <button class="btn btn-secondary" type="submit">Go!</button>
+
+
               </form>
               </span>
-              <li>
-                    <a href="AddBlogPost.php">Add New Post</a>
-                  </li>
             </div>
+
              <div class="card my-4">
           <h5 class="card-header">Trier Par</h5>
           <div class="card-body">
@@ -143,15 +143,24 @@ $AddBlogPost="DashboardUser.php";
                   <li>
                     <a href="WatchBlogPost.php?tri=DD">Date Décroissant</a>
                   </li>
-                  <li>
-                    <a href="#">Most Active</a>
-                  </li>
-                  <li>
-                    <a href="#">Least Active</a>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
+               <div class="card my-4">
+          <h5 class="card-header">Catégories</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                 <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="WatchBlogPost.php">News</a>
+                  </li>
+                  <li>
+                    <a href="WatchBlogPost.php?tri=ZA">Entertainment</a>
+                  </li>
+                                  
+                </ul>
           </div>
         </div>
           </div>

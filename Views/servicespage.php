@@ -55,7 +55,7 @@ include_once '../Views/navbar.php';
 
 <body>
    <!-- Navigation -->
-<div  align="center" class="container-fluid">
+    <div  align="center" class="container-fluid">
         <div id="google_translate_element"></div>
 
 <script type="text/javascript">
@@ -65,7 +65,8 @@ function googleTranslateElementInit() {
 </script>
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-          <div class="row">
+</div>
+ <div class="row">
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="Acceuil.php">PawPaws</a>

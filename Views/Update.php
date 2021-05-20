@@ -68,7 +68,8 @@ require "../model/bloc.php";
         </label>
             </th>
             <th align="left">
-        <input type="file" id="image" name="image"  value="<?php  echo $post["image"];?>" required><?php  echo $post["image"];?></input>
+        <input type="file" id="image" name="image"  value="<?php  echo $picture["image"];?>" required> 
+        <?php  echo $picture["image"];?></input>
             </th>
         </tr>
         <input value="<?php echo $id ?>" id="id1" name="id1" hidden>         

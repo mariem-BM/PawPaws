@@ -60,21 +60,22 @@ function Modifier($titre, $type,$desc,$id,$check) {
             try {
                 $pdo = getConnexion();
                 $query = $pdo->prepare(
-                    'UPDATE complaint SET  Titre=:titre, Type= :type , Message= :Message, Checked=:Checked, WHERE id = :id'
+                    'UPDATE complaint SET  Titre=:titre, Type= :type , Message= :Message, Checked=:Checked WHERE id = :id'
                 );
                 $query->execute([
-         'titre' => $titre,
-         'type' => $type,
+                    'titre' => $titre,
+                    'type' => $type,
                     'id' => $id,
                     'Message' => $desc,
                     'Checked'=> $check
                 ]);
-             echo $id;
-             $query->rowCount();
+             echo "changes saved";
+             echo $query->rowCount();
             } catch (PDOException $e) {
                echo $e->getMessage();
             }
         }
+       
 
 function Creation_Comp ($titre,$message,$type,$id_user,$nomuser)
 {
@@ -91,8 +92,9 @@ function Creation_Comp ($titre,$message,$type,$id_user,$nomuser)
                     'type' => $type,
                     'id_user' => $id_user,
                     'nom_user' => $nomuser,
-                    
-                ]);}
+                ]);
+              }
+
              catch (PDOException $e) {
                 echo $e->getMessage();
             }
@@ -177,7 +179,7 @@ function get_Rec_by_id($id)
   }
   $sql="SELECT *  FROM complaint WHERE id=$id";
   $result = $conn->query($sql);
-  if ($result>0)
+  if ($result->num_rows > 0)
   {
     while($row = $result->fetch_assoc())
       {$post->nom=$row["Titre"];
@@ -186,7 +188,7 @@ function get_Rec_by_id($id)
   $post->type=$row["Type"];
  $post->user=$row["nom_user"];}}
   else
-  echo "";
+  echo "no result";
   $conn->close();
   return $post;
 }

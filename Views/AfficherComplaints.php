@@ -1,5 +1,5 @@
 <?php
-require_once "../controller/RatingsC.php";
+require_once "../Controller/RatingsC.php";
 $tri="";
 if (isset($_GET["tri"]))
 $tri=$_GET["tri"];
@@ -21,24 +21,30 @@ $tri=$_GET["tri"];
     
     $list=AfficherComplaints($tri);
 ?>
- <a href="AfficherComplaints.php?tri=AZ" class="btn btn-success"> Alphabetique A-Z</a>
-        <a href="AfficherComplaints.php?tri=ZA" class="btn btn-success"> Alphabetique Z-A</a>
-
+ 
 <table border=3 align = 'center'>
-  <thead> 
-      <tr style="text-align: center;"  >
 
-        <th  style="text-align: center; padding: 10px ;width: 250px ; font-size: 20px  "> Id </th>
+   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Gestion Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets3/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
         
-        <th   style="text-align: center; width: 250px; font-size: 20px ">Titre</th>
-        <th style="text-align: center; width: 250px; font-size: 20px ">Date</th>
-                 <th style="text-align: center; width: 250px; font-size: 20px ">Modifier</th>
-        <th style="text-align: center; width: 250px; font-size: 20px ">Supprimer</th>
+    <!-- Custom styles for this template -->
+    <link href="../assets3/css/style.css" rel="stylesheet">
+    <link href="../assets3/css/style-responsive.css" rel="stylesheet">
 
-          <th style="text-align: center; width: 250px; font-size: 20px ">View</th>
+    
+  </head>
 
-      </tr>
-</thead>
 <?PHP
         foreach($list as $Complaints)
         {
@@ -47,6 +53,9 @@ $tri=$_GET["tri"];
 <form method="POST" action="AfficherComplaints.php">
           <td align="center" ><input name="titre" value="<?PHP echo $Complaints['Titre']; ?>"></td>
           <td align="center"><input name="Message" value="<?PHP echo $Complaints['Message']; ?>"></td>
+          <td align="center"><?PHP echo $Complaints['nom_user']; ?></td>>
+          <td align="center"><input name="Type" value="<?PHP echo $Complaints['Type']; ?>"></td>>
+          <td align="center"><input name="Checked" value="<?PHP echo $Complaints['Checked']; ?>"></td>>
           <td align="center"><?PHP echo $Complaints['Date']; ?></td>>
           
 

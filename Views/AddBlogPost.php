@@ -1,5 +1,5 @@
 <?php
-require "../Controller/BlogC.php";
+require "../controller/BlogC.php";
 require "../model/bloc.php";
 
 
@@ -29,26 +29,49 @@ require "../model/bloc.php";
 ?>
 <!DOCTYPE html>
 <html>
-<script src="../Assets/Controledesaisiejs/Control_Blog.js"></script>
+<script src="../Assets3/Controledesaisiejs/Control_Blog.js"></script>
     <head>
+         <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-           <!-- Bootstrap core CSS -->
-    <link href="../assets3/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
-    <!-- Custom styles for this template -->
-    <link href="../assets3/css/style.css" rel="stylesheet">
-    <link href="../assets3/css/style-responsive.css" rel="stylesheet">
+  <title>Blog</title>
 
+  <!-- Bootstrap core CSS -->
+  <link href="../assets3/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../assets3/css/blog-home.css" rel="stylesheet">
         <meta charset="utf-8"/>
         <title>Inscription</title>
         <script src="script.js"></script>
     </head>
-
 <body>
-    
-<h1>Post</h1> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">PawPaws</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="Acceuil.php">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="DashboardUser.php">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="new 1.html">Rate Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<h1>Post</h1>    
     <form NAME="f" action="blank.php" method="POST" enctype="multipart/form-data" >
     <table border="1" width="80%">
         <tr>

@@ -92,7 +92,7 @@ function afficherpostsMod($search, $tri)
             <a href="read_post.php?id=<?= $row['id'] ?>" class="btn btn-primary">Read More &rarr;</a>
             <form NAME="f" action="ModBlogPost.php" method="POST">
               <input id="id" name="id" value="<?= $row['id'] ?>" hidden>
-            <a href="Update.php?id=<?= $row['id'] ?>" class="btn btn-primary" style="margin:5px;">Modifier</a>    
+            <a href=Affichertoutposts.php?id=<?= $row['id'] ?>" class="btn btn-primary" style="margin:5px;">Modifier</a>    
             <button type="submit" class="btn btn-primary">Delete</button> 
           </form>
           </div>
@@ -118,7 +118,9 @@ function afficherpostsMod($search, $tri)
             <a href="read_post.php?id=<?= $row['id'] ?>" class="btn btn-primary">Read More &rarr;</a>
             <form NAME="f" action="ModBlogPost.php" method="POST">
               <input id="id" name="id" value="<?= $row['id'] ?>" hidden>
-            <a href="Update.php?id=<?= $row['id'] ?>" class="btn btn-primary" style="margin:5px;">Modifier</a>    
+            <a href="Affichertoutposts.php?id=<?= $row['id'] ?>" class="btn btn-primary" style="margin:5px;">Modifier</a> 
+           <a href="AddBlogPost.php?id=<?= $row['id'] ?>" class="btn btn-primary" style="margin:5px;">Add New Post</a>    
+   
             <button type="submit" class="btn btn-primary">Delete</button> 
           </form>
           </div>

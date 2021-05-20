@@ -9,7 +9,7 @@ alert('Connectez-vous');
 
 if($_SESSION['role'] != 'admin')
 {
-echo "<script>document.location.href = 'chat.php';
+echo "<script>document.location.href = 'chatAdmin.php';
 </script>";
 }
 

@@ -47,7 +47,7 @@ if ($_SESSION["role"]=="admin")
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="Acceuil.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>

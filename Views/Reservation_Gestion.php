@@ -218,6 +218,17 @@ else if($_POST['tri']=="Nights desc")
 <a href="showreservations.php?tri=ZA"> Alphabetique Z-A</a>
 <a href="showreservations.php?tri=DA"> Date↓</a>
 <a href="showreservations.php?tri=DS"> Date↑</a>-->
+    <div  align="center" class="container-fluid">
+        <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
 <form class="contact__form" method="post" action="">
     <div align="center"  class="control-group form-group">   
 <input type="text" name="tri" list="tri" >
