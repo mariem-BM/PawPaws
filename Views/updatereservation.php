@@ -75,7 +75,7 @@ $_POST['iduser']
 <div class="wrapper">
     <div class="inner">
         <div class="image-holder">
-            <img src="images/wizard.jpg" alt="" width="909" height="316">
+            <img src="background.jpg" alt="">
 
             <h3>Your reservation</h3>
         </div>

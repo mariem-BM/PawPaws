@@ -90,6 +90,7 @@
   <!-- header -->
 
    <header class = "header" id = "header">
+    
     <img src = "../assets3/img/PawPaws_Logo2.png" id="bg" alt = "logo image" height="50px" width="50px">
    <div class = "head-top">
    <div class = "site-name">
@@ -131,7 +132,7 @@
    
    <li><a href = "Frontt/promotion.php">Promotions</a></li>
 
-
+   <li><a href = "cart.php">Cart</a></li>
 
     <?php 
 

@@ -153,7 +153,15 @@ $error = "Missing information";
                              
                       </ul>
                       </li>
-            
+            <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Gestion Commandes</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="back/commandes.php">Gestion commandes</a></li>
+                      </ul>
+                      </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>

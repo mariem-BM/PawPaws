@@ -76,7 +76,7 @@ else if($_POST['tri']=="Nights desc")
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Gestion Blog</title>
+    <title>Gestion Reservation</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">
@@ -184,7 +184,15 @@ else if($_POST['tri']=="Nights desc")
                              
                       </ul>
                       </li>
-            
+            <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Gestion Commandes</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="back/commandes.php">Gestion commandes</a></li>
+                      </ul>
+                      </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
@@ -305,7 +313,7 @@ function googleTranslateElementInit() {
         <th>Nbre Room</th>
         <th>Special Requirments</th>
         <th>Roomtype<th>
-        <th>Hotel adress<th>
+        
         <!-- <th>user</th>-->
         <th>delete</th>
         <th>update</th>
@@ -332,8 +340,7 @@ function googleTranslateElementInit() {
             <td><?PHP echo $reservationh['rp']; ?></td>
 
             <td><?PHP echo $reservationh['roomtype']; ?></td>
-            <td><?PHP echo $reservationh['hoteladresse']; ?></td>
-
+           
          <!--   <td><?PHP// echo $reservationh['Nom']; ?>&nbsp;<?PHP //echo $reservationh//['Prenom'];?></td>-->
 <div class="dontPrint">
             <td>

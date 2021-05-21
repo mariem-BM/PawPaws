@@ -27,9 +27,8 @@ if (  isset($_POST["idroom"]) &&
     !empty($_POST["qty"])
     ) {
         $Room = new room( //ism model//
-
+        	$_POST['hoteladresse'],
             $_POST['roomtype'],
-            $_POST['hoteladresse'],
             $_POST['price'],
             $_POST['photo'],
   $_POST['qty']

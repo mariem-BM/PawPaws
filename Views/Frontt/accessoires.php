@@ -92,7 +92,7 @@ function googleTranslateElementInit() {
                                 <p>$<?=$produit->prix?></p>
                                 <p><?=$produit->type?></p>
                                 <p>size : XS/S/M/L/XL</p>
-                                <button class="btn btn-success btn-xs" onclick="window.location.href = 'panier.php?id=<?= $produit->id ?>';"> <i class="fa fa-plus "> ADD to cart</i></button>
+                                <button class="btn btn-success btn-xs" onclick="window.location.href = 'http://localhost/PawPaws/phpharoun/panier/views/ajouterpanier.php?id=<?= $produit->id ?>';"> <i class="fa fa-plus "> ADD to cart</i></button>
                                 
                                 <ul class="blog-info-link">
                                 <br>

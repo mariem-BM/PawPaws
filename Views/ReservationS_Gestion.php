@@ -64,7 +64,7 @@ else if($_POST['tri']=="nb pets desc")
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Gestion Reservation</title>
+    <title>Gestion Rendez-vous</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets3/css/bootstrap.css" rel="stylesheet">
@@ -172,7 +172,15 @@ else if($_POST['tri']=="nb pets desc")
                              
                       </ul>
                       </li>
-            
+            <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Gestion Commandes</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="back/commandes.php">Gestion commandes</a></li>
+                      </ul>
+                      </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>

@@ -65,10 +65,13 @@
                     <li>
                         <a class="active-menu" href="gestion_produit.php"><i class="fa fa-dashboard"></i> Gestion produit</a>
                     </li>
+
                     <li>
                         <a href="gestion_promo.php"><i class="fa fa-desktop"></i> Gestion Promo</a>
                     </li>
-                    
+                    <li>
+                        <a href="commandes.php"><i class="fa fa-desktop"></i> Gestion Commandes</a>
+                    </li>
 		
                         <li ><a  href="../ReservationS_Gestion.php"><i class="fa fa-desktop"></i>Gérer Les Rendez vous service</a></li>
                           <li><a  href="../Services_Gestion.php"><i class="fa fa-desktop"></i>Gérer Les Sevices</a></li>

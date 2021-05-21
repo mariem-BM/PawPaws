@@ -123,7 +123,7 @@ class reservationsC{
         }
     }
 function searchreservation($search){
-$sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom WHERE adresse LIKE  '%$search%' OR tel LIKE '%$search%' OR nbn LIKE '%$search%' OR rp LIKE '%$search%' OR idreservation LIKE '%$search%' OR Prenom LIKE '%$search%' OR Nom LIKE '%$search%' OR roomtype LIKE '%$search%' ";
+$sql="SELECT * FROM reservation LEFT JOIN utilisateur ON utilisateur.id=reservation.iduser LEFT JOIN rooms ON rooms.idroom=reservation.idroom WHERE adresse LIKE  '%$search%' OR nbn LIKE '%$search%' OR rp LIKE '%$search%' OR idreservation LIKE '%$search%' OR Prenom LIKE '%$search%' OR Nom LIKE '%$search%' OR roomtype LIKE '%$search%' OR hoteladresse LIKE '%$search%' OR firstname LIKE '%$search%' ";
                 $db = config::getConnexion();
                 try{
                     $liste = $db->query($sql);

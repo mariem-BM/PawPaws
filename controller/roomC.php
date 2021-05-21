@@ -108,7 +108,7 @@ function trierrooms($tri){
             }
             function searchrooms2($search){
             
-                $sql="SELECT * FROM rooms WHERE roomtype LIKE  '%$search%' OR idroom LIKE '%$search%' OR qty LIKE '%$search%' OR price LIKE '%$search%' OR qty LIKE '%$search%' ";
+                $sql="SELECT * FROM rooms WHERE roomtype LIKE  '%$search%' OR idroom LIKE '%$search%' OR qty LIKE '%$search%' OR price LIKE '%$search%' OR qty LIKE '%$search%' OR hoteladresse LIKE '%$search%' ";
                 $db = config::getConnexion();
                 try{
                     $liste = $db->query($sql);
