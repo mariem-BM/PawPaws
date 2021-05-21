@@ -67,12 +67,12 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
+                <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><a href="profil_admin.php"><img src="../assets3/img/Unknown.png" class="img-circle" width="60"></a></p>
+                   <p class="centered"><a href="profil.php"><img src="../assets3/img/Unknown.png" class="img-circle" width="60"></a></p>
                   
                   <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
-                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
+                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6> 
                     
                   <li class="mt" class="active">
                       <a href="DashboardAdmin.php">
@@ -86,9 +86,9 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Gérer les comptes</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></li>
+                         
                       </ul>
-                  </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
@@ -99,24 +99,35 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                         
                           <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
                           <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
                           <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
                       </ul>
                   </li>
 
-<li class="sub-menu">
+                      <li class="sub-menu">
                       <a href="javascript:;">
                           <i class="fa fa-book"></i>
                           <span>Rooms</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
                           <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
                           <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
-                          <li><a  href="sendemail">Send Email</a></li>
                           <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                        
                       </ul>
                   </li>
+                 <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Gestion Produit</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="back/gestion_produit.php">Gestion Produit</a></li>
+                            <li ><a  href="back/gestion_promo.php">Gestion Promo</a></li>
+                             
+                      </ul>
+                      </li>
+            
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
@@ -137,7 +148,9 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <li ><a  href="chat.php">Chat Room</a></l>
                       </ul>
                   </li>
-                  <li><a  href="sendemail">Send Email</a></li>
+                   
+                   <li><a  href="sendemail">Send Email</a></li>
+
               </ul>
               <!-- sidebar menu end-->
           </div>
@@ -253,7 +266,7 @@ $db = config::getConnexion();
         <br>
         <?php
 		if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['search'])){
-			$result = $UserC->getUserByNom_Prenom($_POST['nom'],$_POST['prenom']);
+			$result = $UserC->getAdminByNom_Prenom($_POST['nom'],$_POST['prenom']);
 			if ($result !== false) {
 	    ?>
         <table class="datatable table table-hover table-center mb-0">

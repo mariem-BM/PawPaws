@@ -1,9 +1,10 @@
 <?php
+session_start();
 
 include_once '../model/reservationS.php';
 include_once '../model/service.php';
 include_once '../controller/reservationSC.php';
-include_once '../Views/navbar.php';
+//include_once '../Views/navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,26 +14,12 @@ include_once '../Views/navbar.php';
 
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-     <style>
-         .servicescss {
-        font-family: Arial,Heveltica, sans-serif;
-        color: tomato;
-        font-style: italic;
-       }
-       .css9{
-        font-family: Arial,Heveltica, sans-serif;
-        color: black;
-        font-style: italic;
-       }
-
-    </style>
-
-    <title>PawPaws</title>
-
-    <!-- Bootstrap core CSS -->
+  <title>PawPaws</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../assets3/css/main2.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+   <link rel = "icon" href = "../assets3/img/logo.png" type = "image/png">
+       <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -42,19 +29,99 @@ include_once '../Views/navbar.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/roompagestyle.css">
   
-    <title>PawPaws</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-   <link rel="shortcut icon" type="image/x-icon" href="img2/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    
 </head> 
 
 <body>
    <!-- Navigation -->
+     <!-- header -->
+   <header class = "header" id = "header">
+   <div class = "head-top">
+   <div class = "site-name">
+    <span>PawPaws</span>
+    </div>
+    <div class = "site-nav">
+    <span id = "nav-btn">MENU <i class = "fas fa-bars"></i></span>
+    </div>
+    </div>
+    <div class = "head-bottom flex">
+   <h2>Services</h2>
+    </div>
+    </header>
+    <!-- end of header -->
+
+   <!-- side navbar -->
+   <div class = "sidenav" id = "sidenav">
+    <span class = "cancel-btn" id = "cancel-btn">
+    <i class = "fas fa-times"></i>
+    </span>
+    <ul class = "navbar">
+    <li><a href = "Acceuil.php">Home</a></li>
+
+   <li><a href = "servicespage.php">services</a></li>
+
+   <li><a href = "WatchBlogPost.php">Blog</a></li>
+
+    <li><a href = "chat.php">Chat</a></li>
+
+   <li><a href = "FormComplaint.php">Reclamation</a></li>
+
+    <li><a href = "roomspage.php">Rooms</a></li>
+
+ <li><a href = "Frontt/accessoires.php">Produits</a></li>
+   
+   <li><a href = "Frontt/promotion.php">Promotions</a></li>
+    <?php 
+
+if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
+    {
+
+  echo "<li><a href = 'DashboardAdmin.php'>Admin Space</a></li>";
+}
+if (isset($_SESSION["role"]) && $_SESSION["role"]!="admin")
+    {
+
+    echo "<li><a href = 'liste_des_profil.php'>Liste des profils</a></li>";
+}
+
+if (isset($_SESSION["e"])){
+
+    echo "<li><a href = 'profil.php'>User Space</a></li>";
+   echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
+    } 
+
+
+if (!isset($_SESSION["e"]))
+    {
+
+
+ echo "<a class = 'btn sign-up' href='Signup.php'>sign up</a>";
+  echo  "<a class = 'btn log-in' href='signin.php'>log in</a>";
+    
+    
+    }
+
+
+?>
+</ul>
+
+    </div>
+   
+
+<!-- bradcam_area_start (couleur orange) -->
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Services</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end -->
+
+<hr>
     <div  align="center" class="container-fluid">
         <div id="google_translate_element"></div>
 
@@ -66,31 +133,7 @@ function googleTranslateElementInit() {
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </div>
- <div class="row">
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="Acceuil.php">PawPaws</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="Acceuil.php">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profil.php">Account</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-<br>
-<br>
-<br>
-<br>
+ 
 
     <!-- service_area_start  -->
     <div class="service_area">
@@ -192,7 +235,7 @@ function googleTranslateElementInit() {
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script src="../assets3/js/script.js"></script>
 </body>
 
 </html>

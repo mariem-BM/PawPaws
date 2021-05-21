@@ -116,20 +116,17 @@
     <i class = "fas fa-times"></i>
     </span>
     <ul class = "navbar">
-    <li><a href = "#header">Home</a></li>
 
    <li><a href = "servicespage.php">services</a></li>
 
    <li><a href = "WatchBlogPost.php">Blog</a></li>
 
-   <li><a href = "form.php">Shop</a></li>
     <li><a href = "roomspage.php">Rooms</a></li>
 
-    <li><a href = "chatAdmin.php">Chat</a></li>
+    <li><a href = "chat.php">Chat</a></li>
 
    <li><a href = "FormComplaint.php">Reclamation</a></li>
 
-  
    <li><a href = "Frontt/accessoires.php">Produits</a></li>
    
    <li><a href = "Frontt/promotion.php">Promotions</a></li>
@@ -137,18 +134,7 @@
 
 
     <?php 
- /* if (isset($_SESSION["role"]) && $_SESSION["role"]=="hotelmanager")
-    {
 
-  echo "<li><a href = 'DashboardHotelManager.php'>HotelManager Space</a></li>";
-
-}
-  if (isset($_SESSION["role"]) && $_SESSION["role"]=="ServiceProvider")
-    {
-
-  echo "<li><a href = 'DashboardServiceProvider.php'>ServiceProvider Space</a></li>";
-
-}*/
 if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
     {
 
@@ -163,7 +149,7 @@ if (isset($_SESSION["role"]) && $_SESSION["role"]!="admin")
 if (isset($_SESSION["e"])){
 
     echo "<li><a href = 'profil.php'>User Space</a></li>";
-       
+   echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
     } 
 
 
@@ -176,7 +162,6 @@ if (!isset($_SESSION["e"]))
     
     
     }
-echo "<a class = 'btn sign-up' href='../disconnect.php'>Logout</a>";
 ?>
 </ul>
 
@@ -211,7 +196,7 @@ function googleTranslateElementInit() {
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                      <img src = "../assets3/service.png" alt = "customer image" height="250px" width="400px">
+                      <img src = "../assets3/products.png" alt = "customer image" height="250px" width="400px">
                       <br>
                        <h3 class="css1">Services for every pet</h3>
                        <p class="css2">Whether it’s a pamper day, playdate, sleepover, training class or veterinary visit, we provide the best in pet services with highly trained, passionate associates. From our pet hotel & doggie day camp as an alternative to pet sitting, to our dog training and grooming as an alternative to DIY, our services are conveniently located inside most of our PawPaws stores.</p>
@@ -237,7 +222,7 @@ function googleTranslateElementInit() {
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                       <img src = "../assets3/products.png" alt = "customer image" height="250px" width="400px">
+                       <img src = "../assets3/service.png" alt = "customer image" height="250px" width="400px">
                        <br>
                         <h3 class="css1">Products for every pet</h3>
                         <br>

@@ -101,13 +101,14 @@ if (  isset($_POST["idroom"]) &&
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
+                <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><a href="profile.html"><img src="../assets/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
+                   <p class="centered"><a href="profil.php"><img src="../assets3/img/Unknown.png" class="img-circle" width="60"></a></p>
+                  
                   <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
-                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
+                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6> 
                     
-                  <li class="mt">
+                  <li class="mt" class="active">
                       <a href="DashboardAdmin.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
@@ -119,33 +120,48 @@ if (  isset($_POST["idroom"]) &&
                           <span>Gérer les comptes</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></li>
+                         
                       </ul>
-                  </li>
                   <li class="sub-menu">
-                      <a href="javascript:;">
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Services</span>
+                          <span>Sevices</span>
                       </a>
                       <ul class="sub">
                           <li ><a  href="ReservationS_Gestion.php">Gérer Les Reservations</a></li>
-                          <li class="active"><a  href="Ajouter_Service.php">Ajouter Un Service</a></li>
-                          <li><a  href="Services_Gestion.php">Gérer Les Services</a></li>
+                        
+                          <li><a  href="Ajouter_Service.php">Ajouter Une Sevice</a></li>
+                          <li><a  href="Services_Gestion.php">Gérer Les Sevices</a></li>
                           <li><a  href="create-dynamic-pdf-send">Rendez-vous Details</a></li>
                       </ul>
                   </li>
-                                    <li class="sub-menu">
-                      <a href="javascript:;"  class="active">
+
+                      <li class="sub-menu">
+                      <a href="javascript:;">
                           <i class="fa fa-book"></i>
                           <span>Rooms</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li class="active"><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
+                          <li><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
                           <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
                           <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
+                        
                       </ul>
                   </li>
+                 <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Gestion Produit</span>
+                      </a>
+                      <ul class="sub">
+                          <li ><a  href="back/gestion_produit.php">Gestion Produit</a></li>
+                            <li ><a  href="back/gestion_promo.php">Gestion Promo</a></li>
+                             
+                      </ul>
+                      </li>
+            
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
@@ -166,7 +182,7 @@ if (  isset($_POST["idroom"]) &&
                           <li ><a  href="chat.php">Chat Room</a></l>
                       </ul>
                   </li>
-                 
+                   
                    <li><a  href="sendemail">Send Email</a></li>
 
               </ul>

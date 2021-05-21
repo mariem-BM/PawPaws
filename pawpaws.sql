@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : jeu. 20 mai 2021 à 18:04
--- Version du serveur :  10.4.18-MariaDB
--- Version de PHP : 7.3.27
+-- Host: 127.0.0.1
+-- Generation Time: May 21, 2021 at 02:43 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `pawpaws`
+-- Database: `pawpaws`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `clients`
+-- Table structure for table `clients`
 --
 
 CREATE TABLE `clients` (
@@ -38,7 +38,7 @@ CREATE TABLE `clients` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comentu`
+-- Table structure for table `comentu`
 --
 
 CREATE TABLE `comentu` (
@@ -50,7 +50,7 @@ CREATE TABLE `comentu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `comentu`
+-- Dumping data for table `comentu`
 --
 
 INSERT INTO `comentu` (`id_coment`, `id_sender`, `id_reciever`, `message`, `date_com`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `comentu` (`id_coment`, `id_sender`, `id_reciever`, `message`, `date
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comment`
+-- Table structure for table `comment`
 --
 
 CREATE TABLE `comment` (
@@ -72,7 +72,7 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `comment`
+-- Dumping data for table `comment`
 --
 
 INSERT INTO `comment` (`id`, `Nom_User`, `id_user`, `id_post`, `Message`, `Date_p`) VALUES
@@ -85,13 +85,12 @@ INSERT INTO `comment` (`id`, `Nom_User`, `id_user`, `id_post`, `Message`, `Date_
 (47, 'rahmani zeineb', 7, 83, 'sd', '2021-05-09'),
 (48, 'rahmani zeineb', 7, 82, 'fdf', '2021-05-09'),
 (49, 'rahmani zeineb', 7, 81, 'hgu', '2021-05-09'),
-(50, 'rahmani eya', 6, 82, 'yrtufygulihmjol', '2021-05-09'),
-(51, 'skander rachah', 12, 0, 'dfbdf', '2021-05-20');
+(50, 'rahmani eya', 6, 82, 'yrtufygulihmjol', '2021-05-09');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `complaint`
+-- Table structure for table `complaint`
 --
 
 CREATE TABLE `complaint` (
@@ -106,20 +105,20 @@ CREATE TABLE `complaint` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `complaint`
+-- Dumping data for table `complaint`
 --
 
 INSERT INTO `complaint` (`id`, `Titre`, `Message`, `Type`, `id_user`, `nom_user`, `Checked`, `Date`) VALUES
 (21, 'hjh', '55', 'Autres', 6, 'Bruh bruh', 'Unchecked', '2021-04-24'),
-(23, 'start', 'dsiu', 'Rooms', 6, 'Bruh bruh', 'Unchecked', '2021-04-25'),
-(24, 'hello', 'ds', 'Produits', 6, 'Bruh bruh', 'Unchecked', '2021-04-25'),
-(25, 'how', 'hjbb', 'Produits', 3, 'mariam B.M', 'Unchecked', '2021-05-08'),
-(26, 'new', 'vhjbknl,;,kl', 'Services', 6, 'rahmani eya', 'Unchecked', '2021-05-09');
+(24, 'pop', 'dsn', 'Produits', 6, 'Bruh bruh', 'Unchecked', '2021-04-25'),
+(25, 'jh', 'hjbb', 'Produits', 3, 'mariam B.M', 'Unchecked', '2021-05-08'),
+(26, 'hgjh', 'vhjbknl,;,kl', 'Services', 6, 'rahmani eya', 'Unchecked', '2021-05-09'),
+(27, 'pogh', 'jksfjfkjl', 'Animals', 6, 'rahmani eya', 'Unchecked', '2021-05-15');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message`
+-- Table structure for table `message`
 --
 
 CREATE TABLE `message` (
@@ -133,7 +132,7 @@ CREATE TABLE `message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `message`
+-- Dumping data for table `message`
 --
 
 INSERT INTO `message` (`id`, `source`, `destinataire`, `contenu`, `date`, `readDestination`, `type`) VALUES
@@ -150,18 +149,20 @@ INSERT INTO `message` (`id`, `source`, `destinataire`, `contenu`, `date`, `readD
 (90, 10, 8, 'est ce que vous avez des problémes', '2021-01-04 22:44:38', 0, 0),
 (91, 10, 8, 'fdk', '2021-05-09 11:18:36', 0, 0),
 (92, 10, 3, 'ddc', '2021-05-09 11:24:54', 0, 0),
-(93, 7, 6, 'fvvb', '2021-05-09 11:29:17', 0, 0),
+(93, 7, 6, 'fvvb', '2021-05-09 11:29:17', 1, 0),
 (94, 7, 3, 'hjhju', '2021-05-09 11:50:06', 0, 0),
 (95, 16, 5, 'jhkjlk', '2021-05-09 16:08:10', 0, 0),
 (96, 16, 7, 'gdfhgjkhljmk!', '2021-05-09 16:08:18', 0, 0),
 (97, 16, 7, 'ghcfjgkhj;n', '2021-05-09 16:08:41', 0, 0),
 (98, 16, 7, '', '2021-05-09 16:08:41', 0, 0),
-(99, 13, 6, 'hello', '2021-05-20 17:58:58', 1, 0);
+(99, 6, 7, 'jbkn,;l', '2021-05-15 02:00:45', 0, 0),
+(100, 6, 5, 'hjk;,bjh', '2021-05-15 02:00:53', 0, 0),
+(101, 6, 11, 'hgjhkbjln', '2021-05-15 02:01:00', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `produit`
+-- Table structure for table `produit`
 --
 
 CREATE TABLE `produit` (
@@ -174,7 +175,7 @@ CREATE TABLE `produit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `produit`
+-- Dumping data for table `produit`
 --
 
 INSERT INTO `produit` (`id`, `nom`, `type`, `quantite`, `image`, `prix`) VALUES
@@ -186,7 +187,7 @@ INSERT INTO `produit` (`id`, `nom`, `type`, `quantite`, `image`, `prix`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `promotion`
+-- Table structure for table `promotion`
 --
 
 CREATE TABLE `promotion` (
@@ -197,7 +198,7 @@ CREATE TABLE `promotion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `promotion`
+-- Dumping data for table `promotion`
 --
 
 INSERT INTO `promotion` (`id`, `id_produit`, `pourcentage`, `nv_prix`) VALUES
@@ -206,7 +207,7 @@ INSERT INTO `promotion` (`id`, `id_produit`, `pourcentage`, `nv_prix`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reponses`
+-- Table structure for table `reponses`
 --
 
 CREATE TABLE `reponses` (
@@ -219,19 +220,20 @@ CREATE TABLE `reponses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `reponses`
+-- Dumping data for table `reponses`
 --
 
 INSERT INTO `reponses` (`id`, `Nom_User`, `id_user`, `id_Reclamation`, `Message`, `Date_P`) VALUES
 (1, 'Bruh bruh', 6, 2, 'aaaaaa', '2021-01-08'),
 (3, 'Bruh bruh', 6, 9, 'mùl;ùml:', '2021-04-04'),
 (5, 'Bruh bruh', 6, 23, 'kidsuhihc', '2021-04-25'),
-(6, 'skander rachah', 12, 25, 'fd', '2021-05-20');
+(6, 'rahmani eya', 6, 26, 'hkjjlk', '2021-05-15'),
+(7, 'rahmani eya', 6, 24, 'kjlkmj', '2021-05-20');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reservation`
+-- Table structure for table `reservation`
 --
 
 CREATE TABLE `reservation` (
@@ -250,7 +252,7 @@ CREATE TABLE `reservation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `reservation`
+-- Dumping data for table `reservation`
 --
 
 INSERT INTO `reservation` (`idreservation`, `firstname`, `lastname`, `adresse`, `tel`, `email`, `nbn`, `date`, `room`, `rp`, `idroom`, `iduser`) VALUES
@@ -260,7 +262,7 @@ INSERT INTO `reservation` (`idreservation`, `firstname`, `lastname`, `adresse`, 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reservations`
+-- Table structure for table `reservations`
 --
 
 CREATE TABLE `reservations` (
@@ -276,7 +278,7 @@ CREATE TABLE `reservations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `reservations`
+-- Dumping data for table `reservations`
 --
 
 INSERT INTO `reservations` (`idreservation`, `adresse`, `tel`, `email`, `nbn`, `date`, `rp`, `idservice`, `iduser`) VALUES
@@ -287,7 +289,7 @@ INSERT INTO `reservations` (`idreservation`, `adresse`, `tel`, `email`, `nbn`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `review_post`
+-- Table structure for table `review_post`
 --
 
 CREATE TABLE `review_post` (
@@ -299,19 +301,22 @@ CREATE TABLE `review_post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `review_post`
+-- Dumping data for table `review_post`
 --
 
 INSERT INTO `review_post` (`id`, `Titre`, `Message`, `date_p`, `Picture`) VALUES
-(1, 'esprit', '                autre', '2021-05-20', 'album7.jpg'),
 (68, 'Many animals play dead—an', '                       Scientifically known as thanatosis, or tonic immobility, playing dead occurs across the animal kingdom, from birds to mammals to fish. Perhaps the most famous death faker is Nor', '2021-04-21', '3.jpg'),
 (75, 'pawpaws', '                sdc', '2021-04-22', 'service_icon_2.png'),
-(76, 'azerty', '                qaz', '2021-05-20', 'album6.jpg');
+(77, 'Eya', '                nb,;,:;!:;,nbvgjhgv', '2021-05-15', 'background.jpg'),
+(81, 'zeineb', '                       hrt    iukhhbhv     ', '2021-04-24', 'background.jpg'),
+(82, 'esprit', '              se former   ', '2021-04-25', 'logo.jpg'),
+(83, 'hawks', '                dkjkdjjkfd', '2021-05-20', 'ui-sam.jpg'),
+(84, 'kl', '                                ghhjkkkk', '2021-05-20', 'logo.png');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `rooms`
+-- Table structure for table `rooms`
 --
 
 CREATE TABLE `rooms` (
@@ -325,7 +330,7 @@ CREATE TABLE `rooms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `rooms`
+-- Dumping data for table `rooms`
 --
 
 INSERT INTO `rooms` (`idroom`, `hoteladresse`, `roomtype`, `price`, `photo`, `qty`, `iduser`) VALUES
@@ -341,7 +346,7 @@ INSERT INTO `rooms` (`idroom`, `hoteladresse`, `roomtype`, `price`, `photo`, `qt
 -- --------------------------------------------------------
 
 --
--- Structure de la table `services`
+-- Table structure for table `services`
 --
 
 CREATE TABLE `services` (
@@ -353,7 +358,7 @@ CREATE TABLE `services` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `services`
+-- Dumping data for table `services`
 --
 
 INSERT INTO `services` (`idservice`, `servicetype`, `price`, `photo`, `qty`) VALUES
@@ -366,7 +371,7 @@ INSERT INTO `services` (`idservice`, `servicetype`, `price`, `photo`, `qty`) VAL
 -- --------------------------------------------------------
 
 --
--- Structure de la table `type_service`
+-- Table structure for table `type_service`
 --
 
 CREATE TABLE `type_service` (
@@ -377,7 +382,7 @@ CREATE TABLE `type_service` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `type_service`
+-- Dumping data for table `type_service`
 --
 
 INSERT INTO `type_service` (`id`, `nom`, `prix`, `dateS`) VALUES
@@ -386,7 +391,7 @@ INSERT INTO `type_service` (`id`, `nom`, `prix`, `dateS`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateur`
+-- Table structure for table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
@@ -404,7 +409,7 @@ CREATE TABLE `utilisateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `utilisateur`
+-- Dumping data for table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id`, `Nom`, `Prenom`, `Email`, `Date_N`, `Facture`, `Picture`, `Login`, `Password`, `sexe`, `Role`) VALUES
@@ -413,27 +418,26 @@ INSERT INTO `utilisateur` (`id`, `Nom`, `Prenom`, `Email`, `Date_N`, `Facture`, 
 (6, 'rahmani', 'eya', 'zeineb.rahmani@esprit.tn', '2000-02-06', 0, 'Unknown.png', 'admin', 'eya123456', 'Femme', 'admin'),
 (7, 'rahmani', 'zeineb', 'zeineb@gmail.com', '2000-02-06', 0, 'Unknown.png', 'client1', 'eya123456', 'Femme', 'client'),
 (11, 'Mariem', 'Ben Massaoud', 'mariembenmassoud123@gmail.com', '2000-12-06', 0, 'Unknown.png', 'May16', '123456m', 'Femme', 'client'),
-(12, 'skander', 'rachah', 'rachah.skander@esprit.tn', '1999-05-27', 0, 'Unknown.png', 'skander', 'skander123456', 'Homme', 'admin'),
-(13, 'web', 'web', 'web@gmail.com', '2018-07-22', 0, 'Unknown.png', 'web', 'web', 'Homme', 'admin');
+(12, 'skander', 'rachah', 'rachah.skander@esprit.tn', '1999-05-27', 0, 'Unknown.png', 'skander', 'skander123456', 'Homme', 'admin');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `clients`
+-- Indexes for table `clients`
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `comentu`
+-- Indexes for table `comentu`
 --
 ALTER TABLE `comentu`
   ADD PRIMARY KEY (`id_coment`);
 
 --
--- Index pour la table `comment`
+-- Indexes for table `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`),
@@ -441,13 +445,13 @@ ALTER TABLE `comment`
   ADD KEY `id_user_C` (`id_user`);
 
 --
--- Index pour la table `complaint`
+-- Indexes for table `complaint`
 --
 ALTER TABLE `complaint`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `message`
+-- Indexes for table `message`
 --
 ALTER TABLE `message`
   ADD PRIMARY KEY (`id`),
@@ -455,25 +459,25 @@ ALTER TABLE `message`
   ADD KEY `userdestinataire` (`destinataire`);
 
 --
--- Index pour la table `produit`
+-- Indexes for table `produit`
 --
 ALTER TABLE `produit`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `promotion`
+-- Indexes for table `promotion`
 --
 ALTER TABLE `promotion`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `reponses`
+-- Indexes for table `reponses`
 --
 ALTER TABLE `reponses`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `reservation`
+-- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
   ADD PRIMARY KEY (`idreservation`),
@@ -481,7 +485,7 @@ ALTER TABLE `reservation`
   ADD KEY `useribfk` (`iduser`);
 
 --
--- Index pour la table `reservations`
+-- Indexes for table `reservations`
 --
 ALTER TABLE `reservations`
   ADD PRIMARY KEY (`idreservation`),
@@ -489,104 +493,104 @@ ALTER TABLE `reservations`
   ADD KEY `useribfk` (`iduser`);
 
 --
--- Index pour la table `review_post`
+-- Indexes for table `review_post`
 --
 ALTER TABLE `review_post`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `rooms`
+-- Indexes for table `rooms`
 --
 ALTER TABLE `rooms`
   ADD PRIMARY KEY (`idroom`);
 
 --
--- Index pour la table `services`
+-- Indexes for table `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`idservice`);
 
 --
--- Index pour la table `type_service`
+-- Indexes for table `type_service`
 --
 ALTER TABLE `type_service`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `utilisateur`
+-- Indexes for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id`,`Login`,`Email`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `clients`
+-- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT pour la table `comment`
+-- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- AUTO_INCREMENT pour la table `complaint`
+-- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT pour la table `message`
+-- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
--- AUTO_INCREMENT pour la table `reponses`
+-- AUTO_INCREMENT for table `reponses`
 --
 ALTER TABLE `reponses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT pour la table `reservation`
+-- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
   MODIFY `idreservation` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
--- AUTO_INCREMENT pour la table `reservations`
+-- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
   MODIFY `idreservation` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 
 --
--- AUTO_INCREMENT pour la table `review_post`
+-- AUTO_INCREMENT for table `review_post`
 --
 ALTER TABLE `review_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
--- AUTO_INCREMENT pour la table `rooms`
+-- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
   MODIFY `idroom` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT pour la table `services`
+-- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
   MODIFY `idservice` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT pour la table `utilisateur`
+-- AUTO_INCREMENT for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

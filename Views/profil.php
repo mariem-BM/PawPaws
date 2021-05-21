@@ -13,8 +13,8 @@ session_start();
         isset($_POST["prenom"]) &&
         isset($_POST["Date_N"]) && 
         isset($_POST["email"]) && 
-        isset($_POST["role"]) &&
-        isset($_POST["sexe"]) &&
+        //isset($_POST["role"]) &&
+        //isset($_POST["sexe"]) &&
         isset($_POST["login"]) && 
         isset($_POST["password"])
     ){
@@ -24,18 +24,18 @@ session_start();
             !empty($_POST["prenom"]) && 
             !empty($_POST["Date_N"]) &&
             !empty($_POST["email"]) && 
-            !empty($_POST["role"]) && 
-            !empty($_POST["sexe"]) && 
+            //!empty($_POST["role"]) && 
+            //!empty($_POST["sexe"]) && 
             !empty($_POST["login"]) && 
             !empty($_POST["password"])
         ) { 
             $user = new User(
                 $_POST['nom'],
                 $_POST['prenom'], 
-                $_POST['sexe'],
+                $_SESSION['Sexe'],
                 $_POST['email'],
                 $_POST['Date_N'],
-                $_POST['role'],
+                $_SESSION['role'],
                 $_POST['login'],
                 $_POST['password']
             );
@@ -51,7 +51,7 @@ session_start();
 ?>
 
 
-<!doctype html>
+
 <html class="no-js" lang="zxx">
 
 <head>
@@ -102,51 +102,17 @@ session_start();
 
    <li><a href = "WatchBlogPost.php">Blog</a></li>
 
-   <li><a href = "form.php">Shop</a></li>
-
     <li><a href = "chatAdmin.php">Chat</a></li>
 
    <li><a href = "FormComplaint.php">Reclamation</a></li>
 
     <li><a href = "roomspage.php">Rooms</a></li>
 
-
+ <li><a href = "Frontt/accessoires.php">Produits</a></li>
+   
+   <li><a href = "Frontt/promotion.php">Promotions</a></li>
     <?php 
-  if (isset($_SESSION["role"]) && $_SESSION["role"]=="hotelmanager")
-    {
 
-   echo " <li class='sub-menu'>
-                      <a href='javascript:;'' >
-                          <i class='fa fa-book'></i>
-                              <span>Hotels</span>
-                      </a>
-                      <ul class='sub'>
-                          <li ><a  href='Reservation_Gestion.php'>Gérer Les Reservations</a></li>
-                          <li><a  href='Ajouter_Room.php'>Ajouter Une Chambre</a></li>
-                          <li><a  href='Room_Gestion.php'>Gérer Les Chambres</a></li>
-                          <li><a  href='sendemail'>Send Email</a></li>
-                          <li><a  href='create-dynamic-pdf-send-as-attachment-with-email-in-php-demo'>Reservations Details</a></li>
-                      </ul>
-                  </li><a>Hotel Manager</a>";
-
-}
-  if (isset($_SESSION["role"]) && $_SESSION["role"]=="ServiceProvider")
-    {
-
-  echo " <li class='sub-menu'>
-                      <a href='javascript:;'' >
-                          <i class='fa fa-book'></i>
-                          <span>Sevices</span>
-                      </a>
-                      <ul class='sub'>
-                          <li ><a  href='ReservationS_Gestion.php'>Gérer Les Reservations</a></li>
-                          <li><a  href='Ajouter_Service.php'>Ajouter Une Sevice</a></li>
-                          <li><a  href='Services_Gestion.php'>Gérer Les Sevices</a></li>
-                          <li><a  href='create-dynamic-pdf-send'>rendez-vous Details</a></li>
-                      </ul>
-                  </li><a>Service Provider</a>";
-
-}
 if (isset($_SESSION["role"]) && $_SESSION["role"]=="admin")
     {
 

@@ -57,6 +57,10 @@
 			<br><br><br>
 
                 <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="../DashboardAdmin.php"><i class="fa fa-desktop"></i> Home</a>
+                    </li>
+                    <li ><a  href="../Gerer_utilisateurs.php"><i class="fa fa-desktop"></i>Liste des utilisateurs</a></li>
 
                     <li>
                         <a class="active-menu" href="gestion_produit.php"><i class="fa fa-dashboard"></i> Gestion produit</a>
@@ -64,13 +68,21 @@
                     <li>
                         <a href="gestion_promo.php"><i class="fa fa-desktop"></i> Gestion Promo</a>
                     </li>
-                    <li>
-                        <a href="../DashboardAdmin.php"><i class="fa fa-desktop"></i> Home</a>
-                    </li>
-		
-
-
                     
+		
+                        <li ><a  href="../ReservationS_Gestion.php"><i class="fa fa-desktop"></i>Gérer Les Rendez vous service</a></li>
+                          <li><a  href="../Services_Gestion.php"><i class="fa fa-desktop"></i>Gérer Les Sevices</a></li>
+                          <li><a  href="../create-dynamic-pdf-send"><i class="fa fa-desktop"></i>Rendez-vous Details</a></li>
+
+                        <li><a  href="../Reservation_Gestion.php"><i class="fa fa-desktop"></i>Gérer Les Reservations</a></li>
+                          <li><a  href="../Room_Gestion.php"><i class="fa fa-desktop"></i>Gérer Les Chambres</a></li>
+                          <li><a  href="../create-dynamic-pdf-send-as-attachment-with-email-in-php-demo"><i class="fa fa-desktop"></i>Reservation Details</a></li>
+
+                          <li ><a  href="../blank.php"><i class="fa fa-desktop"></i>Ajouter un Blog Post</a></li>
+                          <li><a  href="../Affichertoutposts.php"><i class="fa fa-desktop"></i>Afficher les Blog Posts</a></li>
+                           <li ><a  href="../Complaints_Gestion.php"><i class="fa fa-desktop"></i>Gérer Les FeedBack</a></li>
+                          <li ><a  href="../chat.php"><i class="fa fa-desktop"></i>Chat Room</a></l>
+
 					</ul>
 
             </div>

@@ -73,9 +73,11 @@
 							<li class="menu__item "><a href="../Acceuil.php" >Home</a></li>
 							<li class="menu__item"><a href="accessoires.php" >Produit</a></li>
 							<li class="menu__item"><a href="promotion.php" >Promotion</a></li>
-							<li class="menu__item"><a href="#gallery" class="menu__link scroll">Gallery</a></li>
-							<li class="menu__item"><a href="#rooms" class="menu__link scroll">Rooms</a></li>
-							<li class="menu__item"><a href="#contact" class="menu__link scroll">Contact Us</a></li>
+							<li class="menu__item"><a href="../servicespage.php">Services</a></li>
+							<li class="menu__item"><a href="../WatchBlogPost.php">Bolg</a></li>
+							<li class="menu__item"><a href="../roomspage.php">Rooms</a></li>
+							<li class="menu__item"><a href="../chat.php">chat</a></li>
+							<li class="menu__item"><a href="../FormComplaint.php">Complaint</a></li>
 						</ul>
 					</nav>
 				</div>

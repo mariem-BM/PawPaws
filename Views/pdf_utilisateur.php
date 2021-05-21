@@ -45,32 +45,32 @@ include "../controller/UserC.php";
         $pdf->AddPage('L','A4',0);
         $pdf->Ln();
         $pdf->SetFont('Times','B',12);
-        $pdf->Cell(20,10,'Nom',1,0,'C');
+        $pdf->Cell(40,10,'Nom',1,0,'C');
         $pdf->Cell(30,10,'Prenom',1,0,'C');
         $pdf->Cell(80,10,'Email',1,0,'C');
-        $pdf->Cell(50,10,'Date de naissance',1,0,'C');
+        $pdf->Cell(35,10,'Date de naissance',1,0,'C');
         $pdf->Cell(30,10,'Login',1,0,'C');
-        $pdf->Cell(50,10,'Sexe',1,0,'C');
-        $pdf->Cell(20,10,'Role',1,0,'C');
+        $pdf->Cell(25,10,'Sexe',1,0,'C');
+        $pdf->Cell(40,10,'Role',1,0,'C');
         
     
         
         foreach($listeUsers as $user){
     
 
-            {              $pdf->Ln();
-                $pdf->Cell(20,10,$user['Nom'],1,0,'C');
+                $pdf->Ln();
+                $pdf->Cell(40,10,$user['Nom'],1,0,'C');
                 $pdf->Cell(30,10,$user['Prenom'],1,0,'C');
                 $pdf->Cell(80,10,$user['Email'],1,0,'C');
-                $pdf->Cell(50,10,$user['Date_N'],1,0,'C');
+                $pdf->Cell(35,10,$user['Date_N'],1,0,'C');
                 $pdf->Cell(30,10,$user['Login'],1,0,'C');
-                $pdf->Cell(50,10,$user['sexe'],1,0,'C');
-                $pdf->Cell(20,10,$user['Role'],1,0,'C');
+                $pdf->Cell(25,10,$user['sexe'],1,0,'C');
+                $pdf->Cell(40,10,$user['Role'],1,0,'C');
 
 
 
                      }
-               
+                   
         $pdf->Output(); 
-                    }
+                    
 ?>

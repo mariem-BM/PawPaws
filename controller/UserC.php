@@ -218,8 +218,9 @@ class UserC{
                       'sexe' => $utilisateur->sexe,
         'id' => $id
       ]);
-     
-      echo $query->rowCount() . " records UPDATED successfully <br>";
+
+     echo '<script>alert(" '.$query->rowCount() .'records UPDATED successfully")</script>';
+      //echo $query->rowCount() . " records UPDATED successfully <br>";
       
     } catch (PDOException $e) {
       $e->getMessage();
@@ -241,6 +242,24 @@ class UserC{
         $e->getMessage();
     }
   }
+
+  function getAdminByNom_Prenom($Nom,$Prenom) {
+    try {
+        $db = config::getConnexion();
+        $query = $db->prepare(
+            'SELECT * FROM utilisateur WHERE Nom = :Nom AND Prenom= :Prenom'
+        );
+        $query->execute([
+            'Nom' => $Nom,
+            'Prenom' => $Prenom
+        ]);
+        return $query->fetch();
+    } catch (PDOException $e) {
+        $e->getMessage();
+    }
+  }
+
+  
   
   
   

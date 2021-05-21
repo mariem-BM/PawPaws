@@ -1,6 +1,6 @@
 
 <?php 
-//require_once 'header.php';
+require_once 'header.php';
  include_once '../../model/Promo.php';
 include_once '../../controller/PromoC.php';
 
@@ -8,163 +8,20 @@ $promoC=new PromotionC() ;
 $liste=$promoC->displayPromotions();
  
 
- session_start();
-if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
-{
-  if ($_SESSION["role"]=="admin" || $_SESSION["role"]=="ServiceProvider" )
-  {
-
 ?>
+	<div id="home" class="w3ls-banner">
+		<!-- banner-text -->
+		<div id="page-wrapper">
+            <div id="page-inner">
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Service</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../assets3/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="../assets3/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
-    <!-- Custom styles for this template -->
-    <link href="../../assets3/css/style.css" rel="stylesheet">
-    <link href="../../assets3/css/style-responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-  <section id="container" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-      <!--header start-->
-      <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <!--logo start-->
-            <a href="acceuil.php" class="logo"><b>PawPaws</b></a>
-            <!--logo end-->
-             <div class="top-menu">
-              <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../../disconnect.php">Logout</a></li>
-              </ul>
-            </div>
-                                
-        </header>
-      <!--header end-->
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-              
-                  <p class="centered"><a href="profile.html"><img src="../../assets3/img/<?php echo $_SESSION["Picture"];?>" class="img-circle" width="60"></a></p>
-                  <h5 class="centered"><?php echo $_SESSION["Nom"]." ".$_SESSION["Prenom"]; ?></h5>
-                  <h6 class="centered"><?php echo $_SESSION["role"]?></h6>
-                    
-                  <li class="mt">
-                      <a href="../DashboardAdmin.php">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
-                 <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Gérer les comptes</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="../Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
-                      </ul>
-                  </li>
-                  
-                                    <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book"></i>
-                          <span>Services</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="../ReservationS_Gestion.php">Gérer Les Reservations</a></li>
-                          <li class="active"><a  href="../Ajouter_Service.php">Ajouter Un Service</a></li>
-                          <li><a  href="../Services_Gestion.php">Gérer Les Services</a></li>
-                          <li><a  href="../create-dynamic-pdf-send">Rendez-vous Details</a></li>
-                      </ul>
-                  </li>
-                   <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book"></i>
-                          <span>Rooms</span>
-                      </a>
-                       <ul class="sub">
-                          <li ><a  href="../Reservation_Gestion.php">Gérer Les Reservations</a></li>
-                          <li class="active"><a  href="../Ajouter_Room.php">Ajouter Une Chambre</a></li>
-                          <li><a  href="../Room_Gestion.php">Gérer Les Chambres</a></li>
-                        
-                          <li><a  href="../create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
-                      </ul>
-                  </li>
-                 <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book"></i>
-                          <span>Gestion Produit</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="gestion_produit.php">Gestion Produit</a></li>
-                          <li ><a  href="ajouter_produit.php">ajouter Produit</a></li>
-                          <li ><a  href="gestion_promo.php">Gestion promo</a></li>
-                          <li ><a  href="ajouter_promo.php">ajouter Promo</a></li>
-                      </ul>
-                      </li>
-<li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Blog</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="../blank.php">Ajouter un Blog Post</a></li>
-                          <li><a  href="../Affichertoutposts.php">Afficher les Blog Posts</a></li>
-                      </ul>
-                  </li>
-                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>FeedBack</span>
-                      </a>
-                      <ul class="sub">
-                          <li ><a  href="../Complaints_Gestion.php">Gérer Les FeedBack</a></li>
-                          <li ><a  href="../chat.php">Chat Room</a></l>
-                      </ul>
-                  </li>
-                  <li><a  href="../sendemail">Send Email</a></li>
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper site-min-height">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Gestion <small>Promo </small>
+                        </h1>
+                    </div>
+                </div>
                 <!-- /. ROW  -->
 			
 
@@ -248,43 +105,68 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                             
 		
 
-                                               </section>
-      </section><!-- /MAIN CONTENT -->
-
-      <!--main content end-->
-      <!--footer start-->
-      
-      <!--footer end-->
-  </section>
-
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="../../assets3/js/jquery.js"></script>
-    <script src="../../assets3/js/bootstrap.min.js"></script>
-    <script src="../../assets3/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="../../assets3/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="../../assets3/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="../../assets3/js/jquery.scrollTo.min.js"></script>
-    <script src="../../assets3/js/jquery.nicescroll.js" type="text/javascript"></script>
+        <?php require_once 'footer.php';?>
+	
 
 
-    <!--common script for all pages-->
-    <script src="../../assets3/js/common-scripts.js"></script>
+			
+        
+                  <!--
+                  JavaScripts
+                  ========================== -->
+				<!-- JS here -->
+				<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+				<script src="js/vendor/jquery-1.12.4.min.js"></script>
+				<script src="js/popper.min.js"></script>
+				<script src="js/bootstrap.min.js"></script>
+				<script src="js/owl.carousel.min.js"></script>
+				<script src="js/isotope.pkgd.min.js"></script>
+				<script src="js/ajax-form.js"></script>
+				<script src="js/waypoints.min.js"></script>
+				<script src="js/jquery.counterup.min.js"></script>
+				<script src="js/imagesloaded.pkgd.min.js"></script>
+				<script src="js/scrollIt.js"></script>
+				<script src="js/jquery.scrollUp.min.js"></script>
+				<script src="js/wow.min.js"></script>
+				<script src="js/nice-select.min.js"></script>
+				<script src="js/jquery.slicknav.min.js"></script>
+				<script src="js/jquery.magnific-popup.min.js"></script>
+				<script src="js/plugins.js"></script>
+				<script src="js/gijgo.min.js"></script>
 
-    <!--script for this page-->
-    
-  <script>
-      //custom select box
+				<!--contact js-->
+				<script src="js/contact.js"></script>
+				<script src="js/jquery.ajaxchimp.min.js"></script>
+				<script src="js/jquery.form.js"></script>
+				<script src="js/jquery.validate.min.js"></script>
+				<script src="js/mail-script.js"></script>
 
-      $(function(){
-          $('select.styled').customSelect();
-      });
+				<script src="js/main.js"></script>
+              </pre>
 
-  </script>
+          </section>
 
-  </body>
-</html>
-<?php }
-else echo "Access denied to non admins";
-}
-else   echo("<script>location.href = '../signin.php';</script>");
-?>
+          
+      		</ul>
+      	</div>
+      </section>
+  </div>
+</div>
+
+
+		<!-- Essential JavaScript Libraries
+			==============================================-->
+			<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+			<script type="text/javascript" src="js/jquery.nav.js"></script>
+			<script type="text/javascript" src="syntax-highlighter/scripts/shCore.js"></script> 
+			<script type="text/javascript" src="syntax-highlighter/scripts/shBrushXml.js"></script> 
+			<script type="text/javascript" src="syntax-highlighter/scripts/shBrushCss.js"></script> 
+			<script type="text/javascript" src="syntax-highlighter/scripts/shBrushJScript.js"></script> 
+			<script type="text/javascript" src="syntax-highlighter/scripts/shBrushPhp.js"></script> 
+			<script type="text/javascript">
+				SyntaxHighlighter.all()
+			</script>
+			<script type="text/javascript" src="js/custom.js"></script>
+
+		</body>
+		</html>

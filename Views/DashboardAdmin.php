@@ -82,7 +82,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Gérer les comptes</span>
                       </a>
                       <ul class="sub">
-                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></l>
+                          <li ><a  href="Gerer_utilisateurs.php">Liste des utilisateurs</a></li>
                          
                       </ul>
                   <li class="sub-menu">
@@ -105,7 +105,7 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                           <span>Rooms</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
+                          <li><a  href="Reservation_Gestion.php">Gérer Les Reservations</a></li>
                           <li><a  href="Ajouter_Room.php">Ajouter Une Chambre</a></li>
                           <li><a  href="Room_Gestion.php">Gérer Les Chambres</a></li>
                           <li><a  href="create-dynamic-pdf-send-as-attachment-with-email-in-php-demo">Reservation Details</a></li>
@@ -119,9 +119,8 @@ if (isset($_SESSION["e"])&& isset($_SESSION["role"]))
                       </a>
                       <ul class="sub">
                           <li ><a  href="back/gestion_produit.php">Gestion Produit</a></li>
-                          <li ><a  href="back/ajouter_produit.php">ajouter Produit</a></li>
-                          <li ><a  href="back/gestion_promo.php">Gestion promo</a></li>
-                          <li ><a  href="back/ajouter_promo.php">ajouter promo</a></li>
+                            <li ><a  href="back/gestion_promo.php">Gestion Promo</a></li>
+                             
                       </ul>
                       </li>
             
